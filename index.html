@@ -3,450 +3,443 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ana Carolina Gonçalves | Sites, Planilhas e Apoio Financeiro</title>
-<meta name="description" content="Criação de sites, planilhas e automação, assistência financeira e administrativa remota para pequenos negócios e profissionais autônomos.">
-<meta property="og:title" content="Ana Carolina Gonçalves | Sites, Planilhas e Apoio Financeiro">
-<meta property="og:description" content="Sites, planilhas, automação e apoio financeiro e administrativo para pequenos negócios. Atendimento remoto.">
+<title>Ana Carolina Gonçalves | Sites, Planilhas e Finanças</title>
+<meta name="description" content="Sites, planilhas, automação e apoio financeiro e administrativo para pequenos negócios. 100% online.">
+<meta property="og:title" content="Ana Carolina Gonçalves | Sites, Planilhas e Finanças">
+<meta property="og:description" content="Sites, planilhas, automação e apoio financeiro e administrativo para pequenos negócios. 100% online.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0E2A47">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E2A47'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EAC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#1B8F5E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231B8F5E'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EAC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0E2A47;
-    --navy-2: #163A5F;
-    --ink: #1A2230;
-    --muted: #556070;
-    --line: #E1E6EC;
-    --bg: #F5F7FA;
+    --pen: #1F3FBF;          /* azul caneta: só para textos */
+    --brand: #1B8F5E;
+    --brand-dark: #136B46;
+    --brand-soft: #DDF3E8;
+    --brand-mist: #B9E4CF;
+    --pen-dark: #136B46;
+    --pen-ink: #0F1E5C;
+    --pen-soft: #E3F5EC;
+    --pen-mist: #B9E4CF;
+    --text: #18213F;
+    --muted: #5A6383;
     --white: #FFFFFF;
-    --accent: #0F7B5C;
-    --accent-dark: #0A5C45;
-    --accent-soft: #E3F2EC;
-    --sheet-head: #F1F4F7;
-    --sheet-line: #E3E8EE;
-    --radius: 12px;
+    --glass: rgba(255,255,255,.55);
+    --glass-border: rgba(255,255,255,.85);
+    --glass-shadow: 0 10px 40px -12px rgba(27,143,94,.28);
+    --sun: #F5B83D;
+    --sun-soft: #FFF3D6;
+    --leaf: #1B8F5E;
+    --leaf-soft: #DDF3E8;
+    --skin: #D9A27C;
+    --hair: #3B2418;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: "Figtree", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+    margin: 0; background: var(--white); color: var(--text);
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: 1.05rem; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
   }
-  h1, h2, h3 { font-family: "Sora", sans-serif; color: var(--navy); letter-spacing: -.015em; }
-  a { color: var(--accent); }
-  a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-  .eyebrow { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  h1, h2, h3 { color: var(--pen-ink); letter-spacing: -.02em; margin: 0; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+  .pen-note { font-family: "Caveat", cursive; color: var(--pen); font-weight: 700; }
 
-  /* Cabeçalho */
-  .topbar { position: sticky; top: 0; z-index: 10; background: rgba(245,247,250,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  .topbar nav { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand-mark { width: 36px; height: 36px; border-radius: 9px; background: var(--navy); color: #fff; display: grid; place-items: center; font-family: "Sora"; font-weight: 700; font-size: .9rem; }
-  .brand-name { font-family: "Sora"; font-weight: 600; color: var(--navy); }
-  .menu { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
-  .menu a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .97rem; }
-  .menu a:hover { color: var(--navy); }
-  @media (max-width: 820px) { .menu .hide-sm { display: none; } .brand-name { display: none; } }
+  /* Vidro */
+  .glass {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,.9);
+  }
+  .blob { position: absolute; border-radius: 50%; filter: blur(60px); z-index: 0; pointer-events: none; }
 
+  /* Botões */
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    background: var(--accent); color: #fff; padding: 13px 24px; border-radius: 8px;
-    font-weight: 600; text-decoration: none; border: 1.5px solid var(--accent); transition: background .15s, border-color .15s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--brand); color: #fff; padding: 14px 26px; border-radius: 999px;
+    font-weight: 700; text-decoration: none; border: 0; transition: transform .15s, background .15s;
+    box-shadow: 0 10px 24px -10px rgba(27,143,94,.7);
   }
-  .btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
-  .btn.small { padding: 9px 16px; font-size: .95rem; }
-  .btn.outline { background: transparent; color: var(--navy); border-color: #C3CCD7; }
-  .btn.outline:hover { border-color: var(--navy); background: var(--white); }
-  .btn svg { width: 18px; height: 18px; }
+  .btn:hover { background: var(--brand-dark); transform: translateY(-2px); }
+  .btn svg { width: 20px; height: 20px; }
+  .btn.ghost { color: var(--pen-ink); background: var(--glass); box-shadow: var(--glass-shadow); }
+  .btn.ghost:hover { background: rgba(255,255,255,.85); }
+  .btn.small { padding: 10px 18px; font-size: .95rem; }
 
-  /* HERO: planilha */
-  .hero { padding: 48px 0 88px; }
-  .sheet {
-    background: var(--white); border: 1px solid var(--sheet-line); border-radius: 16px; overflow: hidden;
-    box-shadow: 0 1px 2px rgba(14,42,71,.05), 0 30px 60px -32px rgba(14,42,71,.35);
-  }
-  .sheet-bar { display: flex; align-items: center; gap: 14px; padding: 12px 18px; border-bottom: 1px solid var(--sheet-line); background: #FBFCFD; }
-  .dots { display: flex; gap: 7px; }
-  .dots i { width: 11px; height: 11px; border-radius: 50%; background: #D5DBE3; }
-  .file { display: flex; align-items: center; gap: 8px; font-size: .92rem; color: var(--muted); font-weight: 500; }
-  .file svg { width: 18px; height: 18px; color: var(--accent); }
-  .tabs { margin-left: auto; display: flex; gap: 6px; font-size: .82rem; }
-  .tabs span { padding: 3px 10px; border-radius: 6px; color: var(--muted); }
-  .tabs span.on { background: var(--accent-soft); color: var(--accent-dark); font-weight: 600; }
-  @media (max-width: 640px) { .tabs { display: none; } }
+  /* Topo */
+  .topbar { position: fixed; top: 14px; left: 0; right: 0; z-index: 20; }
+  .topbar nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 999px; padding: 8px 8px 8px 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--pen-ink); font-weight: 700; }
+  .brand-mark { width: 38px; height: 38px; border-radius: 12px; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .9rem; }
+  .menu { display: flex; align-items: center; gap: 26px; list-style: none; margin: 0; padding: 0; }
+  .menu a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: .95rem; }
+  .menu a:hover { color: var(--pen); }
+  .menu a.btn, .menu a.btn:hover { color: #fff; }
+  @media (max-width: 820px) { .menu .hide-sm { display: none; } }
+  @media (max-width: 420px) { .brand span:last-child { display: none; } }
 
-  .formula { display: flex; align-items: center; gap: 12px; padding: 9px 18px; border-bottom: 1px solid var(--sheet-line); font-family: "JetBrains Mono", monospace; font-size: .9rem; white-space: nowrap; overflow: hidden; }
-  .cell-ref { background: var(--sheet-head); border: 1px solid var(--sheet-line); padding: 1px 12px; border-radius: 6px; color: var(--ink); }
-  .fx { font-style: italic; color: var(--accent); font-weight: 500; }
-  .typed { color: var(--ink); }
-  .caret { display: inline-block; width: 2px; height: 1.05em; background: var(--accent); vertical-align: -3px; margin-left: 1px; animation: blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
-
-  .grid { display: grid; grid-template-columns: 46px 1.45fr 1fr; }
-  .grid > div { border-right: 1px solid var(--sheet-line); border-bottom: 1px solid var(--sheet-line); }
-  .grid > div:nth-child(3n) { border-right: 0; }
-  .colh, .rowh { background: var(--sheet-head); color: #8792A2; font-family: "JetBrains Mono", monospace; font-size: .76rem; display: flex; align-items: center; justify-content: center; padding: 5px 0; }
-  .colh.on, .rowh.on { background: #DCEFE7; color: var(--accent-dark); font-weight: 500; }
-  .c { padding: 14px 22px; min-width: 0; }
-  .c.span2 { grid-column: span 2; border-right: 0 !important; }
-  .tag { font-size: .95rem; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .tag b { color: var(--navy); font-weight: 600; }
-  .pill { font-size: .78rem; background: var(--accent-soft); color: var(--accent-dark); padding: 2px 10px; border-radius: 99px; font-weight: 600; }
-
-  .selected { position: relative; background: linear-gradient(0deg, rgba(15,123,92,.05), rgba(15,123,92,.05)); box-shadow: inset 0 0 0 2px var(--accent); }
-  .selected::after { content: ""; position: absolute; right: -5px; bottom: -5px; width: 9px; height: 9px; background: var(--accent); border: 2px solid var(--white); z-index: 1; }
-  .hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.9rem); line-height: 1.06; margin: 0; padding: 14px 0 10px; font-weight: 700; }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .lead { margin: 0; font-size: 1.15rem; color: var(--muted); max-width: 58ch; }
-
-  .svc-head { font-family: "JetBrains Mono", monospace; font-size: .78rem; color: #8792A2; text-transform: uppercase; letter-spacing: .05em; }
-  .svc { font-weight: 600; color: var(--navy); }
-  .ok { display: inline-flex; align-items: center; gap: 7px; color: var(--accent-dark); font-weight: 600; font-size: .95rem; }
-  .ok::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  /* HERO */
+  .hero { position: relative; padding: 130px 0 70px; }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; }
+  .hello { font-size: 1.7rem; margin: 0 0 6px; display: inline-flex; align-items: center; gap: 8px; }
+  .hero h1 { font-size: clamp(2.3rem, 5.4vw, 4rem); line-height: 1.05; font-weight: 800; }
+  .hero h1 .u { position: relative; color: var(--pen); white-space: nowrap; }
+  .hero h1 .u svg { position: absolute; left: 0; bottom: -10px; width: 100%; height: 16px; }
+  .hero .sub { font-size: 1.2rem; color: var(--muted); margin: 22px 0 30px; max-width: 34ch; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  @media (max-width: 640px) {
-    .grid { grid-template-columns: 32px 1fr 1fr; }
-    .c { padding: 12px 12px; }
-    .svc { font-size: .95rem; }
-    .ok { font-size: .85rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; font-size: .9rem; font-weight: 600; color: var(--pen-ink); }
+  .chip svg { width: 16px; height: 16px; color: var(--brand); }
+
+  .stage { position: relative; aspect-ratio: 1 / 1; max-width: 520px; width: 100%; margin: 0 auto; }
+  .stage .disc { position: absolute; inset: 8% 8% 4%; border-radius: 50%; background: linear-gradient(150deg, rgba(255,243,214,.85), rgba(221,243,232,.7)) !important; }
+  .stage .avatar { position: absolute; left: -6%; right: -6%; bottom: -2%; }
+  .float { position: absolute; border-radius: 18px; padding: 12px 14px; animation: bob 6s ease-in-out infinite; }
+  .float.f1 { top: 6%; left: -2%; width: 44%; }
+  .float.f2 { top: 10%; left: 2%; right: auto; animation-delay: -2s; }
+  .float.f3 { bottom: 22%; right: -2%; animation-delay: -4s; }
+  .float.f4 { bottom: 30%; left: -4%; animation-delay: -3s; }
+  .mini-sheet { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .mini-sheet i { height: 10px; border-radius: 3px; background: var(--brand-mist); }
+  .mini-sheet i.hi { background: var(--leaf); }
+  .mini-sheet i { background: var(--leaf-soft) !important; }
+  .mini-sheet i.hi { background: var(--leaf) !important; }
+  .float small { display: block; font-size: .72rem; font-weight: 700; color: var(--pen-ink); margin-bottom: 8px; }
+  .float .icon-only { width: 46px; height: 46px; display: grid; place-items: center; color: var(--brand); }
+  .float .icon-only svg { width: 28px; height: 28px; }
+  .float.f2 b { font-family: ui-monospace, monospace; color: var(--leaf); font-size: 1.15rem; }
+  .me-note { position: absolute; bottom: 6%; left: -6%; font-size: 1.6rem; transform: rotate(-6deg); display: flex; align-items: center; gap: 4px; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @media (max-width: 900px) {
+    .hero { padding-top: 110px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .stage { max-width: 400px; }
+    .me-note { left: 0; }
   }
 
   /* Seções */
-  section { padding: 88px 0; }
-  .section-head { max-width: 640px; margin-bottom: 44px; }
-  .section-head h2 { font-size: clamp(1.75rem, 3.4vw, 2.4rem); line-height: 1.15; margin: 0 0 14px; }
-  .section-head p { color: var(--muted); margin: 0; }
+  section { position: relative; padding: 90px 0; }
+  .head { text-align: center; max-width: 620px; margin: 0 auto 48px; position: relative; z-index: 1; }
+  .head .pen-note { font-size: 1.6rem; display: block; margin-bottom: 4px; }
+  .head h2 { font-size: clamp(1.9rem, 3.8vw, 2.7rem); line-height: 1.12; font-weight: 800; }
 
   /* Serviços */
-  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
-  .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
-  .icon { width: 44px; height: 44px; flex: none; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
-  .icon svg { width: 22px; height: 22px; }
-  .card h3 { font-size: 1.25rem; margin: 0; }
-  .card p { color: var(--muted); margin: 0 0 14px; }
-  .card ul { list-style: none; margin: 0; padding: 0; }
-  .card li { position: relative; padding-left: 24px; margin: 6px 0; font-size: 1rem; }
-  .card li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 11px; height: 6px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
-  .ideal { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: .93rem; color: var(--muted); }
-  .ideal b { color: var(--navy); font-weight: 600; }
-  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } .card { padding: 24px 20px; } }
+  .services { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .svc { border-radius: 24px; padding: 14px; transition: transform .2s; }
+  .svc:hover { transform: translateY(-4px); }
+  .svc .art { border-radius: 16px; background: linear-gradient(160deg, #F1FAF5, #DDF2E7); aspect-ratio: 16 / 9; display: grid; place-items: center; overflow: hidden; }
+  .svc .art svg { width: 100%; height: 100%; }
+  .svc .body { padding: 18px 10px 8px; }
+  .svc h3 { font-size: 1.35rem; font-weight: 800; }
+  .svc p { margin: 6px 0 14px; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span { font-size: .85rem; font-weight: 600; color: var(--pen-dark); background: var(--brand-soft); padding: 5px 12px; border-radius: 999px; }
+  .svc.t-green .art { background: linear-gradient(160deg, #F0FAF5, #D6F0E3); }
+  .svc.t-green .tags span { background: var(--leaf-soft); color: #136B46; }
+  .svc.t-sun .art { background: linear-gradient(160deg, #FFF9EA, #FFEDC2); }
+  .svc.t-sun .tags span { background: var(--sun-soft); color: #7A4E00; }
+  .svc.t-mix .art { background: linear-gradient(160deg, #F1FAF5, #FFF3D6); }
+  .svc .bar { height: 5px; width: 44px; border-radius: 99px; background: var(--brand); margin-bottom: 12px; }
+  .svc.t-green .bar { background: var(--leaf); }
+  .svc.t-sun .bar { background: var(--sun); }
+  .svc.t-mix .bar { background: linear-gradient(90deg, var(--brand), var(--sun)); }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
 
   /* Como funciona */
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: s; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); overflow: hidden; }
-  .steps li { counter-increment: s; padding: 28px 24px; border-right: 1px solid var(--line); }
-  .steps li:last-child { border-right: 0; }
-  .steps li::before { content: "0" counter(s); font-family: "Sora"; font-weight: 600; color: var(--accent); font-size: .95rem; display: block; margin-bottom: 10px; }
-  .steps h3 { font-size: 1.05rem; margin: 0 0 6px; }
-  .steps p { margin: 0; color: var(--muted); font-size: .97rem; }
-  @media (max-width: 900px) {
-    .steps { grid-template-columns: 1fr 1fr; }
-    .steps li:nth-child(2) { border-right: 0; }
-    .steps li:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  }
-  @media (max-width: 520px) {
-    .steps { grid-template-columns: 1fr; }
-    .steps li { border-right: 0; border-bottom: 1px solid var(--line); }
-    .steps li:last-child { border-bottom: 0; }
-  }
+  .flow { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { border-radius: 22px; padding: 28px 24px; text-align: center; }
+  .step .ic { width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 20px; background: var(--brand); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 22px -10px rgba(27,143,94,.8); }
+  .step .ic svg { width: 30px; height: 30px; }
+  .step h3 { font-size: 1.15rem; font-weight: 800; }
+  .step p { margin: 4px 0 0; color: var(--muted); font-size: .97rem; }
+  .step .n { font-family: "Caveat", cursive; color: var(--pen); font-size: 1.4rem; font-weight: 700; display: block; }
+  .step:nth-child(2) { background: rgba(255,243,214,.6) !important; }
+  .step:nth-child(3) { background: rgba(221,243,232,.6) !important; }
+  .step:nth-child(3) .ic { background: var(--brand-dark); box-shadow: 0 10px 22px -10px rgba(27,143,94,.8); }
+  .step:nth-child(2) .ic { background: var(--sun); color: #5A3B00; box-shadow: 0 10px 22px -10px rgba(217,151,31,.8); }
+  @media (max-width: 760px) { .flow { grid-template-columns: 1fr; } }
 
   /* Sobre */
-  .about { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .about-grid { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
-  .photo { width: 100%; aspect-ratio: 4/5; border-radius: 16px; background: var(--navy); display: grid; place-items: center; overflow: hidden; }
-  .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .photo .initials { font-family: "Sora"; font-size: 3.6rem; font-weight: 700; color: rgba(255,255,255,.9); }
-  .about p { max-width: 62ch; margin: 0 0 16px; color: var(--muted); }
-  .about p strong { color: var(--ink); font-weight: 600; }
-  .creds { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
-  .cred { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--bg); }
-  .cred b { display: block; color: var(--navy); font-weight: 600; }
-  .cred span { font-size: .92rem; color: var(--muted); }
-  @media (max-width: 860px) {
-    .about-grid { grid-template-columns: 1fr; gap: 28px; }
-    .photo { max-width: 200px; }
-    .creds { grid-template-columns: 1fr; }
-  }
+  .about-card { position: relative; z-index: 1; border-radius: 28px; padding: 36px; display: grid; grid-template-columns: 200px 1fr; gap: 36px; align-items: center; }
+  .about-face { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(150deg, #FFE7AE, #CDEFDD); overflow: hidden; display: grid; place-items: end center; }
+  .about-card h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; }
+  .about-card p { margin: 10px 0 18px; color: var(--muted); max-width: 56ch; }
+  .creds { display: flex; flex-wrap: wrap; gap: 8px; }
+  .creds span { display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 600; color: var(--pen-ink); background: var(--white); border: 1px solid var(--brand-mist); padding: 7px 13px; border-radius: 999px; }
+  .creds svg { width: 15px; height: 15px; color: var(--brand); }
+  .creds span:nth-child(1) svg { color: #1B8F5E; } .creds span:nth-child(2) svg { color: #C4841A; } .creds span:nth-child(4) svg { color: #1B8F5E; }
+  .about-card { background: linear-gradient(120deg, rgba(255,255,255,.7), rgba(255,243,214,.65)) !important; }
+  @media (max-width: 760px) { .about-card { grid-template-columns: 1fr; text-align: center; padding: 28px 20px; } .about-face { margin: 0 auto; width: 160px; height: 160px; } .creds { justify-content: center; } .about-card p { margin-inline: auto; } }
 
   /* FAQ */
-  .faq { max-width: 800px; }
-  details { background: var(--white); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 10px; }
-  summary { cursor: pointer; list-style: none; padding: 18px 56px 18px 22px; font-weight: 600; color: var(--navy); position: relative; }
+  .faq { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+  details { border-radius: 18px; }
+  summary { cursor: pointer; list-style: none; padding: 18px 56px 18px 22px; font-weight: 700; color: var(--pen-ink); position: relative; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--accent); font-weight: 400; }
+  summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--leaf); font-weight: 500; }
   details[open] summary::after { content: "–"; }
   details p { margin: 0; padding: 0 22px 18px; color: var(--muted); }
 
   /* Contato */
-  .cta { background: var(--navy); color: #D5DDE8; border-radius: 20px; padding: 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-  .cta h2 { color: #fff; font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 12px; line-height: 1.15; }
-  .cta .eyebrow { color: #7FD1B3; }
-  .cta p { margin: 0; }
-  .cta .actions { flex-direction: column; }
-  .cta .btn { width: 100%; }
-  .cta .btn.outline { color: #fff; border-color: rgba(255,255,255,.3); }
-  .cta .btn.outline:hover { background: rgba(255,255,255,.08); border-color: #fff; }
-  .note { font-size: .9rem; color: #A9B6C7; margin-top: 6px; text-align: center; }
-  @media (max-width: 820px) { .cta { grid-template-columns: 1fr; padding: 32px 22px; gap: 28px; } }
+  .cta-band { position: relative; overflow: hidden; border-radius: 32px; background: var(--brand); padding: 64px 28px; text-align: center; }
+  .cta-band .blob { filter: blur(50px); }
+  .cta-glass { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; border-radius: 26px; padding: 40px 28px;
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.35);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+  .cta-glass h2 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; }
+  .cta-glass p { color: #E3F7EE; margin: 10px 0 28px; }
+  .cta-glass .pen-note { color: #FFD27A; font-size: 1.5rem; display: block; margin-bottom: 4px; }
+  .cta-glass .actions { justify-content: center; }
+  .btn.white { background: #fff; color: var(--brand-dark); box-shadow: 0 10px 26px -10px rgba(0,0,0,.4); }
+  .btn.white:hover { background: #EAF8F1; }
+  .btn.line { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.55); box-shadow: none; }
+  .btn.line:hover { background: rgba(255,255,255,.12); }
+  .cta-glass small { display: block; margin-top: 18px; color: #CDEFDD; }
 
-  footer { padding: 28px 0 40px; font-size: .92rem; color: var(--muted); }
+  footer { padding: 30px 0 40px; text-align: center; font-size: .9rem; color: var(--muted); }
 
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .caret { animation: none; } }
+  /* Botão flutuante WhatsApp */
+  .wa-fab { position: fixed; right: 18px; bottom: 18px; z-index: 30; width: 58px; height: 58px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; box-shadow: 0 12px 28px -8px rgba(27,143,94,.8); }
+  .wa-fab svg { width: 28px; height: 28px; }
+
+  /* Entrada suave */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .float { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Botões de WhatsApp em amarelo para chamar atenção */
+  .btn.wa { background: var(--sun); color: var(--pen-ink); box-shadow: 0 10px 24px -10px rgba(217,151,31,.85); }
+  .btn.wa:hover { background: #FFC94F; color: var(--pen-ink); }
+  .wa-fab { background: var(--sun) !important; color: var(--pen-ink); box-shadow: 0 12px 28px -8px rgba(217,151,31,.85); }
+
+  /* Imagens 3D */
+  .stage .avatar { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; height: 100%; width: auto; right: auto; filter: drop-shadow(0 18px 24px rgba(15,30,92,.18)); }
+  .svc .art, .svc.t-green .art, .svc.t-sun .art, .svc.t-mix .art { background: #fff !important; border: 1px solid #EEF1F5; }
+  .svc .art { aspect-ratio: 5 / 4 !important; position: relative; display: block !important; }
+  .svc .art img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; }
+  .about-face { position: relative; display: block !important; }
+  .about-face img { position: absolute; top: 7%; left: 50%; width: 118%; transform: translateX(-50%); }
+  .cta-ana { position: absolute; left: 4%; bottom: -150px; height: 470px; z-index: 1; filter: drop-shadow(0 16px 24px rgba(0,0,0,.25)); }
+  @media (max-width: 980px) { .cta-ana { display: none; } }
 </style>
 </head>
 <body>
 
+<!-- ======== ÍCONE DO WHATSAPP (reutilizado) ======== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></symbol>
+</svg>
+
 <header class="topbar">
-  <nav class="wrap" aria-label="Principal">
-    <a class="brand" href="#">
-      <span class="brand-mark">AC</span>
-      <span class="brand-name">Ana Carolina Gonçalves</span>
-    </a>
-    <ul class="menu">
-      <li class="hide-sm"><a href="#servicos">Serviços</a></li>
-      <li class="hide-sm"><a href="#como-funciona">Como funciona</a></li>
-      <li class="hide-sm"><a href="#sobre">Sobre</a></li>
-      <li class="hide-sm"><a href="#duvidas">Dúvidas</a></li>
-      <li><a class="btn small" href="#contato">Pedir orçamento</a></li>
-    </ul>
-  </nav>
+  <div class="wrap">
+    <nav class="glass" aria-label="Principal">
+      <a class="brand" href="#"><span class="brand-mark">AC</span><span>Ana Carolina</span></a>
+      <ul class="menu">
+        <li class="hide-sm"><a href="#servicos">Serviços</a></li>
+        <li class="hide-sm"><a href="#como-funciona">Como funciona</a></li>
+        <li class="hide-sm"><a href="#sobre">Sobre</a></li>
+        <li><a class="btn small" href="#contato">Orçamento</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <!-- HERO: planilha -->
+  <!-- ======== HERO ======== -->
   <div class="hero">
-    <div class="wrap">
-      <div class="sheet">
-        <div class="sheet-bar" aria-hidden="true">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <div class="file">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
-            ana-carolina_servicos.xlsx
-          </div>
-          <div class="tabs"><span class="on">Início</span><span>Serviços</span><span>Contato</span></div>
+    <div class="blob" style="width:520px;height:520px;background:#B9E4CF;top:-120px;right:-120px"></div>
+    <div class="blob" style="width:300px;height:300px;background:#FFE3A3;top:280px;right:22%"></div>
+    <div class="blob" style="width:380px;height:380px;background:#CDEFDD;bottom:-80px;left:-120px"></div>
+
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hello pen-note">oi, eu sou a Ana!</p>
+        <h1>Seu negócio <span class="u">organizado<svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 10 C 70 3, 150 14, 220 6 S 285 8, 297 9" stroke="#F5B83D" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> e no digital.</h1>
+        <p class="sub">Sites, planilhas e rotina financeira resolvidos por mim, para você focar no que importa.</p>
+        <div class="actions">
+          <!-- TROQUE 5521900000000 pelo seu número -->
+          <a class="btn wa" href="https://wa.me/5521900000000?text=Ol%C3%A1%2C%20Ana!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Chamar no WhatsApp</a>
+          <a class="btn ghost glass" href="#servicos">Ver serviços</a>
         </div>
-
-        <div class="formula" aria-hidden="true">
-          <span class="cell-ref" id="ref">B2</span>
-          <span class="fx">fx</span>
-          <span><span class="typed" id="typed">=ORGANIZAR(seu_negócio)</span><span class="caret"></span></span>
+        <div class="chips">
+          <span class="chip glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>100% online</span>
+          <span class="chip glass"><svg style="color:#1B8F5E" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Experiência desde 2020</span>
+          <span class="chip glass"><svg style="color:#D9971F" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Resposta em 1 dia útil</span>
         </div>
+      </div>
 
-        <div class="grid">
-          <div class="colh"></div>
-          <div class="colh on">B</div>
-          <div class="colh">C</div>
+      <!-- Palco com o bonequinho -->
+      <div class="stage">
+        <div class="disc glass"></div>
 
-          <div class="rowh">1</div>
-          <div class="c span2 tag"><b>Ana Carolina Gonçalves</b> Sites · Planilhas · Financeiro <span class="pill">100% remoto</span></div>
+        <!-- BONEQUINHO: cabelo ondulado castanho-escuro, partido no meio, pele morena clara -->
+        <img class="avatar" src="img/ana-celular.png" alt="Ana Carolina mostrando o celular" width="261" height="702">
 
-          <div class="rowh on">2</div>
-          <div class="c span2 selected">
-            <h1>Seu negócio organizado, <em>sem dor de cabeça</em>.</h1>
-          </div>
-
-          <div class="rowh">3</div>
-          <div class="c span2">
-            <p class="lead">Crio sites e planilhas sob medida e cuido da rotina financeira e administrativa de pequenas empresas e profissionais autônomos, com a experiência de quem faz isso todos os dias desde 2020.</p>
-          </div>
-
-          <div class="rowh">4</div>
-          <div class="c svc-head">Serviço</div>
-          <div class="c svc-head">Status</div>
-
-          <div class="rowh">5</div>
-          <div class="c svc">Criação de sites</div>
-          <div class="c"><span class="ok">Disponível</span></div>
-
-          <div class="rowh">6</div>
-          <div class="c svc">Planilhas e automação</div>
-          <div class="c"><span class="ok">Disponível</span></div>
-
-          <div class="rowh">7</div>
-          <div class="c svc">Assistência financeira</div>
-          <div class="c"><span class="ok">Disponível</span></div>
-
-          <div class="rowh">8</div>
-          <div class="c svc">Assistência administrativa</div>
-          <div class="c"><span class="ok">Disponível</span></div>
-
-          <div class="rowh" style="border-bottom:0">9</div>
-          <div class="c span2" style="border-bottom:0">
-            <div class="actions">
-              <a class="btn" href="#contato">Pedir um orçamento</a>
-              <a class="btn outline" href="#servicos">Ver detalhes dos serviços</a>
-            </div>
-          </div>
-        </div>
+        <!-- cartões de vidro flutuando -->
+        <div class="float f2 glass" aria-hidden="true"><b>=SOMA()</b></div>
+        <div class="float f3 glass" aria-hidden="true"><div class="icon-only" style="color:#D9971F"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z" fill="#FCD877"/><path d="M9 18h6M10 21h4"/></svg></div></div>
+        <div class="float f4 glass" aria-hidden="true"><div class="icon-only"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div></div>
       </div>
     </div>
   </div>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" style="padding-top: 24px;">
+  <!-- ======== SERVIÇOS ======== -->
+  <section id="servicos">
+    <div class="blob" style="width:420px;height:420px;background:#FFEAB8;top:20%;left:-160px"></div>
+    <div class="blob" style="width:420px;height:420px;background:#CDEFDD;bottom:0;right:-160px"></div>
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Serviços</span>
-        <h2>O que eu posso fazer por você</h2>
-        <p>Contrate um serviço avulso ou combine vários. O escopo, o prazo e o valor ficam definidos por escrito antes de começar.</p>
+      <div class="head reveal">
+        <span class="pen-note">o que eu faço</span>
+        <h2>Escolha o que você precisa</h2>
       </div>
 
       <div class="services">
-        <article class="card">
-          <div class="card-top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14l-2 2 2 2M16 14l2 2-2 2"/></svg></div>
+        <!-- 1. SITES -->
+        <article class="svc glass reveal t-blue">
+          <div class="art">
+            <img src="img/servico-sites.jpg" alt="Ana criando um site" loading="lazy">
+          </div>
+          <div class="body">
+            <div class="bar"></div>
             <h3>Criação de sites</h3>
+            <p>Seu negócio fácil de achar e passando confiança.</p>
+            <div class="tags"><span>Site de apresentação</span><span>Funciona no celular</span><span>Botão de WhatsApp</span></div>
           </div>
-          <p>Um site simples, rápido e bonito para você ser encontrado e passar confiança.</p>
-          <ul>
-            <li>Página de apresentação do seu trabalho</li>
-            <li>Funciona bem no celular</li>
-            <li>Botão direto para o seu WhatsApp</li>
-            <li>Ajuda para publicar com domínio próprio</li>
-          </ul>
-          <div class="ideal"><b>Ideal para:</b> profissionais autônomos e pequenos negócios que ainda não têm site.</div>
         </article>
 
-        <article class="card">
-          <div class="card-top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
+        <!-- 2. PLANILHAS -->
+        <article class="svc glass reveal t-green">
+          <div class="art">
+            <img src="img/servico-planilhas.jpg" alt="Ana trabalhando em planilhas" loading="lazy">
+          </div>
+          <div class="body">
+            <div class="bar"></div>
             <h3>Planilhas e automação</h3>
+            <p>Controles claros e tarefas repetitivas no automático.</p>
+            <div class="tags"><span>Excel e Google Planilhas</span><span>Painéis</span><span>Apps Script</span></div>
           </div>
-          <p>Controles claros em Excel ou Google Planilhas e automação do que é repetitivo.</p>
-          <ul>
-            <li>Fluxo de caixa, despesas e relatórios</li>
-            <li>Painéis, fórmulas e dados organizados</li>
-            <li>Sistemas internos com Google Apps Script</li>
-            <li>Conserto de planilhas que já existem</li>
-          </ul>
-          <div class="ideal"><b>Ideal para:</b> quem perde tempo com controles manuais ou planilhas bagunçadas.</div>
         </article>
 
-        <article class="card">
-          <div class="card-top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c0-1.9-2.2-3.5-5-3.5S7 4.6 7 6.5 9.2 10 12 10s5 1.6 5 3.5S14.8 17 12 17s-5-1.6-5-3.5"/></svg></div>
+        <!-- 3. FINANCEIRO -->
+        <article class="svc glass reveal t-sun">
+          <div class="art">
+            <img src="img/servico-financeiro.jpg" alt="Ana cuidando das finanças" loading="lazy">
+          </div>
+          <div class="body">
+            <div class="bar"></div>
             <h3>Assistência financeira</h3>
+            <p>Suas contas em dia, sem você se preocupar.</p>
+            <div class="tags"><span>Pagar e receber</span><span>Faturamento</span><span>Conciliação bancária</span></div>
           </div>
-          <p>Sua rotina financeira em dia e com prestação de contas.</p>
-          <ul>
-            <li>Contas a pagar e a receber</li>
-            <li>Faturamento e emissão de cobranças</li>
-            <li>Conciliação bancária</li>
-            <li>Acompanhamento de vencimentos e inadimplência</li>
-          </ul>
-          <div class="ideal"><b>Ideal para:</b> empresas pequenas sem um financeiro dedicado.</div>
         </article>
 
-        <article class="card">
-          <div class="card-top">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+        <!-- 4. ADMINISTRATIVO -->
+        <article class="svc glass reveal t-mix">
+          <div class="art">
+            <img src="img/servico-administrativo.jpg" alt="Ana organizando documentos" loading="lazy">
+          </div>
+          <div class="body">
+            <div class="bar"></div>
             <h3>Assistência administrativa</h3>
+            <p>Documentos e rotinas no lugar certo.</p>
+            <div class="tags"><span>Organização de documentos</span><span>Cadastros</span><span>Processos</span></div>
           </div>
-          <p>Apoio remoto para as tarefas que se acumulam e tomam o seu tempo.</p>
-          <ul>
-            <li>Organização e digitalização de documentos</li>
-            <li>Cadastros, controles e arquivos em ordem</li>
-            <li>Montagem de rotinas e processos</li>
-          </ul>
-          <div class="ideal"><b>Ideal para:</b> quem quer delegar a parte burocrática do negócio.</div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
-  <section id="como-funciona" style="padding-top: 8px;">
+  <!-- ======== COMO FUNCIONA ======== -->
+  <section id="como-funciona" style="padding-top: 20px;">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Como funciona</span>
-        <h2>Simples do começo ao fim</h2>
+      <div class="head reveal">
+        <span class="pen-note" style="color:#1B8F5E">simples assim</span>
+        <h2>Como funciona</h2>
       </div>
-      <ol class="steps">
-        <li><h3>Conversa inicial</h3><p>Você me conta o que precisa pelo WhatsApp ou e-mail, sem compromisso.</p></li>
-        <li><h3>Proposta</h3><p>Envio por escrito o que será feito, o prazo e o valor.</p></li>
-        <li><h3>Execução</h3><p>Faço o trabalho e mostro o andamento para você opinar.</p></li>
-        <li><h3>Entrega e suporte</h3><p>Entrego pronto, explico como usar e tiro dúvidas depois.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre" class="about">
-    <div class="wrap about-grid">
-      <div class="photo">
-        <!-- Para usar sua foto: envie "foto.jpg" para o repositório e troque a linha abaixo por:
-             <img src="foto.jpg" alt="Foto de Ana Carolina Gonçalves"> -->
-        <span class="initials">AC</span>
-      </div>
-      <div>
-        <span class="eyebrow">Sobre mim</span>
-        <h2>Prazer, sou a Ana Carolina</h2>
-        <p>Trabalho <strong>desde 2020</strong> na área administrativa e financeira de uma transportadora, com <strong>faturamento, contas a pagar e receber, fluxo de caixa e conciliação bancária</strong>.</p>
-        <p>Resolvendo problemas do dia a dia, comecei a criar minhas próprias ferramentas: reestruturei controles de fluxo de caixa, desenvolvi sistemas internos em Google Sheets e Apps Script e passei a construir sites. Hoje levo essa experiência para outros negócios que querem se organizar.</p>
-        <div class="creds">
-          <div class="cred"><b>Gestão Financeira</b><span>Graduação · UNIGRANRIO</span></div>
-          <div class="cred"><b>Técnico em Administração</b><span>SENAC · Contas a Pagar, Receber e Tesouraria</span></div>
-          <div class="cred"><b>Programação e Web Design</b><span>CVTI Nova Iguaçu</span></div>
-          <div class="cred"><b>Excel do básico ao avançado</b><span>Fundação Bradesco</span></div>
+      <div class="flow">
+        <div class="step glass reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+          <span class="n">1.</span><h3>Você me chama</h3><p>Conta o que precisa, sem compromisso.</p>
+        </div>
+        <div class="step glass reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+          <span class="n">2.</span><h3>Recebe a proposta</h3><p>Prazo e valor por escrito.</p>
+        </div>
+        <div class="step glass reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <span class="n">3.</span><h3>Recebe pronto</h3><p>Com explicação e suporte.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DÚVIDAS -->
-  <section id="duvidas">
+  <!-- ======== SOBRE ======== -->
+  <section id="sobre" style="padding-top: 20px;">
+    <div class="blob" style="width:460px;height:460px;background:#FFE7AE;top:0;left:30%"></div>
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Dúvidas frequentes</span>
-        <h2>Antes de chamar, talvez você queira saber</h2>
+      <div class="about-card glass reveal">
+        <div class="about-face">
+          <img src="img/ana-bracos-cruzados.png" alt="Ana Carolina">
+        </div>
+        <div>
+          <span class="pen-note" style="font-size:1.5rem;color:#C4841A">prazer!</span>
+          <h2>Finanças + tecnologia</h2>
+          <p>Trabalho no financeiro de uma transportadora desde 2020 e crio as ferramentas que resolvem o dia a dia: planilhas, sistemas e sites.</p>
+          <div class="creds">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Gestão Financeira · UNIGRANRIO</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Técnico em Administração · SENAC</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-3 3 3 3M16 9l3 3-3 3"/></svg>Programação e Web Design · CVTI</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>Excel Avançado · Fundação Bradesco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== DÚVIDAS ======== -->
+  <section style="padding-top: 10px;">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="pen-note" style="color:#C4841A">dúvidas rápidas</span>
+        <h2>Perguntas frequentes</h2>
       </div>
       <div class="faq">
-        <details>
-          <summary>Como é feito o orçamento?</summary>
-          <p>Depois de entender o que você precisa, envio uma proposta por escrito com escopo, prazo e valor. Só começo com a sua aprovação.</p>
-        </details>
-        <details>
-          <summary>O atendimento é só online?</summary>
-          <p>Sim. Todo o trabalho é feito à distância, por WhatsApp e e-mail, então atendo clientes de qualquer lugar do Brasil.</p>
-        </details>
-        <details>
-          <summary>Em quanto tempo você responde?</summary>
-          <p>Em até 1 dia útil. Os prazos de entrega de cada serviço ficam definidos na proposta.</p>
-        </details>
-        <details>
-          <summary>Meus dados financeiros ficam seguros?</summary>
-          <p>Sim. Informações e documentos são usados apenas para o serviço contratado e tratados com total confidencialidade.</p>
-        </details>
+        <details class="glass reveal"><summary>Atende só online?</summary><p>Sim, por WhatsApp e e-mail, para todo o Brasil.</p></details>
+        <details class="glass reveal"><summary>Como é o orçamento?</summary><p>Você recebe prazo e valor por escrito. Só começo com a sua aprovação.</p></details>
+        <details class="glass reveal"><summary>Meus dados ficam seguros?</summary><p>Sim. São usados só para o serviço e tratados com sigilo.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section id="contato" style="padding-top: 0;">
+  <!-- ======== CONTATO ======== -->
+  <section id="contato" style="padding-top: 30px;">
     <div class="wrap">
-      <div class="cta">
-        <div>
-          <span class="eyebrow">Contato</span>
-          <h2>Vamos organizar o seu negócio?</h2>
-          <p>Me conte o que você precisa e receba uma proposta sem compromisso.</p>
-        </div>
-        <div>
+      <div class="cta-band reveal">
+        <div class="blob" style="width:340px;height:340px;background:#4CC08C;top:-140px;left:-80px"></div>
+        <div class="blob" style="width:300px;height:300px;background:#1B8F5E;opacity:.7;bottom:-120px;right:-60px"></div>
+        <img class="cta-ana" src="img/ana-notebook.png" alt="" aria-hidden="true" loading="lazy">
+        <div class="cta-glass">
+          <span class="pen-note">vamos começar?</span>
+          <h2>Me chama e eu te ajudo</h2>
+          <p>Orçamento sem compromisso.</p>
           <div class="actions">
-            <!-- TROQUE 5521900000000 pelo seu número com DDI e DDD, só números -->
-            <a class="btn" href="https://wa.me/5521965846763?text=Ol%C3%A1%2C%20Ana!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
-              Falar no WhatsApp
-            </a>
+            <!-- TROQUE 5521900000000 pelo seu número -->
+            <a class="btn wa" href="https://wa.me/5521900000000?text=Ol%C3%A1%2C%20Ana!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
             <!-- TROQUE pelo seu e-mail -->
-            <a class="btn outline" href="mailto:ana.carolina.o13@hotmail.com">Enviar e-mail</a>
-            <a class="btn outline" href="https://www.linkedin.com/in/ana-carolina-o-gon%C3%A7alves-0231ba255" target="_blank" rel="noopener">Ver perfil no LinkedIn</a>
+            <a class="btn line" href="mailto:seuemail@exemplo.com">E-mail</a>
+            <a class="btn line" href="https://www.linkedin.com/in/ana-carolina-o-gon%C3%A7alves-0231ba255" target="_blank" rel="noopener">LinkedIn</a>
           </div>
-          <p class="note">Resposta em até 1 dia útil.</p>
+          <small>Resposta em até 1 dia útil</small>
         </div>
       </div>
     </div>
@@ -455,41 +448,19 @@
 
 <footer class="wrap">© <span id="ano">2026</span> Ana Carolina de Oliveira Gonçalves · Rio de Janeiro, RJ</footer>
 
+<!-- Botão fixo do WhatsApp (TROQUE o número aqui também) -->
+<a class="wa-fab" href="https://wa.me/5521900000000" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
 <script>
   document.getElementById("ano").textContent = new Date().getFullYear();
-
-  // Barra de fórmula "digitando"
+  // Animação de entrada ao rolar a página
   (function () {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var el = document.getElementById("typed");
-    var ref = document.getElementById("ref");
-    var items = [
-      ["B2", "=ORGANIZAR(seu_negócio)"],
-      ["B5", "=CRIAR(site; \"bonito e rápido\")"],
-      ["B6", "=AUTOMATIZAR(planilhas)"],
-      ["B7", "=CONCILIAR(banco; extrato)"],
-      ["B9", "=SE(precisa_de_ajuda; \"me chama!\")"]
-    ];
-    var i = 0, pos = 0, deleting = false;
-    function tick() {
-      var text = items[i][1];
-      if (!deleting) {
-        pos++;
-        el.textContent = text.slice(0, pos);
-        if (pos === text.length) { deleting = true; return setTimeout(tick, 2200); }
-        return setTimeout(tick, 55);
-      }
-      pos--;
-      el.textContent = text.slice(0, pos);
-      if (pos === 0) {
-        deleting = false;
-        i = (i + 1) % items.length;
-        ref.textContent = items[i][0];
-        return setTimeout(tick, 350);
-      }
-      setTimeout(tick, 25);
-    }
-    setTimeout(function () { deleting = true; tick(); }, 2500);
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
   })();
 </script>
 </body>
