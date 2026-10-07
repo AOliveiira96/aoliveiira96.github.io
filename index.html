@@ -3,214 +3,284 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ana Carolina Gonçalves | Sites, planilhas e apoio financeiro</title>
+<title>Ana Carolina Gonçalves | Sites, Planilhas e Apoio Financeiro</title>
 <meta name="description" content="Criação de sites, planilhas e automação, assistência financeira e administrativa remota para pequenos negócios e profissionais autônomos.">
+<meta property="og:title" content="Ana Carolina Gonçalves | Sites, Planilhas e Apoio Financeiro">
+<meta property="og:description" content="Sites, planilhas, automação e apoio financeiro e administrativo para pequenos negócios. Atendimento remoto.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E2A47">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E2A47'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EAC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1B2433;
-    --ink-soft: #4A5568;
-    --paper: #F6F8FA;
+    --navy: #0E2A47;
+    --navy-2: #163A5F;
+    --ink: #1A2230;
+    --muted: #556070;
+    --line: #E1E6EC;
+    --bg: #F5F7FA;
     --white: #FFFFFF;
-    --grid: #D9DEE5;
-    --header: #EEF1F5;
-    --green: #0F7B5C;
-    --green-dark: #0A5C45;
-    --mark: #FFE27A;
-    --radius: 6px;
+    --accent: #0F7B5C;
+    --accent-dark: #0A5C45;
+    --accent-soft: #E3F2EC;
+    --sheet-head: #F1F4F7;
+    --sheet-line: #E3E8EE;
+    --radius: 12px;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Figtree", system-ui, sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.6;
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Figtree", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--green); }
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 4px; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Sora", sans-serif; color: var(--navy); letter-spacing: -.015em; }
+  a { color: var(--accent); }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
 
-  /* Navegação */
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; gap: 16px; }
-  .logo { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.25rem; text-decoration: none; color: var(--ink); }
-  .logo span { color: var(--green); }
-  nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
-  nav ul a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
-  nav ul a:hover { color: var(--ink); }
-  @media (max-width: 640px) { nav ul { display: none; } }
+  /* Cabeçalho */
+  .topbar { position: sticky; top: 0; z-index: 10; background: rgba(245,247,250,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .topbar nav { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand-mark { width: 36px; height: 36px; border-radius: 9px; background: var(--navy); color: #fff; display: grid; place-items: center; font-family: "Sora"; font-weight: 700; font-size: .9rem; }
+  .brand-name { font-family: "Sora"; font-weight: 600; color: var(--navy); }
+  .menu { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+  .menu a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .97rem; }
+  .menu a:hover { color: var(--navy); }
+  @media (max-width: 820px) { .menu .hide-sm { display: none; } .brand-name { display: none; } }
 
   .btn {
-    display: inline-block; background: var(--green); color: var(--white);
-    padding: 13px 22px; border-radius: var(--radius); font-weight: 600;
-    text-decoration: none; transition: background .15s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--accent); color: #fff; padding: 13px 24px; border-radius: 8px;
+    font-weight: 600; text-decoration: none; border: 1.5px solid var(--accent); transition: background .15s, border-color .15s;
   }
-  .btn:hover { background: var(--green-dark); }
-  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
-  .btn.ghost:hover { background: var(--ink); color: var(--white); }
+  .btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+  .btn.small { padding: 9px 16px; font-size: .95rem; }
+  .btn.outline { background: transparent; color: var(--navy); border-color: #C3CCD7; }
+  .btn.outline:hover { border-color: var(--navy); background: var(--white); }
+  .btn svg { width: 18px; height: 18px; }
 
-  /* Hero: uma planilha */
-  .hero { padding: 28px 0 72px; }
+  /* HERO: planilha */
+  .hero { padding: 48px 0 88px; }
   .sheet {
-    background: var(--white); border: 1px solid var(--grid); border-radius: 10px;
-    overflow: hidden; box-shadow: 0 18px 40px -24px rgba(27,36,51,.35);
+    background: var(--white); border: 1px solid var(--sheet-line); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(14,42,71,.05), 0 30px 60px -32px rgba(14,42,71,.35);
   }
-  .formula {
-    display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--grid);
-    padding: 10px 14px; font-family: "JetBrains Mono", monospace; font-size: .9rem; color: var(--ink-soft);
-    overflow-x: auto; white-space: nowrap;
-  }
-  .formula .cell-ref { background: var(--header); padding: 2px 10px; border-radius: 4px; color: var(--ink); }
-  .formula .fx { font-style: italic; color: var(--green); font-weight: 500; }
-  .formula .typed { color: var(--ink); }
-  .formula .typed::after { content: ""; display: inline-block; width: 2px; height: 1em; background: var(--ink); vertical-align: -2px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+  .sheet-bar { display: flex; align-items: center; gap: 14px; padding: 12px 18px; border-bottom: 1px solid var(--sheet-line); background: #FBFCFD; }
+  .dots { display: flex; gap: 7px; }
+  .dots i { width: 11px; height: 11px; border-radius: 50%; background: #D5DBE3; }
+  .file { display: flex; align-items: center; gap: 8px; font-size: .92rem; color: var(--muted); font-weight: 500; }
+  .file svg { width: 18px; height: 18px; color: var(--accent); }
+  .tabs { margin-left: auto; display: flex; gap: 6px; font-size: .82rem; }
+  .tabs span { padding: 3px 10px; border-radius: 6px; color: var(--muted); }
+  .tabs span.on { background: var(--accent-soft); color: var(--accent-dark); font-weight: 600; }
+  @media (max-width: 640px) { .tabs { display: none; } }
+
+  .formula { display: flex; align-items: center; gap: 12px; padding: 9px 18px; border-bottom: 1px solid var(--sheet-line); font-family: "JetBrains Mono", monospace; font-size: .9rem; white-space: nowrap; overflow: hidden; }
+  .cell-ref { background: var(--sheet-head); border: 1px solid var(--sheet-line); padding: 1px 12px; border-radius: 6px; color: var(--ink); }
+  .fx { font-style: italic; color: var(--accent); font-weight: 500; }
+  .typed { color: var(--ink); }
+  .caret { display: inline-block; width: 2px; height: 1.05em; background: var(--accent); vertical-align: -3px; margin-left: 1px; animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
 
-  .grid {
-    display: grid; grid-template-columns: 44px repeat(3, 1fr);
-  }
-  .grid > div { border-right: 1px solid var(--grid); border-bottom: 1px solid var(--grid); }
-  .colh, .rowh {
-    background: var(--header); color: var(--ink-soft); font-family: "JetBrains Mono", monospace;
-    font-size: .78rem; display: flex; align-items: center; justify-content: center; padding: 4px 0;
-  }
-  .rowh { min-height: 44px; }
-  .c { padding: 10px 16px; min-height: 44px; }
-  .span3 { grid-column: span 3; }
-  .hero h1 {
-    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
-    font-size: clamp(2.2rem, 6.2vw, 4.6rem); line-height: 1.02; letter-spacing: -.02em;
-    margin: 0; padding: 18px 0 6px;
-  }
-  .selected { position: relative; background: rgba(255,226,122,.35); outline: 2.5px solid var(--green); outline-offset: -2px; }
-  .selected::after {
-    content: ""; position: absolute; right: -4px; bottom: -4px; width: 8px; height: 8px;
-    background: var(--green); border: 2px solid var(--white);
-  }
-  .hero .lead { margin: 0; max-width: 60ch; color: var(--ink-soft); font-size: 1.15rem; }
-  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; padding: 6px 0 10px; }
-  .tag { font-size: .95rem; color: var(--ink-soft); }
-  .tag b { color: var(--ink); font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 46px 1.45fr 1fr; }
+  .grid > div { border-right: 1px solid var(--sheet-line); border-bottom: 1px solid var(--sheet-line); }
+  .grid > div:nth-child(3n) { border-right: 0; }
+  .colh, .rowh { background: var(--sheet-head); color: #8792A2; font-family: "JetBrains Mono", monospace; font-size: .76rem; display: flex; align-items: center; justify-content: center; padding: 5px 0; }
+  .colh.on, .rowh.on { background: #DCEFE7; color: var(--accent-dark); font-weight: 500; }
+  .c { padding: 14px 22px; min-width: 0; }
+  .c.span2 { grid-column: span 2; border-right: 0 !important; }
+  .tag { font-size: .95rem; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .tag b { color: var(--navy); font-weight: 600; }
+  .pill { font-size: .78rem; background: var(--accent-soft); color: var(--accent-dark); padding: 2px 10px; border-radius: 99px; font-weight: 600; }
+
+  .selected { position: relative; background: linear-gradient(0deg, rgba(15,123,92,.05), rgba(15,123,92,.05)); box-shadow: inset 0 0 0 2px var(--accent); }
+  .selected::after { content: ""; position: absolute; right: -5px; bottom: -5px; width: 9px; height: 9px; background: var(--accent); border: 2px solid var(--white); z-index: 1; }
+  .hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.9rem); line-height: 1.06; margin: 0; padding: 14px 0 10px; font-weight: 700; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .lead { margin: 0; font-size: 1.15rem; color: var(--muted); max-width: 58ch; }
+
+  .svc-head { font-family: "JetBrains Mono", monospace; font-size: .78rem; color: #8792A2; text-transform: uppercase; letter-spacing: .05em; }
+  .svc { font-weight: 600; color: var(--navy); }
+  .ok { display: inline-flex; align-items: center; gap: 7px; color: var(--accent-dark); font-weight: 600; font-size: .95rem; }
+  .ok::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
   @media (max-width: 640px) {
-    .grid { grid-template-columns: 32px 1fr; }
-    .colh.hide-m { display: none; }
-    .span3 { grid-column: span 1; }
-    .c { padding: 10px 12px; }
+    .grid { grid-template-columns: 32px 1fr 1fr; }
+    .c { padding: 12px 12px; }
+    .svc { font-size: .95rem; }
+    .ok { font-size: .85rem; }
   }
 
   /* Seções */
-  section { padding: 72px 0; }
-  h2 {
-    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
-    font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.1; letter-spacing: -.015em; margin: 0 0 12px;
-  }
-  .intro { color: var(--ink-soft); max-width: 58ch; margin: 0 0 40px; }
+  section { padding: 88px 0; }
+  .section-head { max-width: 640px; margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(1.75rem, 3.4vw, 2.4rem); line-height: 1.15; margin: 0 0 14px; }
+  .section-head p { color: var(--muted); margin: 0; }
 
-  /* Serviços: linhas, não cartões */
-  .services { border-top: 2px solid var(--ink); }
-  .service {
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: 12px 48px;
-    padding: 32px 0; border-bottom: 1px solid var(--grid);
-  }
-  .service h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.6rem; line-height: 1.15; margin: 0; }
-  .service p { margin: 0 0 12px; color: var(--ink-soft); }
-  .service ul { margin: 0; padding-left: 1.1em; }
-  .service li { margin: 4px 0; }
-  .service li::marker { color: var(--green); }
-  @media (max-width: 760px) { .service { grid-template-columns: 1fr; } }
+  /* Serviços */
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+  .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .icon { width: 44px; height: 44px; flex: none; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  .icon svg { width: 22px; height: 22px; }
+  .card h3 { font-size: 1.25rem; margin: 0; }
+  .card p { color: var(--muted); margin: 0 0 14px; }
+  .card ul { list-style: none; margin: 0; padding: 0; }
+  .card li { position: relative; padding-left: 24px; margin: 6px 0; font-size: 1rem; }
+  .card li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 11px; height: 6px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .ideal { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: .93rem; color: var(--muted); }
+  .ideal b { color: var(--navy); font-weight: 600; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } .card { padding: 24px 20px; } }
 
-  /* Como funciona: é uma sequência, então leva números */
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; list-style: none; margin: 0; padding: 0; }
-  .steps li { counter-increment: step; }
-  .steps li::before {
-    content: counter(step); display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--white);
-    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; margin-bottom: 14px;
+  /* Como funciona */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: s; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); overflow: hidden; }
+  .steps li { counter-increment: s; padding: 28px 24px; border-right: 1px solid var(--line); }
+  .steps li:last-child { border-right: 0; }
+  .steps li::before { content: "0" counter(s); font-family: "Sora"; font-weight: 600; color: var(--accent); font-size: .95rem; display: block; margin-bottom: 10px; }
+  .steps h3 { font-size: 1.05rem; margin: 0 0 6px; }
+  .steps p { margin: 0; color: var(--muted); font-size: .97rem; }
+  @media (max-width: 900px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps li:nth-child(2) { border-right: 0; }
+    .steps li:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   }
-  .steps h3 { font-size: 1.1rem; margin: 0 0 6px; }
-  .steps p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
-  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) {
+    .steps { grid-template-columns: 1fr; }
+    .steps li { border-right: 0; border-bottom: 1px solid var(--line); }
+    .steps li:last-child { border-bottom: 0; }
+  }
 
   /* Sobre */
-  .about { background: var(--ink); color: #E8ECF2; }
-  .about h2 { color: var(--white); }
-  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; }
-  .about p { color: #C5CDD8; max-width: 60ch; }
-  .facts { list-style: none; padding: 0; margin: 0; }
-  .facts li { padding: 14px 0; border-bottom: 1px solid #34405A; }
-  .facts b { display: block; color: var(--white); font-weight: 600; }
-  .facts span { color: #A9B4C4; font-size: .97rem; }
-  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 24px; } }
+  .about { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
+  .photo { width: 100%; aspect-ratio: 4/5; border-radius: 16px; background: var(--navy); display: grid; place-items: center; overflow: hidden; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo .initials { font-family: "Sora"; font-size: 3.6rem; font-weight: 700; color: rgba(255,255,255,.9); }
+  .about p { max-width: 62ch; margin: 0 0 16px; color: var(--muted); }
+  .about p strong { color: var(--ink); font-weight: 600; }
+  .creds { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+  .cred { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--bg); }
+  .cred b { display: block; color: var(--navy); font-weight: 600; }
+  .cred span { font-size: .92rem; color: var(--muted); }
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; gap: 28px; }
+    .photo { max-width: 200px; }
+    .creds { grid-template-columns: 1fr; }
+  }
+
+  /* FAQ */
+  .faq { max-width: 800px; }
+  details { background: var(--white); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 10px; }
+  summary { cursor: pointer; list-style: none; padding: 18px 56px 18px 22px; font-weight: 600; color: var(--navy); position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--accent); font-weight: 400; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0; padding: 0 22px 18px; color: var(--muted); }
 
   /* Contato */
-  .contact-box {
-    display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center;
-    background: var(--white); border: 1px solid var(--grid); border-radius: 10px; padding: 44px;
-  }
-  .contact-links { display: flex; flex-direction: column; gap: 12px; }
-  .contact-links .btn { text-align: center; }
-  @media (max-width: 760px) { .contact-box { grid-template-columns: 1fr; padding: 28px 22px; } }
+  .cta { background: var(--navy); color: #D5DDE8; border-radius: 20px; padding: 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .cta h2 { color: #fff; font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 12px; line-height: 1.15; }
+  .cta .eyebrow { color: #7FD1B3; }
+  .cta p { margin: 0; }
+  .cta .actions { flex-direction: column; }
+  .cta .btn { width: 100%; }
+  .cta .btn.outline { color: #fff; border-color: rgba(255,255,255,.3); }
+  .cta .btn.outline:hover { background: rgba(255,255,255,.08); border-color: #fff; }
+  .note { font-size: .9rem; color: #A9B6C7; margin-top: 6px; text-align: center; }
+  @media (max-width: 820px) { .cta { grid-template-columns: 1fr; padding: 32px 22px; gap: 28px; } }
 
-  footer { padding: 32px 0 48px; color: var(--ink-soft); font-size: .92rem; }
+  footer { padding: 28px 0 40px; font-size: .92rem; color: var(--muted); }
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .formula .typed::after { animation: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .caret { animation: none; } }
 </style>
 </head>
 <body>
 
-<header class="wrap">
-  <nav aria-label="Principal">
-    <a class="logo" href="#">Ana Carolina<span>.</span></a>
-    <ul>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#como-funciona">Como funciona</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
+<header class="topbar">
+  <nav class="wrap" aria-label="Principal">
+    <a class="brand" href="#">
+      <span class="brand-mark">AC</span>
+      <span class="brand-name">Ana Carolina Gonçalves</span>
+    </a>
+    <ul class="menu">
+      <li class="hide-sm"><a href="#servicos">Serviços</a></li>
+      <li class="hide-sm"><a href="#como-funciona">Como funciona</a></li>
+      <li class="hide-sm"><a href="#sobre">Sobre</a></li>
+      <li class="hide-sm"><a href="#duvidas">Dúvidas</a></li>
+      <li><a class="btn small" href="#contato">Pedir orçamento</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <!-- HERO -->
-  <div class="hero wrap">
-    <div class="sheet" role="presentation">
-      <div class="formula" aria-hidden="true">
-        <span class="cell-ref">B2</span>
-        <span class="fx">fx</span>
-        <span class="typed">=ORGANIZAR(seu_negócio)</span>
-      </div>
-      <div class="grid">
-        <div class="colh"></div>
-        <div class="colh">A</div>
-        <div class="colh hide-m">B</div>
-        <div class="colh hide-m">C</div>
-
-        <div class="rowh">1</div>
-        <div class="c span3 tag"><b>Ana Carolina Gonçalves</b> · atendimento remoto para todo o Brasil</div>
-
-        <div class="rowh">2</div>
-        <div class="c span3 selected">
-          <h1>Seu site, suas planilhas e suas contas em ordem.</h1>
+  <!-- HERO: planilha -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="sheet">
+        <div class="sheet-bar" aria-hidden="true">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="file">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+            ana-carolina_servicos.xlsx
+          </div>
+          <div class="tabs"><span class="on">Início</span><span>Serviços</span><span>Contato</span></div>
         </div>
 
-        <div class="rowh">3</div>
-        <div class="c span3">
-          <p class="lead">Ajudo pequenos negócios e profissionais autônomos a aparecer na internet e a deixar a rotina financeira e administrativa sob controle — com a experiência de quem faz isso todo dia desde 2020.</p>
+        <div class="formula" aria-hidden="true">
+          <span class="cell-ref" id="ref">B2</span>
+          <span class="fx">fx</span>
+          <span><span class="typed" id="typed">=ORGANIZAR(seu_negócio)</span><span class="caret"></span></span>
         </div>
 
-        <div class="rowh">4</div>
-        <div class="c span3">
-          <div class="actions">
-            <a class="btn" href="#contato">Pedir um orçamento</a>
-            <a class="btn ghost" href="#servicos">Ver serviços</a>
+        <div class="grid">
+          <div class="colh"></div>
+          <div class="colh on">B</div>
+          <div class="colh">C</div>
+
+          <div class="rowh">1</div>
+          <div class="c span2 tag"><b>Ana Carolina Gonçalves</b> Sites · Planilhas · Financeiro <span class="pill">100% remoto</span></div>
+
+          <div class="rowh on">2</div>
+          <div class="c span2 selected">
+            <h1>Seu negócio organizado, <em>sem dor de cabeça</em>.</h1>
+          </div>
+
+          <div class="rowh">3</div>
+          <div class="c span2">
+            <p class="lead">Crio sites e planilhas sob medida e cuido da rotina financeira e administrativa de pequenas empresas e profissionais autônomos, com a experiência de quem faz isso todos os dias desde 2020.</p>
+          </div>
+
+          <div class="rowh">4</div>
+          <div class="c svc-head">Serviço</div>
+          <div class="c svc-head">Status</div>
+
+          <div class="rowh">5</div>
+          <div class="c svc">Criação de sites</div>
+          <div class="c"><span class="ok">Disponível</span></div>
+
+          <div class="rowh">6</div>
+          <div class="c svc">Planilhas e automação</div>
+          <div class="c"><span class="ok">Disponível</span></div>
+
+          <div class="rowh">7</div>
+          <div class="c svc">Assistência financeira</div>
+          <div class="c"><span class="ok">Disponível</span></div>
+
+          <div class="rowh">8</div>
+          <div class="c svc">Assistência administrativa</div>
+          <div class="c"><span class="ok">Disponível</span></div>
+
+          <div class="rowh" style="border-bottom:0">9</div>
+          <div class="c span2" style="border-bottom:0">
+            <div class="actions">
+              <a class="btn" href="#contato">Pedir um orçamento</a>
+              <a class="btn outline" href="#servicos">Ver detalhes dos serviços</a>
+            </div>
           </div>
         </div>
       </div>
@@ -218,88 +288,89 @@
   </div>
 
   <!-- SERVIÇOS -->
-  <section id="servicos">
+  <section id="servicos" style="padding-top: 24px;">
     <div class="wrap">
-      <h2>O que eu faço</h2>
-      <p class="intro">Você pode contratar um serviço avulso ou combinar vários. Tudo é feito à distância, com prazos e valores combinados antes de começar.</p>
+      <div class="section-head">
+        <span class="eyebrow">Serviços</span>
+        <h2>O que eu posso fazer por você</h2>
+        <p>Contrate um serviço avulso ou combine vários. O escopo, o prazo e o valor ficam definidos por escrito antes de começar.</p>
+      </div>
 
       <div class="services">
-        <article class="service">
-          <h3>Criação de sites</h3>
-          <div>
-            <p>Um site simples, bonito e rápido para você ser encontrado e passar confiança para quem ainda não te conhece.</p>
-            <ul>
-              <li>Página de apresentação para profissionais e pequenas empresas</li>
-              <li>Funciona bem no celular</li>
-              <li>Botão direto para o seu WhatsApp</li>
-              <li>Ajuda para colocar no ar com o seu domínio</li>
-            </ul>
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14l-2 2 2 2M16 14l2 2-2 2"/></svg></div>
+            <h3>Criação de sites</h3>
           </div>
+          <p>Um site simples, rápido e bonito para você ser encontrado e passar confiança.</p>
+          <ul>
+            <li>Página de apresentação do seu trabalho</li>
+            <li>Funciona bem no celular</li>
+            <li>Botão direto para o seu WhatsApp</li>
+            <li>Ajuda para publicar com domínio próprio</li>
+          </ul>
+          <div class="ideal"><b>Ideal para:</b> profissionais autônomos e pequenos negócios que ainda não têm site.</div>
         </article>
 
-        <article class="service">
-          <h3>Planilhas e automação</h3>
-          <div>
-            <p>Chega de planilha que só você entende. Monto controles claros em Excel ou Google Planilhas e automatizo o que é repetitivo.</p>
-            <ul>
-              <li>Fluxo de caixa, controle de despesas e relatórios</li>
-              <li>Fórmulas, painéis e organização de dados</li>
-              <li>Pequenos sistemas internos com Google Apps Script</li>
-              <li>Revisão e conserto de planilhas que já existem</li>
-            </ul>
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
+            <h3>Planilhas e automação</h3>
           </div>
+          <p>Controles claros em Excel ou Google Planilhas e automação do que é repetitivo.</p>
+          <ul>
+            <li>Fluxo de caixa, despesas e relatórios</li>
+            <li>Painéis, fórmulas e dados organizados</li>
+            <li>Sistemas internos com Google Apps Script</li>
+            <li>Conserto de planilhas que já existem</li>
+          </ul>
+          <div class="ideal"><b>Ideal para:</b> quem perde tempo com controles manuais ou planilhas bagunçadas.</div>
         </article>
 
-        <article class="service">
-          <h3>Assistência financeira</h3>
-          <div>
-            <p>Cuido da rotina financeira para você focar no seu trabalho, com controle e prestação de contas.</p>
-            <ul>
-              <li>Contas a pagar e a receber</li>
-              <li>Faturamento e emissão de cobranças</li>
-              <li>Conciliação bancária</li>
-              <li>Acompanhamento de vencimentos e inadimplência</li>
-            </ul>
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c0-1.9-2.2-3.5-5-3.5S7 4.6 7 6.5 9.2 10 12 10s5 1.6 5 3.5S14.8 17 12 17s-5-1.6-5-3.5"/></svg></div>
+            <h3>Assistência financeira</h3>
           </div>
+          <p>Sua rotina financeira em dia e com prestação de contas.</p>
+          <ul>
+            <li>Contas a pagar e a receber</li>
+            <li>Faturamento e emissão de cobranças</li>
+            <li>Conciliação bancária</li>
+            <li>Acompanhamento de vencimentos e inadimplência</li>
+          </ul>
+          <div class="ideal"><b>Ideal para:</b> empresas pequenas sem um financeiro dedicado.</div>
         </article>
 
-        <article class="service">
-          <h3>Assistência administrativa</h3>
-          <div>
-            <p>Apoio remoto para as tarefas que se acumulam e tomam o seu tempo.</p>
-            <ul>
-              <li>Organização e digitalização de documentos</li>
-              <li>Cadastros, controles e arquivos em ordem</li>
-              <li>Montagem de rotinas e processos do dia a dia</li>
-            </ul>
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+            <h3>Assistência administrativa</h3>
           </div>
+          <p>Apoio remoto para as tarefas que se acumulam e tomam o seu tempo.</p>
+          <ul>
+            <li>Organização e digitalização de documentos</li>
+            <li>Cadastros, controles e arquivos em ordem</li>
+            <li>Montagem de rotinas e processos</li>
+          </ul>
+          <div class="ideal"><b>Ideal para:</b> quem quer delegar a parte burocrática do negócio.</div>
         </article>
       </div>
     </div>
   </section>
 
   <!-- COMO FUNCIONA -->
-  <section id="como-funciona" style="padding-top: 24px;">
+  <section id="como-funciona" style="padding-top: 8px;">
     <div class="wrap">
-      <h2>Como funciona</h2>
-      <p class="intro">Do primeiro contato à entrega, você sabe o que vai acontecer em cada etapa.</p>
+      <div class="section-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Simples do começo ao fim</h2>
+      </div>
       <ol class="steps">
-        <li>
-          <h3>Conversa inicial</h3>
-          <p>Você me conta o que precisa pelo WhatsApp ou e-mail. Sem compromisso.</p>
-        </li>
-        <li>
-          <h3>Proposta</h3>
-          <p>Envio o que será feito, o prazo e o valor, tudo por escrito.</p>
-        </li>
-        <li>
-          <h3>Execução</h3>
-          <p>Faço o trabalho e te mostro o andamento para você opinar.</p>
-        </li>
-        <li>
-          <h3>Entrega e suporte</h3>
-          <p>Entrego pronto, explico como usar e tiro dúvidas depois.</p>
-        </li>
+        <li><h3>Conversa inicial</h3><p>Você me conta o que precisa pelo WhatsApp ou e-mail, sem compromisso.</p></li>
+        <li><h3>Proposta</h3><p>Envio por escrito o que será feito, o prazo e o valor.</p></li>
+        <li><h3>Execução</h3><p>Faço o trabalho e mostro o andamento para você opinar.</p></li>
+        <li><h3>Entrega e suporte</h3><p>Entrego pronto, explico como usar e tiro dúvidas depois.</p></li>
       </ol>
     </div>
   </section>
@@ -307,46 +378,119 @@
   <!-- SOBRE -->
   <section id="sobre" class="about">
     <div class="wrap about-grid">
-      <div>
-        <h2>Prazer, sou a Ana Carolina</h2>
-        <p>Trabalho desde 2020 na área administrativa e financeira de uma transportadora no Rio de Janeiro. Lá cuido de contas a pagar e a receber, faturamento, conciliação bancária e controle de documentos de entrega — e foi resolvendo problemas do dia a dia que comecei a criar planilhas, sistemas internos e sites.</p>
-        <p>Hoje uso essa experiência para ajudar outros negócios a se organizarem, com a mesma atenção que dou à empresa onde trabalho.</p>
+      <div class="photo">
+        <!-- Para usar sua foto: envie "foto.jpg" para o repositório e troque a linha abaixo por:
+             <img src="foto.jpg" alt="Foto de Ana Carolina Gonçalves"> -->
+        <span class="initials">AC</span>
       </div>
-      <ul class="facts">
-        <li><b>Gestão Financeira</b><span>Graduação pela UNIGRANRIO</span></li>
-        <li><b>Técnico em Administração</b><span>SENAC, com curso de contas a pagar, receber e tesouraria</span></li>
-        <li><b>Programação e web design</b><span>CVTI Nova Iguaçu</span></li>
-        <li><b>Excel básico ao avançado</b><span>Fundação Bradesco</span></li>
-      </ul>
+      <div>
+        <span class="eyebrow">Sobre mim</span>
+        <h2>Prazer, sou a Ana Carolina</h2>
+        <p>Trabalho <strong>desde 2020</strong> na área administrativa e financeira de uma transportadora, com <strong>faturamento, contas a pagar e receber, fluxo de caixa e conciliação bancária</strong>.</p>
+        <p>Resolvendo problemas do dia a dia, comecei a criar minhas próprias ferramentas: reestruturei controles de fluxo de caixa, desenvolvi sistemas internos em Google Sheets e Apps Script e passei a construir sites. Hoje levo essa experiência para outros negócios que querem se organizar.</p>
+        <div class="creds">
+          <div class="cred"><b>Gestão Financeira</b><span>Graduação · UNIGRANRIO</span></div>
+          <div class="cred"><b>Técnico em Administração</b><span>SENAC · Contas a Pagar, Receber e Tesouraria</span></div>
+          <div class="cred"><b>Programação e Web Design</b><span>CVTI Nova Iguaçu</span></div>
+          <div class="cred"><b>Excel do básico ao avançado</b><span>Fundação Bradesco</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS -->
+  <section id="duvidas">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Antes de chamar, talvez você queira saber</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Como é feito o orçamento?</summary>
+          <p>Depois de entender o que você precisa, envio uma proposta por escrito com escopo, prazo e valor. Só começo com a sua aprovação.</p>
+        </details>
+        <details>
+          <summary>O atendimento é só online?</summary>
+          <p>Sim. Todo o trabalho é feito à distância, por WhatsApp e e-mail, então atendo clientes de qualquer lugar do Brasil.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo você responde?</summary>
+          <p>Em até 1 dia útil. Os prazos de entrega de cada serviço ficam definidos na proposta.</p>
+        </details>
+        <details>
+          <summary>Meus dados financeiros ficam seguros?</summary>
+          <p>Sim. Informações e documentos são usados apenas para o serviço contratado e tratados com total confidencialidade.</p>
+        </details>
+      </div>
     </div>
   </section>
 
   <!-- CONTATO -->
-  <section id="contato">
+  <section id="contato" style="padding-top: 0;">
     <div class="wrap">
-      <div class="contact-box">
+      <div class="cta">
         <div>
-          <h2>Vamos conversar?</h2>
-          <p class="intro" style="margin-bottom:0;">Me conte o que você precisa e respondo com uma proposta. O primeiro contato é sem compromisso.</p>
+          <span class="eyebrow">Contato</span>
+          <h2>Vamos organizar o seu negócio?</h2>
+          <p>Me conte o que você precisa e receba uma proposta sem compromisso.</p>
         </div>
-        <div class="contact-links">
-          <!-- TROQUE 5521900000000 pelo seu número com DDI e DDD, só números -->
-          <a class="btn" href="https://wa.me/5521965846763?text=Ol%C3%A1%2C%20Ana!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-          <!-- -->
-          <a class="btn ghost" href="mailto:ana.carolina.o13@hotmail.com">Enviar um e-mail</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/ana-carolina-o-gon%C3%A7alves-0231ba255" target="_blank" rel="noopener">Ver meu LinkedIn</a>
+        <div>
+          <div class="actions">
+            <!-- TROQUE 5521900000000 pelo seu número com DDI e DDD, só números -->
+            <a class="btn" href="https://wa.me/5521900000000?text=Ol%C3%A1%2C%20Ana!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+              Falar no WhatsApp
+            </a>
+            <!-- TROQUE pelo seu e-mail -->
+            <a class="btn outline" href="mailto:seuemail@exemplo.com">Enviar e-mail</a>
+            <a class="btn outline" href="https://www.linkedin.com/in/ana-carolina-o-gon%C3%A7alves-0231ba255" target="_blank" rel="noopener">Ver perfil no LinkedIn</a>
+          </div>
+          <p class="note">Resposta em até 1 dia útil.</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="wrap">
-  © <span id="ano">2026</span> Ana Carolina de Oliveira Gonçalves · Rio de Janeiro, RJ
-</footer>
+<footer class="wrap">© <span id="ano">2026</span> Ana Carolina de Oliveira Gonçalves · Rio de Janeiro, RJ</footer>
 
 <script>
   document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // Barra de fórmula "digitando"
+  (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var el = document.getElementById("typed");
+    var ref = document.getElementById("ref");
+    var items = [
+      ["B2", "=ORGANIZAR(seu_negócio)"],
+      ["B5", "=CRIAR(site; \"bonito e rápido\")"],
+      ["B6", "=AUTOMATIZAR(planilhas)"],
+      ["B7", "=CONCILIAR(banco; extrato)"],
+      ["B9", "=SE(precisa_de_ajuda; \"me chama!\")"]
+    ];
+    var i = 0, pos = 0, deleting = false;
+    function tick() {
+      var text = items[i][1];
+      if (!deleting) {
+        pos++;
+        el.textContent = text.slice(0, pos);
+        if (pos === text.length) { deleting = true; return setTimeout(tick, 2200); }
+        return setTimeout(tick, 55);
+      }
+      pos--;
+      el.textContent = text.slice(0, pos);
+      if (pos === 0) {
+        deleting = false;
+        i = (i + 1) % items.length;
+        ref.textContent = items[i][0];
+        return setTimeout(tick, 350);
+      }
+      setTimeout(tick, 25);
+    }
+    setTimeout(function () { deleting = true; tick(); }, 2500);
+  })();
 </script>
 </body>
 </html>
