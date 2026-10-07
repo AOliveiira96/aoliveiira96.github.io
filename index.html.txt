@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ana Carolina Gonçalves | Sites, planilhas e apoio financeiro</title>
+<meta name="description" content="Criação de sites, planilhas e automação, assistência financeira e administrativa remota para pequenos negócios e profissionais autônomos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B2433;
+    --ink-soft: #4A5568;
+    --paper: #F6F8FA;
+    --white: #FFFFFF;
+    --grid: #D9DEE5;
+    --header: #EEF1F5;
+    --green: #0F7B5C;
+    --green-dark: #0A5C45;
+    --mark: #FFE27A;
+    --radius: 6px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Figtree", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: var(--green); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* Navegação */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; gap: 16px; }
+  .logo { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.25rem; text-decoration: none; color: var(--ink); }
+  .logo span { color: var(--green); }
+  nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+  nav ul a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+  nav ul a:hover { color: var(--ink); }
+  @media (max-width: 640px) { nav ul { display: none; } }
+
+  .btn {
+    display: inline-block; background: var(--green); color: var(--white);
+    padding: 13px 22px; border-radius: var(--radius); font-weight: 600;
+    text-decoration: none; transition: background .15s;
+  }
+  .btn:hover { background: var(--green-dark); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--white); }
+
+  /* Hero: uma planilha */
+  .hero { padding: 28px 0 72px; }
+  .sheet {
+    background: var(--white); border: 1px solid var(--grid); border-radius: 10px;
+    overflow: hidden; box-shadow: 0 18px 40px -24px rgba(27,36,51,.35);
+  }
+  .formula {
+    display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--grid);
+    padding: 10px 14px; font-family: "JetBrains Mono", monospace; font-size: .9rem; color: var(--ink-soft);
+    overflow-x: auto; white-space: nowrap;
+  }
+  .formula .cell-ref { background: var(--header); padding: 2px 10px; border-radius: 4px; color: var(--ink); }
+  .formula .fx { font-style: italic; color: var(--green); font-weight: 500; }
+  .formula .typed { color: var(--ink); }
+  .formula .typed::after { content: ""; display: inline-block; width: 2px; height: 1em; background: var(--ink); vertical-align: -2px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .grid {
+    display: grid; grid-template-columns: 44px repeat(3, 1fr);
+  }
+  .grid > div { border-right: 1px solid var(--grid); border-bottom: 1px solid var(--grid); }
+  .colh, .rowh {
+    background: var(--header); color: var(--ink-soft); font-family: "JetBrains Mono", monospace;
+    font-size: .78rem; display: flex; align-items: center; justify-content: center; padding: 4px 0;
+  }
+  .rowh { min-height: 44px; }
+  .c { padding: 10px 16px; min-height: 44px; }
+  .span3 { grid-column: span 3; }
+  .hero h1 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
+    font-size: clamp(2.2rem, 6.2vw, 4.6rem); line-height: 1.02; letter-spacing: -.02em;
+    margin: 0; padding: 18px 0 6px;
+  }
+  .selected { position: relative; background: rgba(255,226,122,.35); outline: 2.5px solid var(--green); outline-offset: -2px; }
+  .selected::after {
+    content: ""; position: absolute; right: -4px; bottom: -4px; width: 8px; height: 8px;
+    background: var(--green); border: 2px solid var(--white);
+  }
+  .hero .lead { margin: 0; max-width: 60ch; color: var(--ink-soft); font-size: 1.15rem; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; padding: 6px 0 10px; }
+  .tag { font-size: .95rem; color: var(--ink-soft); }
+  .tag b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 32px 1fr; }
+    .colh.hide-m { display: none; }
+    .span3 { grid-column: span 1; }
+    .c { padding: 10px 12px; }
+  }
+
+  /* Seções */
+  section { padding: 72px 0; }
+  h2 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.1; letter-spacing: -.015em; margin: 0 0 12px;
+  }
+  .intro { color: var(--ink-soft); max-width: 58ch; margin: 0 0 40px; }
+
+  /* Serviços: linhas, não cartões */
+  .services { border-top: 2px solid var(--ink); }
+  .service {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 12px 48px;
+    padding: 32px 0; border-bottom: 1px solid var(--grid);
+  }
+  .service h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.6rem; line-height: 1.15; margin: 0; }
+  .service p { margin: 0 0 12px; color: var(--ink-soft); }
+  .service ul { margin: 0; padding-left: 1.1em; }
+  .service li { margin: 4px 0; }
+  .service li::marker { color: var(--green); }
+  @media (max-width: 760px) { .service { grid-template-columns: 1fr; } }
+
+  /* Como funciona: é uma sequência, então leva números */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: step; }
+  .steps li::before {
+    content: counter(step); display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--white);
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; margin-bottom: 14px;
+  }
+  .steps h3 { font-size: 1.1rem; margin: 0 0 6px; }
+  .steps p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+  /* Sobre */
+  .about { background: var(--ink); color: #E8ECF2; }
+  .about h2 { color: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; }
+  .about p { color: #C5CDD8; max-width: 60ch; }
+  .facts { list-style: none; padding: 0; margin: 0; }
+  .facts li { padding: 14px 0; border-bottom: 1px solid #34405A; }
+  .facts b { display: block; color: var(--white); font-weight: 600; }
+  .facts span { color: #A9B4C4; font-size: .97rem; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+  /* Contato */
+  .contact-box {
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center;
+    background: var(--white); border: 1px solid var(--grid); border-radius: 10px; padding: 44px;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-links .btn { text-align: center; }
+  @media (max-width: 760px) { .contact-box { grid-template-columns: 1fr; padding: 28px 22px; } }
+
+  footer { padding: 32px 0 48px; color: var(--ink-soft); font-size: .92rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .formula .typed::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav aria-label="Principal">
+    <a class="logo" href="#">Ana Carolina<span>.</span></a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero wrap">
+    <div class="sheet" role="presentation">
+      <div class="formula" aria-hidden="true">
+        <span class="cell-ref">B2</span>
+        <span class="fx">fx</span>
+        <span class="typed">=ORGANIZAR(seu_negócio)</span>
+      </div>
+      <div class="grid">
+        <div class="colh"></div>
+        <div class="colh">A</div>
+        <div class="colh hide-m">B</div>
+        <div class="colh hide-m">C</div>
+
+        <div class="rowh">1</div>
+        <div class="c span3 tag"><b>Ana Carolina Gonçalves</b> · atendimento remoto para todo o Brasil</div>
+
+        <div class="rowh">2</div>
+        <div class="c span3 selected">
+          <h1>Seu site, suas planilhas e suas contas em ordem.</h1>
+        </div>
+
+        <div class="rowh">3</div>
+        <div class="c span3">
+          <p class="lead">Ajudo pequenos negócios e profissionais autônomos a aparecer na internet e a deixar a rotina financeira e administrativa sob controle — com a experiência de quem faz isso todo dia desde 2020.</p>
+        </div>
+
+        <div class="rowh">4</div>
+        <div class="c span3">
+          <div class="actions">
+            <a class="btn" href="#contato">Pedir um orçamento</a>
+            <a class="btn ghost" href="#servicos">Ver serviços</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <h2>O que eu faço</h2>
+      <p class="intro">Você pode contratar um serviço avulso ou combinar vários. Tudo é feito à distância, com prazos e valores combinados antes de começar.</p>
+
+      <div class="services">
+        <article class="service">
+          <h3>Criação de sites</h3>
+          <div>
+            <p>Um site simples, bonito e rápido para você ser encontrado e passar confiança para quem ainda não te conhece.</p>
+            <ul>
+              <li>Página de apresentação para profissionais e pequenas empresas</li>
+              <li>Funciona bem no celular</li>
+              <li>Botão direto para o seu WhatsApp</li>
+              <li>Ajuda para colocar no ar com o seu domínio</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <h3>Planilhas e automação</h3>
+          <div>
+            <p>Chega de planilha que só você entende. Monto controles claros em Excel ou Google Planilhas e automatizo o que é repetitivo.</p>
+            <ul>
+              <li>Fluxo de caixa, controle de despesas e relatórios</li>
+              <li>Fórmulas, painéis e organização de dados</li>
+              <li>Pequenos sistemas internos com Google Apps Script</li>
+              <li>Revisão e conserto de planilhas que já existem</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <h3>Assistência financeira</h3>
+          <div>
+            <p>Cuido da rotina financeira para você focar no seu trabalho, com controle e prestação de contas.</p>
+            <ul>
+              <li>Contas a pagar e a receber</li>
+              <li>Faturamento e emissão de cobranças</li>
+              <li>Conciliação bancária</li>
+              <li>Acompanhamento de vencimentos e inadimplência</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <h3>Assistência administrativa</h3>
+          <div>
+            <p>Apoio remoto para as tarefas que se acumulam e tomam o seu tempo.</p>
+            <ul>
+              <li>Organização e digitalização de documentos</li>
+              <li>Cadastros, controles e arquivos em ordem</li>
+              <li>Montagem de rotinas e processos do dia a dia</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" style="padding-top: 24px;">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <p class="intro">Do primeiro contato à entrega, você sabe o que vai acontecer em cada etapa.</p>
+      <ol class="steps">
+        <li>
+          <h3>Conversa inicial</h3>
+          <p>Você me conta o que precisa pelo WhatsApp ou e-mail. Sem compromisso.</p>
+        </li>
+        <li>
+          <h3>Proposta</h3>
+          <p>Envio o que será feito, o prazo e o valor, tudo por escrito.</p>
+        </li>
+        <li>
+          <h3>Execução</h3>
+          <p>Faço o trabalho e te mostro o andamento para você opinar.</p>
+        </li>
+        <li>
+          <h3>Entrega e suporte</h3>
+          <p>Entrego pronto, explico como usar e tiro dúvidas depois.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Prazer, sou a Ana Carolina</h2>
+        <p>Trabalho desde 2020 na área administrativa e financeira de uma transportadora no Rio de Janeiro. Lá cuido de contas a pagar e a receber, faturamento, conciliação bancária e controle de documentos de entrega — e foi resolvendo problemas do dia a dia que comecei a criar planilhas, sistemas internos e sites.</p>
+        <p>Hoje uso essa experiência para ajudar outros negócios a se organizarem, com a mesma atenção que dou à empresa onde trabalho.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Gestão Financeira</b><span>Graduação pela UNIGRANRIO</span></li>
+        <li><b>Técnico em Administração</b><span>SENAC, com curso de contas a pagar, receber e tesouraria</span></li>
+        <li><b>Programação e web design</b><span>CVTI Nova Iguaçu</span></li>
+        <li><b>Excel básico ao avançado</b><span>Fundação Bradesco</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Vamos conversar?</h2>
+          <p class="intro" style="margin-bottom:0;">Me conte o que você precisa e respondo com uma proposta. O primeiro contato é sem compromisso.</p>
+        </div>
+        <div class="contact-links">
+          <!-- TROQUE 5521900000000 pelo seu número com DDI e DDD, só números -->
+          <a class="btn" href="https://wa.me/5521965846763?text=Ol%C3%A1%2C%20Ana!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <!-- -->
+          <a class="btn ghost" href="mailto:ana.carolina.o13@hotmail.com">Enviar um e-mail</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/ana-carolina-o-gon%C3%A7alves-0231ba255" target="_blank" rel="noopener">Ver meu LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  © <span id="ano">2026</span> Ana Carolina de Oliveira Gonçalves · Rio de Janeiro, RJ
+</footer>
+
+<script>
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
