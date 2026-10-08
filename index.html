@@ -139,11 +139,11 @@
   .svc h3 { font-size: 1.35rem; font-weight: 800; }
   .svc p { margin: 6px 0 14px; color: var(--muted); }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tags span { font-size: .85rem; font-weight: 600; color: var(--pen-dark); background: var(--brand-soft); padding: 5px 12px; border-radius: 999px; }
+  .tags span, .tags .tag { font-size: .85rem; font-weight: 600; color: var(--pen-dark); background: var(--brand-soft); padding: 5px 12px; border-radius: 999px; }
   .svc.t-green .art { background: linear-gradient(160deg, #F0FAF5, #D6F0E3); }
-  .svc.t-green .tags span { background: var(--leaf-soft); color: #136B46; }
+  .svc.t-green .tags span, .svc.t-green .tags .tag { background: var(--leaf-soft); color: #136B46; }
   .svc.t-sun .art { background: linear-gradient(160deg, #FFF9EA, #FFEDC2); }
-  .svc.t-sun .tags span { background: var(--sun-soft); color: #7A4E00; }
+  .svc.t-sun .tags span, .svc.t-sun .tags .tag { background: var(--sun-soft); color: #7A4E00; }
   .svc.t-mix .art { background: linear-gradient(160deg, #F1FAF5, #FFF3D6); }
   .svc .bar { height: 5px; width: 44px; border-radius: 99px; background: var(--brand); margin-bottom: 12px; }
   .svc.t-green .bar { background: var(--leaf); }
@@ -224,13 +224,89 @@
 
   /* Imagens 3D */
   .stage .avatar { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; height: 100%; width: auto; right: auto; filter: drop-shadow(0 18px 24px rgba(15,30,92,.18)); }
-  .svc .art, .svc.t-green .art, .svc.t-sun .art, .svc.t-mix .art { background: #fff !important; border: 1px solid #EEF1F5; }
-  .svc .art { aspect-ratio: 5 / 4 !important; position: relative; display: block !important; }
-  .svc .art img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; }
   .about-face { position: relative; display: block !important; }
   .about-face img { position: absolute; top: 7%; left: 50%; width: 118%; transform: translateX(-50%); }
   .cta-ana { position: absolute; left: 4%; bottom: -150px; height: 470px; z-index: 1; filter: drop-shadow(0 16px 24px rgba(0,0,0,.25)); }
   @media (max-width: 980px) { .cta-ana { display: none; } }
+
+  /* Serviços interativos */
+  .svc .art { position: relative; }
+  .svc .art .view { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transform: scale(.97); transition: opacity .35s ease, transform .35s ease; pointer-events: none; }
+  .svc .art .view.on { opacity: 1; transform: none; }
+  .svc .desc { min-height: 3.2em; transition: opacity .25s; }
+  .svc .desc.fade { opacity: 0; }
+  .tags .tag { font: inherit; font-size: .85rem; font-weight: 600; border: 1.5px solid transparent; padding: 5px 12px; border-radius: 999px; cursor: pointer; transition: background .2s, border-color .2s, transform .2s; }
+  .tags .tag:hover, .tags .tag.active { border-color: currentColor; transform: translateY(-1px); }
+  .svc-hint { text-align: center; color: var(--muted); font-size: .9rem; margin: -30px 0 34px; position: relative; z-index: 1; }
+  .view .scroll { animation: phoneScroll 5s ease-in-out infinite alternate; }
+  @keyframes phoneScroll { 0%,15% { transform: translateY(0); } 85%,100% { transform: translateY(-145px); } }
+  .view .twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 1.8s ease-in-out infinite; }
+  @keyframes twinkle { 50% { transform: scale(.5) rotate(45deg); opacity: .5; } }
+  .view .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 1.6s ease-out infinite; }
+  @keyframes pulse { from { transform: scale(1); opacity: .45; } to { transform: scale(2.2); opacity: 0; } }
+  .view .clickcur { animation: clickcur 1.6s ease-in-out infinite; }
+  @keyframes clickcur { 0%,100% { transform: translate(14px,10px); } 50% { transform: translate(0,0); } }
+  .view .popbubble { transform-box: fill-box; transform-origin: left bottom; animation: pop 3.2s ease-in-out infinite; }
+  @keyframes pop { 0%,20% { opacity: 0; transform: scale(.6); } 35%,90% { opacity: 1; transform: scale(1); } 100% { opacity: 0; } }
+  .view .spin { animation: spin 6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .view .grow rect { transform-box: fill-box; transform-origin: bottom; animation: grow 2.6s ease-in-out infinite alternate; }
+  .view .grow rect:nth-child(2) { animation-delay: .15s; } .view .grow rect:nth-child(3) { animation-delay: .3s; } .view .grow rect:nth-child(4) { animation-delay: .45s; } .view .grow rect:nth-child(5) { animation-delay: .6s; } .view .grow rect:nth-child(6) { animation-delay: .75s; }
+  @keyframes grow { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+  .view .fly { animation: fly 2.4s ease-in-out infinite; }
+  @keyframes fly { 0% { transform: translate(-60px,-30px); opacity: 0; } 30%,80% { transform: none; opacity: 1; } 100% { opacity: 0; } }
+  .view .fly2 { animation: fly2 2.6s ease-in-out infinite; }
+  @keyframes fly2 { 0% { transform: translate(-20px,10px); opacity: 0; } 30%,70% { transform: none; opacity: 1; } 100% { transform: translate(24px,-14px); opacity: 0; } }
+  .view .stamp { transform-box: fill-box; transform-origin: center; animation: stamp 2.6s ease-in-out infinite; }
+  @keyframes stamp { 0%,15% { transform: scale(1.8); opacity: 0; } 30%,90% { transform: scale(1); opacity: 1; } 100% { opacity: 0; } }
+  .view .blink { animation: blink 1.2s ease-in-out infinite; }
+  @keyframes blink { 50% { opacity: .35; } }
+  .view .dash { animation: dash 1s linear infinite; }
+  @keyframes dash { to { stroke-dashoffset: -16; } }
+  .view .drop { animation: drop 2.4s ease-in infinite; }
+  .view .d2 { animation-delay: .5s; } .view .d3 { animation-delay: 1s; }
+  @keyframes drop { 0% { transform: translateY(-30px); opacity: 0; } 25% { opacity: 1; } 70% { transform: translateY(40px); opacity: 1; } 85%,100% { transform: translateY(52px); opacity: 0; } }
+  .view .type { transform-box: fill-box; transform-origin: left; animation: type 2.4s steps(10) infinite; }
+  @keyframes type { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .view .slidein { animation: slidein 2.8s ease-out infinite; }
+  @keyframes slidein { 0% { transform: translateX(40px); opacity: 0; } 30%,85% { transform: none; opacity: 1; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .view * { animation: none !important; } }
+
+  /* Site de apresentação: código no VS Code, salvar e abrir o site */
+  .view .s1-cover { transform-box: fill-box; transform-origin: right center; }
+  @keyframes s1c1 { 0%,6.0% { transform: scaleX(1); } 11.2%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c1 { animation: s1c1 8s linear infinite; }
+  @keyframes s1c2 { 0%,12.2% { transform: scaleX(1); } 17.4%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c2 { animation: s1c2 8s linear infinite; }
+  @keyframes s1c3 { 0%,18.4% { transform: scaleX(1); } 23.6%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c3 { animation: s1c3 8s linear infinite; }
+  @keyframes s1c4 { 0%,24.6% { transform: scaleX(1); } 29.8%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c4 { animation: s1c4 8s linear infinite; }
+  @keyframes s1c5 { 0%,30.8% { transform: scaleX(1); } 36.0%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c5 { animation: s1c5 8s linear infinite; }
+  @keyframes s1c6 { 0%,37.0% { transform: scaleX(1); } 42.2%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c6 { animation: s1c6 8s linear infinite; }
+  @keyframes s1c7 { 0%,43.2% { transform: scaleX(1); } 48.4%,97% { transform: scaleX(0); } 99%,100% { transform: scaleX(1); } }
+  .view.on .s1-c7 { animation: s1c7 8s linear infinite; }
+  .view .s1-clean, .view .s1-status, .view .s1-keys, .view .s1-browser { opacity: 0; }
+  .view.on .s1-dirty { animation: s1dirty 8s linear infinite; }
+  @keyframes s1dirty { 0%,52% { opacity: 1; } 53%,97% { opacity: 0; } 99%,100% { opacity: 1; } }
+  .view.on .s1-clean, .view.on .s1-status { animation: s1clean 8s linear infinite; }
+  @keyframes s1clean { 0%,52% { opacity: 0; } 53%,96% { opacity: 1; } 99%,100% { opacity: 0; } }
+  .view.on .s1-keys { transform-box: fill-box; transform-origin: center; animation: s1keys 8s ease-out infinite; }
+  @keyframes s1keys { 0%,47% { opacity: 0; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.08); } 52% { transform: scale(.94); } 54%,58% { opacity: 1; transform: scale(1); } 61%,100% { opacity: 0; } }
+  .view.on .s1-caret { animation: s1caret 8s steps(1) infinite; }
+  @keyframes s1caret { 0%,50% { opacity: 1; } 5%,15%,25%,35%,45% { opacity: 0; } 51%,100% { opacity: 0; } }
+  .view.on .s1-browser { transform-box: fill-box; transform-origin: 30% 80%; animation: s1browser 8s cubic-bezier(.2,.8,.2,1) infinite; }
+  @keyframes s1browser { 0%,59% { opacity: 0; transform: translate(-18px,24px) scale(.55); } 68%,94% { opacity: 1; transform: none; } 99%,100% { opacity: 0; transform: none; } }
+  .view.on .s1-cur { animation: s1cur 8s ease-in-out infinite; }
+  @keyframes s1cur { 0%,70% { transform: translate(40px,22px); opacity: 0; } 76% { opacity: 1; } 84% { transform: translate(-14px,-4px); } 86% { transform: translate(-14px,-2px); } 88%,94% { transform: translate(-14px,-4px); opacity: 1; } 99%,100% { opacity: 0; } }
+  .view.on .s1-cta { transform-box: fill-box; transform-origin: center; animation: s1cta 8s ease-in-out infinite; }
+  @keyframes s1cta { 0%,85% { transform: scale(1); } 86% { transform: scale(.9); } 88%,100% { transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    .view .s1-cover, .view .s1-dirty, .view .s1-keys, .view .s1-cur { display: none; }
+    .view .s1-clean, .view .s1-status, .view .s1-browser { opacity: 1 !important; }
+  }
 </style>
 </head>
 <body>
@@ -300,57 +376,399 @@
         <span class="pen-note">Serviços</span>
         <h2>Soluções sob medida para o seu negócio</h2>
       </div>
+      <p class="svc-hint">Passe o mouse (ou toque) nos itens de cada serviço para ver mais.</p>
 
       <div class="services">
         <!-- 1. SITES -->
         <article class="svc glass reveal t-blue">
           <div class="art">
-            <img src="servico-sites.jpg" alt="Ana criando um site" loading="lazy">
+            <svg class="view on" data-view="0" viewBox="0 0 320 180" aria-hidden="true">
+              <rect x="18" y="20" width="176" height="140" rx="10" fill="#1E1E2E"/>
+              <rect x="18" y="20" width="176" height="16" rx="10" fill="#2A2A3C"/>
+              <rect x="18" y="30" width="176" height="6" fill="#2A2A3C"/>
+              <circle cx="29" cy="28" r="3" fill="#FF6B6B"/><circle cx="39" cy="28" r="3" fill="#FFC857"/><circle cx="49" cy="28" r="3" fill="#4ADE80"/>
+              <rect x="18" y="36" width="16" height="124" fill="#252536"/>
+              <rect x="22" y="44" width="8" height="8" rx="2" fill="#6B7BFF" opacity=".8"/>
+              <rect x="22" y="58" width="8" height="8" rx="2" fill="#4A4A66"/>
+              <rect x="22" y="72" width="8" height="8" rx="2" fill="#4A4A66"/>
+              <rect x="34" y="36" width="56" height="14" fill="#1E1E2E"/>
+              <rect x="40" y="41" width="40" height="4" rx="2" fill="#9AA5FF"/>
+              <rect x="34" y="49" width="160" height="1" fill="#33334A"/>
+              <g font-family="ui-monospace, Menlo, monospace" font-size="8.5">
+                <text x="40" y="64" fill="#5C6080">1</text><text x="52" y="64" fill="#7AA2FF">&lt;header&gt;</text>
+                <text x="40" y="78" fill="#5C6080">2</text><text x="60" y="78" fill="#7AA2FF">&lt;h1&gt;</text><text x="86" y="78" fill="#E6E6F0">Seu site</text><text x="126" y="78" fill="#7AA2FF">&lt;/h1&gt;</text>
+                <text x="40" y="92" fill="#5C6080">3</text><text x="60" y="92" fill="#7AA2FF">&lt;a</text><text x="74" y="92" fill="#C3A6FF">class</text><text x="100" y="92" fill="#E6E6F0">=</text><text x="105" y="92" fill="#F5B83D">"btn"</text><text x="132" y="92" fill="#7AA2FF">&gt;</text>
+                <text x="40" y="106" fill="#5C6080">4</text><text x="68" y="106" fill="#E6E6F0">WhatsApp</text>
+                <text x="40" y="120" fill="#5C6080">5</text><text x="60" y="120" fill="#7AA2FF">&lt;/a&gt;</text>
+                <text x="40" y="134" fill="#5C6080">6</text><text x="52" y="134" fill="#7AA2FF">&lt;/header&gt;</text>
+              </g>
+              <rect x="111" y="99" width="1.6" height="10" fill="#E6E6F0"/>
+              <rect x="150" y="54" width="128" height="96" rx="10" fill="#fff" stroke="#B9E4CF" stroke-width="2"/>
+              <rect x="150" y="54" width="128" height="16" rx="10" fill="#1B8F5E"/>
+              <rect x="150" y="62" width="128" height="8" fill="#1B8F5E"/>
+              <circle cx="161" cy="62" r="2.6" fill="#fff"/><circle cx="170" cy="62" r="2.6" fill="#fff" opacity=".7"/><circle cx="179" cy="62" r="2.6" fill="#fff" opacity=".5"/>
+              <rect x="162" y="82" width="56" height="8" rx="4" fill="#1B8F5E"/>
+              <rect x="162" y="96" width="44" height="5" rx="2.5" fill="#B9E4CF"/>
+              <rect x="162" y="106" width="50" height="5" rx="2.5" fill="#B9E4CF"/>
+              <rect x="162" y="120" width="34" height="12" rx="6" fill="#F5B83D"/>
+              <rect x="226" y="80" width="40" height="48" rx="8" fill="#E3F5EC"/>
+              <path d="M231 120 l11-13 8 9 5-5 9 9z" fill="#8FD3B3"/>
+              <circle cx="256" cy="92" r="5" fill="#8FD3B3"/>
+              <rect x="262" y="96" width="44" height="72" rx="10" fill="#136B46"/>
+              <rect x="267" y="104" width="34" height="56" rx="5" fill="#fff"/>
+              <rect x="271" y="110" width="20" height="5" rx="2.5" fill="#1B8F5E"/>
+              <rect x="271" y="120" width="26" height="3.5" rx="1.75" fill="#B9E4CF"/>
+              <rect x="271" y="127" width="22" height="3.5" rx="1.75" fill="#B9E4CF"/>
+              <rect x="271" y="148" width="18" height="7" rx="3.5" fill="#F5B83D"/>
+              <path d="M200 132 l0 20 5-5 4.5 9 4.5-2-4.5-9 7 0z" fill="#0F1E5C" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+            </svg><svg class="view" data-view="s1" viewBox="0 0 320 180" aria-hidden="true">
+<g class="s1-editor">
+  <rect x="10" y="10" width="200" height="160" rx="10" fill="#1E1E2E"/>
+  <rect x="10" y="10" width="200" height="16" rx="10" fill="#2A2A3C"/><rect x="10" y="20" width="200" height="6" fill="#2A2A3C"/>
+  <circle cx="21" cy="18" r="2.6" fill="#FF6B6B"/><circle cx="30" cy="18" r="2.6" fill="#FFC857"/><circle cx="39" cy="18" r="2.6" fill="#4ADE80"/>
+  <text x="110" y="21" font-family="Arial" font-size="6.5" fill="#8A8FA8" text-anchor="middle">meu-site — Visual Studio Code</text>
+  <rect x="10" y="26" width="18" height="132" fill="#252536"/>
+  <rect x="14" y="32" width="10" height="10" rx="2" fill="#6B7BFF" opacity=".8"/><rect x="14" y="48" width="10" height="10" rx="2" fill="#4A4A66"/><rect x="14" y="64" width="10" height="10" rx="2" fill="#4A4A66"/>
+  <rect x="28" y="26" width="182" height="15" fill="#252536"/>
+  <rect x="28" y="26" width="64" height="15" fill="#1E1E2E"/><rect x="28" y="26" width="64" height="1.6" fill="#1B8F5E"/>
+  <text x="35" y="36.5" font-family="Arial" font-size="6.8" fill="#E6E6F0">index.html</text>
+  <circle class="s1-dirty" cx="85" cy="33.5" r="2.4" fill="#E6E6F0"/>
+  <path class="s1-clean" d="M82.5 33.5 l2 2 3.5 -4" stroke="#4ADE80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="ui-monospace, Menlo, monospace"><text x="38" y="58" fill="#5C6080" font-size="7.5">1</text><text x="50" y="58" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;!DOCTYPE html&gt;</tspan></text><text x="38" y="71" fill="#5C6080" font-size="7.5">2</text><text x="50" y="71" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;header&gt;</tspan></text><text x="38" y="84" fill="#5C6080" font-size="7.5">3</text><text x="50" y="84" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;h1&gt;</tspan><tspan fill="#E6E6F0">Seu negócio</tspan><tspan fill="#7AA2FF">&lt;/h1&gt;</tspan></text><text x="38" y="97" fill="#5C6080" font-size="7.5">4</text><text x="50" y="97" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;p&gt;</tspan><tspan fill="#E6E6F0">Simples e bonito</tspan><tspan fill="#7AA2FF">&lt;/p&gt;</tspan></text><text x="38" y="110" fill="#5C6080" font-size="7.5">5</text><text x="50" y="110" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;a </tspan><tspan fill="#C3A6FF">class</tspan><tspan fill="#E6E6F0">=</tspan><tspan fill="#F5B83D">"btn"</tspan><tspan fill="#7AA2FF">&gt;</tspan></text><text x="38" y="123" fill="#5C6080" font-size="7.5">6</text><text x="50" y="123" font-size="7.5" xml:space="preserve"><tspan fill="#E6E6F0">    Orçamento</tspan><tspan fill="#7AA2FF">&lt;/a&gt;</tspan></text><text x="38" y="136" fill="#5C6080" font-size="7.5">7</text><text x="50" y="136" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;/header&gt;</tspan></text></g>
+  <rect class="s1-cover s1-c1" x="49" y="50" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c2" x="49" y="63" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c3" x="49" y="76" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c4" x="49" y="89" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c5" x="49" y="102" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c6" x="49" y="115" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c7" x="49" y="128" width="152" height="11" fill="#1E1E2E"/>
+  <rect class="s1-caret" x="50" y="145" width="1.4" height="9" fill="#E6E6F0"/>
+  <rect x="10" y="158" width="200" height="12" fill="#136B46"/><path d="M10 158 h200 v2 h-200z" fill="#136B46"/>
+  <text x="16" y="166.5" font-family="Arial" font-size="6.2" fill="#DDF3E8">HTML</text>
+  <g class="s1-status"><text x="204" y="166.5" font-family="Arial" font-size="6.2" font-weight="700" fill="#fff" text-anchor="end">✓ Salvo</text></g>
+</g>
+<g class="s1-keys">
+  <rect x="150" y="126" width="56" height="20" rx="6" fill="#F5B83D"/><rect x="150" y="126" width="56" height="17" rx="6" fill="#FFD27A"/>
+  <text x="178" y="138.5" font-family="Arial" font-size="8" font-weight="800" fill="#0F1E5C" text-anchor="middle">Ctrl + S</text>
+</g>
+<g class="s1-browser">
+  <rect x="118" y="34" width="194" height="136" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+  <rect x="118" y="34" width="194" height="16" rx="10" fill="#F1F4F8"/><rect x="118" y="44" width="194" height="6" fill="#F1F4F8"/>
+  <circle cx="128" cy="42" r="2.4" fill="#FF6B6B"/><circle cx="136" cy="42" r="2.4" fill="#FFC857"/><circle cx="144" cy="42" r="2.4" fill="#4ADE80"/>
+  <rect x="156" y="37.5" width="110" height="9" rx="4.5" fill="#fff" stroke="#E3E7EE"/>
+  <text x="211" y="44.3" font-family="Arial" font-size="5.8" fill="#6B778C" text-anchor="middle">seunegocio.com.br</text>
+  <circle cx="132" cy="62" r="4" fill="#1B8F5E"/><rect x="140" y="59.5" width="26" height="5" rx="2.5" fill="#0F1E5C"/>
+  <rect x="248" y="59" width="14" height="4" rx="2" fill="#D3DAE6"/><rect x="266" y="57.5" width="34" height="9" rx="4.5" fill="#1B8F5E"/>
+  <rect x="130" y="76" width="84" height="9" rx="4.5" fill="#136B46"/><rect x="130" y="89" width="64" height="9" rx="4.5" fill="#136B46"/>
+  <rect x="130" y="104" width="78" height="4" rx="2" fill="#D3DAE6"/><rect x="130" y="112" width="62" height="4" rx="2" fill="#D3DAE6"/>
+  <rect class="s1-cta" x="130" y="122" width="44" height="13" rx="6.5" fill="#F5B83D"/>
+  <rect x="222" y="74" width="78" height="62" rx="8" fill="#DDF3E8"/><circle cx="284" cy="88" r="6" fill="#F5B83D" opacity=".85"/><path d="M226 132 l20-24 14 14 9-9 27 19z" fill="#8FD3B3"/>
+  <rect x="130" y="144" width="52" height="16" rx="5" fill="#F4F7F9"/><circle cx="139" cy="152" r="3.5" fill="#1B8F5E"/>
+  <rect x="188" y="144" width="52" height="16" rx="5" fill="#F4F7F9"/><circle cx="197" cy="152" r="3.5" fill="#F5B83D"/>
+  <rect x="246" y="144" width="54" height="16" rx="5" fill="#F4F7F9"/><circle cx="255" cy="152" r="3.5" fill="#136B46"/>
+  <path class="s1-cur" d="M168 132 l0 15 4 -4 3.5 7 3.5 -1.6 -3.5 -7 5.6 0z" fill="#0F1E5C" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+</g>
+</svg><svg class="view" data-view="s2" viewBox="0 0 320 180" aria-hidden="true">
+<defs><clipPath id="cp-phone"><rect x="124" y="20" width="72" height="142" rx="6"/></clipPath></defs>
+<rect x="18" y="58" width="86" height="58" rx="6" fill="none" stroke="#B9E4CF" stroke-width="2.5"/><path d="M50 116 v10 M38 128 h24" stroke="#B9E4CF" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="226" y="46" width="66" height="90" rx="8" fill="none" stroke="#B9E4CF" stroke-width="2.5"/>
+<path d="M106 86 h10 M214 86 h10" stroke="#F5B83D" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5"/>
+<rect x="116" y="8" width="88" height="166" rx="16" fill="#136B46"/>
+<rect x="124" y="20" width="72" height="142" rx="6" fill="#fff"/>
+<g clip-path="url(#cp-phone)"><g class="scroll">
+  <rect x="124" y="20" width="72" height="16" fill="#1B8F5E"/><circle cx="133" cy="28" r="3" fill="#fff"/>
+  <rect x="130" y="44" width="50" height="7" rx="3.5" fill="#136B46"/><rect x="130" y="55" width="40" height="7" rx="3.5" fill="#136B46"/>
+  <rect x="130" y="68" width="56" height="3.5" rx="1.75" fill="#D3DAE6"/><rect x="130" y="75" width="46" height="3.5" rx="1.75" fill="#D3DAE6"/>
+  <rect x="130" y="84" width="32" height="10" rx="5" fill="#F5B83D"/>
+  <rect x="130" y="102" width="60" height="40" rx="6" fill="#DDF3E8"/><path d="M134 138 l14-16 10 10 7-7 21 13z" fill="#8FD3B3"/>
+  <rect x="130" y="150" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="161" r="4" fill="#1B8F5E"/><rect x="147" y="159" width="36" height="4" rx="2" fill="#D3DAE6"/>
+  <rect x="130" y="178" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="189" r="4" fill="#F5B83D"/><rect x="147" y="187" width="36" height="4" rx="2" fill="#D3DAE6"/>
+  <rect x="130" y="206" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="217" r="4" fill="#136B46"/><rect x="147" y="215" width="36" height="4" rx="2" fill="#D3DAE6"/>
+  <rect x="130" y="238" width="60" height="30" rx="6" fill="#DDF3E8"/><rect x="136" y="246" width="34" height="5" rx="2.5" fill="#136B46"/><rect x="136" y="255" width="26" height="8" rx="4" fill="#F5B83D"/>
+  <rect x="124" y="276" width="72" height="30" fill="#136B46"/><rect x="132" y="286" width="30" height="4" rx="2" fill="#fff" opacity=".7"/>
+</g></g>
+<rect x="148" y="12" width="24" height="5" rx="2.5" fill="#0D4A31"/></svg><svg class="view" data-view="s3" viewBox="0 0 320 180" aria-hidden="true"><rect x="16" y="22" width="170" height="136" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="16" y="22" width="170" height="16" rx="10" fill="#F1F4F8"/><rect x="16" y="32" width="170" height="6" fill="#F1F4F8"/><circle cx="27" cy="30" r="2.6" fill="#FF6B6B"/><circle cx="36" cy="30" r="2.6" fill="#FFC857"/><circle cx="45" cy="30" r="2.6" fill="#4ADE80"/>
+<rect x="30" y="50" width="90" height="9" rx="4.5" fill="#136B46"/><rect x="30" y="64" width="70" height="9" rx="4.5" fill="#136B46"/>
+<rect x="30" y="82" width="110" height="4.5" rx="2.25" fill="#D3DAE6"/><rect x="30" y="91" width="96" height="4.5" rx="2.25" fill="#D3DAE6"/>
+<rect x="30" y="104" width="96" height="40" rx="8" fill="#DDF3E8"/>
+<circle class="pulse" cx="160" cy="132" r="16" fill="#1B8F5E" opacity=".35"/>
+<circle cx="160" cy="132" r="16" fill="#1B8F5E"/>
+<path d="M153 126 h14 a3 3 0 0 1 3 3 v6 a3 3 0 0 1 -3 3 h-8 l-5 4 v-4 h-1 a3 3 0 0 1 -3 -3 v-6 a3 3 0 0 1 3 -3z" fill="#fff"/>
+<path class="clickcur" d="M168 140 l0 18 4.5-4.5 4 8 4-2 -4-8 6.5 0z" fill="#0F1E5C" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+<g class="popbubble">
+  <rect x="198" y="40" width="108" height="34" rx="10" fill="#fff" stroke="#B9E4CF" stroke-width="2"/>
+  <text x="208" y="55" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Olá, Ana!</text><text x="208" y="66" font-family="Arial" font-size="7.5" font-weight="400" fill="#5A6383" text-anchor="start">Quero um orçamento.</text>
+  <rect x="212" y="84" width="94" height="28" rx="10" fill="#1B8F5E"/>
+  <text x="222" y="97" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="start">Oi! Vamos</text><text x="222" y="107" font-family="Arial" font-size="7.5" font-weight="400" fill="#fff" text-anchor="start">conversar!</text>
+</g></svg>
           </div>
           <div class="body">
             <div class="bar"></div>
             <h3>Criação de sites</h3>
-            <p>Presença online profissional que transmite confiança.</p>
-            <div class="tags"><span>Site de apresentação</span><span>Funciona no celular</span><span>Botão de WhatsApp</span></div>
+            <p class="desc">Presença online profissional que transmite confiança.</p>
+            <div class="tags"><button type="button" class="tag" data-view="s1" data-desc="Eu escrevo o código, salvo e o seu site entra no ar: uma página limpa e direta, com quem você é, o que oferece e como falar com você, num visual que chama atenção." aria-pressed="false">Site de apresentação</button><button type="button" class="tag" data-view="s2" data-desc="O site se ajusta a qualquer tela. Seu cliente navega pelo celular com a mesma facilidade do computador." aria-pressed="false">Funciona no celular</button><button type="button" class="tag" data-view="s3" data-desc="Um clique e o cliente já cai na sua conversa, com a mensagem pronta. Menos barreira, mais pedidos de orçamento." aria-pressed="false">Botão de WhatsApp</button></div>
           </div>
         </article>
 
         <!-- 2. PLANILHAS -->
         <article class="svc glass reveal t-green">
           <div class="art">
-            <img src="servico-planilhas.jpg" alt="Ana trabalhando em planilhas" loading="lazy">
+            <svg class="view on" data-view="0" viewBox="0 0 320 180" aria-hidden="true">
+              <rect x="22" y="16" width="230" height="150" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+              <rect x="22" y="16" width="230" height="20" rx="10" fill="#1B8F5E"/>
+              <rect x="22" y="28" width="230" height="8" fill="#1B8F5E"/>
+              <rect x="32" y="23" width="40" height="5" rx="2.5" fill="#fff" opacity=".85"/>
+              <rect x="80" y="23" width="26" height="5" rx="2.5" fill="#fff" opacity=".5"/>
+              <rect x="112" y="23" width="26" height="5" rx="2.5" fill="#fff" opacity=".5"/>
+              <rect x="22" y="36" width="230" height="16" fill="#F4F6F9"/>
+              <rect x="28" y="39" width="22" height="10" rx="2" fill="#fff" stroke="#D3DAE6"/>
+              <text x="39" y="47" text-anchor="middle" font-family="Arial" font-size="7" fill="#33415C">D4</text>
+              <text x="58" y="47" font-family="Georgia, serif" font-style="italic" font-size="8" fill="#1B8F5E">fx</text>
+              <text x="72" y="47" font-family="ui-monospace, monospace" font-size="7.5" fill="#33415C">=SOMA(B4:C4)</text>
+              <rect x="22" y="52" width="230" height="12" fill="#EEF1F5"/>
+              <rect x="22" y="52" width="18" height="114" fill="#EEF1F5"/>
+              <g font-family="Arial" font-size="7" fill="#6B778C" text-anchor="middle">
+                <text x="63" y="61">A</text><text x="111" y="61">B</text><text x="159" y="61">C</text><text x="214" y="61" fill="#1B8F5E" font-weight="700">D</text>
+                <text x="31" y="75">1</text><text x="31" y="93">2</text><text x="31" y="111">3</text><text x="31" y="129" fill="#1B8F5E" font-weight="700">4</text><text x="31" y="147">5</text>
+              </g>
+              <g stroke="#E3E7EE" stroke-width="1">
+                <path d="M40 64v102M88 52v114M136 52v114M184 52v114M22 64h230M22 82h230M22 100h230M22 118h230M22 136h230M22 154h230"/>
+              </g>
+              <g font-family="Arial" font-size="7.5" fill="#33415C">
+                <text x="46" y="76" font-weight="700">Mês</text><text x="94" y="76" font-weight="700">Entradas</text><text x="142" y="76" font-weight="700">Saídas</text><text x="190" y="76" font-weight="700">Saldo</text>
+                <text x="46" y="94">Jan</text><text x="94" y="94">8.200</text><text x="142" y="94">5.100</text><text x="190" y="94">3.100</text>
+                <text x="46" y="112">Fev</text><text x="94" y="112">9.450</text><text x="142" y="112">6.020</text><text x="190" y="112">3.430</text>
+                <text x="46" y="130">Mar</text><text x="94" y="130">10.300</text><text x="142" y="130">6.480</text>
+                <text x="46" y="148">Abr</text><text x="94" y="148">11.120</text><text x="142" y="148">6.900</text>
+              </g>
+              <rect x="184" y="118" width="68" height="18" fill="#1B8F5E" opacity=".1"/>
+              <rect x="184" y="118" width="68" height="18" fill="none" stroke="#1B8F5E" stroke-width="2.5"/>
+              <rect x="248" y="132" width="6" height="6" fill="#1B8F5E" stroke="#fff" stroke-width="1.5"/>
+              <text x="190" y="130" font-family="Arial" font-size="7.5" font-weight="700" fill="#1B8F5E">3.820</text>
+              <g transform="translate(272 116)">
+                <circle r="34" fill="#136B46"/>
+                <path d="M-18 -10 A 21 21 0 0 1 16 -13" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M10 -20 L 17 -13 L 8 -9" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 10 A 21 21 0 0 1 -16 13" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M-10 20 L -17 13 L -8 9" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 -11 L -6 2 L 1 2 L -3 12 L 7 -2 L 0 -2 Z" fill="#F5B83D"/>
+              </g>
+            </svg><svg class="view" data-view="p1" viewBox="0 0 320 180" aria-hidden="true"><rect x="20" y="30" width="150" height="124" rx="8" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="20" y="30" width="150" height="18" rx="8" fill="#1B8F5E"/><rect x="20" y="40" width="150" height="8" fill="#1B8F5E"/><text x="30" y="42.5" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="start">Controle.xlsx</text><path d="M20 60h150" stroke="#E3E7EE"/><path d="M20 76h150" stroke="#E3E7EE"/><path d="M20 92h150" stroke="#E3E7EE"/><path d="M20 108h150" stroke="#E3E7EE"/><path d="M20 124h150" stroke="#E3E7EE"/><path d="M57.5 48v106" stroke="#E3E7EE"/><path d="M95.0 48v106" stroke="#E3E7EE"/><path d="M132.5 48v106" stroke="#E3E7EE"/><rect x="150" y="14" width="150" height="124" rx="8" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="150" y="14" width="150" height="18" rx="8" fill="#2C7A8C"/><rect x="150" y="24" width="150" height="8" fill="#2C7A8C"/><text x="160" y="26.5" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="start">Planilhas Google</text><path d="M150 44h150" stroke="#E3E7EE"/><path d="M150 60h150" stroke="#E3E7EE"/><path d="M150 76h150" stroke="#E3E7EE"/><path d="M150 92h150" stroke="#E3E7EE"/><path d="M150 108h150" stroke="#E3E7EE"/><path d="M187.5 32v106" stroke="#E3E7EE"/><path d="M225.0 32v106" stroke="#E3E7EE"/><path d="M262.5 32v106" stroke="#E3E7EE"/>
+<rect x="188" y="62" width="37.5" height="16" fill="#1B8F5E" opacity=".12" stroke="#1B8F5E" stroke-width="2"/>
+<text x="156" y="104" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">=SE(C4&gt;0;&quot;Pago&quot;;&quot;Aberto&quot;)</text>
+<g class="spin" style="transform-origin:150px 150px"><circle cx="150" cy="150" r="18" fill="#F5B83D"/><path d="M141 147 a10 10 0 0 1 17 -4 M159 153 a10 10 0 0 1 -17 4" stroke="#0F1E5C" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M156 139 l2 4 -4 1 M144 161 l-2 -4 4 -1" stroke="#0F1E5C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="38" y="62" font-family="Arial" font-size="7" font-weight="700" fill="#33415C" text-anchor="start">Mês</text><text x="76" y="62" font-family="Arial" font-size="7" font-weight="700" fill="#33415C" text-anchor="start">Valor</text><text x="38" y="78" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">Jan</text><text x="76" y="78" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">8.200</text><text x="38" y="94" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">Fev</text><text x="76" y="94" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">9.450</text></svg><svg class="view" data-view="p2" viewBox="0 0 320 180" aria-hidden="true"><rect x="14" y="10" width="292" height="160" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="14" y="10" width="292" height="16" rx="10" fill="#F1F4F8"/><rect x="14" y="20" width="292" height="6" fill="#F1F4F8"/><circle cx="25" cy="18" r="2.6" fill="#FF6B6B"/><circle cx="34" cy="18" r="2.6" fill="#FFC857"/><circle cx="43" cy="18" r="2.6" fill="#4ADE80"/>
+<text x="28" y="40" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C" text-anchor="start">Painel · Outubro</text>
+<rect x="28" y="48" width="80" height="34" rx="8" fill="#DDF3E8"/><text x="36" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#136B46" text-anchor="start">Entradas</text><text x="36" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 18.400</text>
+<rect x="116" y="48" width="80" height="34" rx="8" fill="#FFF3D6"/><text x="124" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#8A5A00" text-anchor="start">Saídas</text><text x="124" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 11.200</text>
+<rect x="204" y="48" width="88" height="34" rx="8" fill="#F1F4F8"/><text x="212" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#5A6383" text-anchor="start">Saldo</text><text x="212" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#1B8F5E" text-anchor="start">R$ 7.200</text>
+<rect x="28" y="92" width="170" height="68" rx="8" fill="#FAFBFC" stroke="#E3E7EE"/>
+<g class="grow">
+<rect x="42" y="118" width="16" height="34" rx="3" fill="#B9E4CF"/><rect x="66" y="110" width="16" height="42" rx="3" fill="#8FD3B3"/><rect x="90" y="104" width="16" height="48" rx="3" fill="#1B8F5E"/>
+<rect x="114" y="112" width="16" height="40" rx="3" fill="#8FD3B3"/><rect x="138" y="100" width="16" height="52" rx="3" fill="#1B8F5E"/><rect x="162" y="96" width="16" height="56" rx="3" fill="#F5B83D"/>
+</g>
+<rect x="206" y="92" width="86" height="68" rx="8" fill="#FAFBFC" stroke="#E3E7EE"/>
+<circle cx="249" cy="126" r="22" fill="none" stroke="#DDF3E8" stroke-width="10"/>
+<circle class="donut" cx="249" cy="126" r="22" fill="none" stroke="#1B8F5E" stroke-width="10" stroke-dasharray="90 138" transform="rotate(-90 249 126)"/>
+<circle cx="249" cy="126" r="22" fill="none" stroke="#F5B83D" stroke-width="10" stroke-dasharray="30 138" stroke-dashoffset="-90" transform="rotate(-90 249 126)"/>
+<text x="249" y="129" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">65%</text></svg><svg class="view" data-view="p3" viewBox="0 0 320 180" aria-hidden="true">
+<rect x="14" y="16" width="190" height="148" rx="10" fill="#1E1E2E"/><rect x="14" y="16" width="190" height="16" rx="10" fill="#2A2A3C"/><rect x="14" y="26" width="190" height="6" fill="#2A2A3C"/>
+<circle cx="25" cy="24" r="2.6" fill="#FF6B6B"/><circle cx="34" cy="24" r="2.6" fill="#FFC857"/><circle cx="43" cy="24" r="2.6" fill="#4ADE80"/>
+<g font-family="ui-monospace, Menlo, monospace" font-size="8">
+<text x="24" y="50" fill="#C3A6FF">function</text><text x="66" y="50" fill="#7AA2FF">lembrete</text><text x="106" y="50" fill="#E6E6F0">() {</text>
+<text x="32" y="66" fill="#C3A6FF">const</text><text x="60" y="66" fill="#E6E6F0">conta = vencendo();</text>
+<text x="32" y="82" fill="#C3A6FF">if</text><text x="44" y="82" fill="#E6E6F0">(conta) {</text>
+<text x="40" y="98" fill="#7AA2FF">enviarEmail</text><text x="96" y="98" fill="#E6E6F0">(conta);</text>
+<text x="40" y="114" fill="#7AA2FF">marcar</text><text x="72" y="114" fill="#E6E6F0">(</text><text x="77" y="114" fill="#F5B83D">"avisado"</text><text x="121" y="114" fill="#E6E6F0">);</text>
+<text x="32" y="130" fill="#E6E6F0">}</text><text x="24" y="146" fill="#E6E6F0">}</text>
+</g>
+<g class="spin" style="transform-origin:236px 64px"><circle cx="236" cy="64" r="26" fill="#1B8F5E"/><circle cx="236" cy="64" r="9" fill="none" stroke="#fff" stroke-width="4"/>
+<path d="M236 42v7M236 79v7M214 64h7M251 64h7M220 48l5 5M247 75l5 5M220 80l5-5M247 53l5-5" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g>
+<g class="fly"><rect x="222" y="112" width="40" height="28" rx="5" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><path d="M223 114 l19 14 19 -14" fill="none" stroke="#1B8F5E" stroke-width="2"/></g>
+<g><circle cx="290" cy="130" r="14" fill="#F5B83D"/><path d="M284 134 h12 l-2 -3 v-5 a4 4 0 0 0 -8 0 v5z M288 136 a2 2 0 0 0 4 0" fill="#0F1E5C"/></g></svg>
           </div>
           <div class="body">
             <div class="bar"></div>
             <h3>Planilhas e automação</h3>
-            <p>Controles claros e tarefas repetitivas no automático.</p>
-            <div class="tags"><span>Excel e Google Planilhas</span><span>Painéis</span><span>Apps Script</span></div>
+            <p class="desc">Controles claros e tarefas repetitivas no automático.</p>
+            <div class="tags"><button type="button" class="tag" data-view="p1" data-desc="Controles organizados no programa que você já usa, com fórmulas que calculam sozinhas e abas fáceis de entender." aria-pressed="false">Excel e Google Planilhas</button><button type="button" class="tag" data-view="p2" data-desc="Os números do mês num relance: entradas, saídas, saldo e gráficos que se atualizam conforme você preenche." aria-pressed="false">Painéis</button><button type="button" class="tag" data-view="p3" data-desc="Automações que fazem o repetitivo por você: lembretes de vencimento, relatórios e preenchimentos automáticos." aria-pressed="false">Apps Script</button></div>
           </div>
         </article>
 
         <!-- 3. FINANCEIRO -->
         <article class="svc glass reveal t-sun">
           <div class="art">
-            <img src="servico-financeiro.jpg" alt="Ana cuidando das finanças" loading="lazy">
+            <svg class="view on" data-view="0" viewBox="0 0 320 180" aria-hidden="true">
+              <!-- sistema financeiro: contas a pagar -->
+              <rect x="16" y="16" width="214" height="150" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+              <rect x="16" y="16" width="214" height="22" rx="10" fill="#136B46"/>
+              <rect x="16" y="30" width="214" height="8" fill="#136B46"/>
+              <text x="28" y="31" font-family="Arial" font-size="8.5" font-weight="700" fill="#fff">Contas a pagar · Outubro</text>
+              <circle cx="214" cy="27" r="5" fill="#fff" opacity=".35"/>
+              <rect x="26" y="46" width="58" height="26" rx="6" fill="#DDF3E8"/>
+              <text x="32" y="56" font-family="Arial" font-size="6" fill="#136B46">A pagar</text>
+              <text x="32" y="67" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C">R$ 4.380</text>
+              <rect x="90" y="46" width="58" height="26" rx="6" fill="#FFF3D6"/>
+              <text x="96" y="56" font-family="Arial" font-size="6" fill="#8A5A00">Vence hoje</text>
+              <text x="96" y="67" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C">R$ 1.250</text>
+              <rect x="154" y="46" width="58" height="26" rx="6" fill="#F1F4F8"/>
+              <text x="160" y="56" font-family="Arial" font-size="6" fill="#5A6383">Pago</text>
+              <text x="160" y="67" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C">R$ 9.720</text>
+              <g font-family="Arial" font-size="6.5" fill="#6B778C">
+                <text x="28" y="86">Fornecedor</text><text x="104" y="86">Vencimento</text><text x="150" y="86">Valor</text><text x="186" y="86">Status</text>
+              </g>
+              <path d="M26 90h194" stroke="#E3E7EE"/>
+              <g font-family="Arial" font-size="7" fill="#33415C">
+                <text x="28" y="102">Combustível</text><text x="104" y="102">05/10</text><text x="150" y="102">2.300,00</text>
+                <text x="28" y="120">Energia</text><text x="104" y="120">07/10</text><text x="150" y="120">1.250,00</text>
+                <text x="28" y="138">Manutenção</text><text x="104" y="138">12/10</text><text x="150" y="138">830,00</text>
+                <text x="28" y="156">Internet</text><text x="104" y="156">15/10</text><text x="150" y="156">199,90</text>
+              </g>
+              <path d="M26 108h194M26 126h194M26 144h194" stroke="#EEF1F5"/>
+              <rect x="184" y="95" width="30" height="10" rx="5" fill="#DDF3E8"/><text x="199" y="102.5" text-anchor="middle" font-family="Arial" font-size="6" font-weight="700" fill="#136B46">Pago</text>
+              <rect x="184" y="113" width="30" height="10" rx="5" fill="#FFE6A8"/><text x="199" y="120.5" text-anchor="middle" font-family="Arial" font-size="6" font-weight="700" fill="#8A5A00">Hoje</text>
+              <rect x="184" y="131" width="30" height="10" rx="5" fill="#E8EDFF"/><text x="199" y="138.5" text-anchor="middle" font-family="Arial" font-size="5.6" font-weight="700" fill="#1F3FBF">Agend.</text>
+              <rect x="184" y="149" width="30" height="10" rx="5" fill="#E8EDFF"/><text x="199" y="156.5" text-anchor="middle" font-family="Arial" font-size="5.6" font-weight="700" fill="#1F3FBF">Agend.</text>
+              <!-- cartão de conciliação -->
+              <rect x="224" y="36" width="86" height="76" rx="12" fill="#fff" stroke="#B9E4CF" stroke-width="2"/>
+              <text x="234" y="52" font-family="Arial" font-size="7" font-weight="700" fill="#0F1E5C">Conciliação</text>
+              <circle cx="250" cy="82" r="16" fill="none" stroke="#DDF3E8" stroke-width="7"/>
+              <circle cx="250" cy="82" r="16" fill="none" stroke="#1B8F5E" stroke-width="7" stroke-linecap="round" stroke-dasharray="101 101" transform="rotate(-90 250 82)"/>
+              <path d="M243 82l4 4 8-9" fill="none" stroke="#1B8F5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="272" y="79" font-family="Arial" font-size="6" fill="#5A6383">Extrato</text>
+              <text x="272" y="90" font-family="Arial" font-size="9" font-weight="700" fill="#136B46">100%</text>
+              <!-- moedas -->
+              <g>
+                <ellipse cx="272" cy="160" rx="24" ry="7" fill="#C4841A"/>
+                <rect x="248" y="147" width="48" height="13" fill="#C4841A"/>
+                <ellipse cx="272" cy="147" rx="24" ry="7" fill="#F5B83D"/>
+                <rect x="248" y="136" width="48" height="11" fill="#F5B83D"/>
+                <ellipse cx="272" cy="136" rx="24" ry="7" fill="#FCD877"/>
+                <text x="272" y="140" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#7A4E00">R$</text>
+              </g>
+            </svg><svg class="view" data-view="f1" viewBox="0 0 320 180" aria-hidden="true"><rect x="18" y="14" width="180" height="150" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="18" y="14" width="180" height="16" rx="10" fill="#F1F4F8"/><rect x="18" y="24" width="180" height="6" fill="#F1F4F8"/><circle cx="29" cy="22" r="2.6" fill="#FF6B6B"/><circle cx="38" cy="22" r="2.6" fill="#FFC857"/><circle cx="47" cy="22" r="2.6" fill="#4ADE80"/><text x="30" y="46" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Vencimentos · Outubro</text><rect x="30" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">1</text><rect x="52" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">2</text><rect x="74" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">3</text><rect x="96" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">4</text><rect x="118" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">5</text><rect x="140" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">6</text><rect x="162" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">7</text><rect x="30" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">8</text><rect x="52" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">9</text><rect x="74" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">10</text><rect x="96" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">11</text><rect x="118" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">12</text><rect x="140" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">13</text><rect x="162" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">14</text><rect x="30" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">15</text><rect x="52" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">16</text><rect x="74" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">17</text><rect x="96" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">18</text><rect x="118" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">19</text><rect x="140" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">20</text><rect x="162" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">21</text><rect x="30" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">22</text><rect x="52" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">23</text><rect x="74" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">24</text><rect x="96" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">25</text><rect x="118" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">26</text><rect x="140" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">27</text><rect x="162" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">28</text><rect x="52" y="56" width="18" height="18" rx="4" fill="#1B8F5E"/><text x="61" y="68" font-family="Arial" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle">2</text><rect x="118" y="78" width="18" height="18" rx="4" fill="#1B8F5E"/><text x="127" y="90" font-family="Arial" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle">12</text><rect class="blink" x="74" y="100" width="18" height="18" rx="4" fill="#F5B83D"/><text x="83" y="112" font-family="Arial" font-size="6.5" font-weight="700" fill="#0F1E5C" text-anchor="middle">17</text><rect x="162" y="122" width="18" height="18" rx="4" fill="none" stroke="#F5B83D" stroke-width="2"/>
+<rect x="212" y="30" width="96" height="50" rx="10" fill="#fff" stroke="#B9E4CF" stroke-width="2"/>
+<circle cx="230" cy="55" r="10" fill="#DDF3E8"/><path d="M230 60 v-10 M225 54 l5 -5 5 5" stroke="#1B8F5E" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="246" y="51" font-family="Arial" font-size="6.5" font-weight="400" fill="#5A6383" text-anchor="start">Recebido</text><text x="246" y="63" font-family="Arial" font-size="9" font-weight="700" fill="#1B8F5E" text-anchor="start">R$ 3.200</text>
+<rect x="212" y="92" width="96" height="50" rx="10" fill="#fff" stroke="#FCE3A6" stroke-width="2"/>
+<circle cx="230" cy="117" r="10" fill="#FFF3D6"/><path d="M230 112 v10 M225 118 l5 5 5 -5" stroke="#C4841A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="246" y="113" font-family="Arial" font-size="6.5" font-weight="400" fill="#5A6383" text-anchor="start">Pago hoje</text><text x="246" y="125" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 1.250</text></svg><svg class="view" data-view="f2" viewBox="0 0 320 180" aria-hidden="true">
+<rect x="60" y="10" width="140" height="160" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+<rect x="60" y="10" width="140" height="28" rx="10" fill="#136B46"/><rect x="60" y="28" width="140" height="10" fill="#136B46"/>
+<text x="74" y="28" font-family="Arial" font-size="8.5" font-weight="700" fill="#fff" text-anchor="start">FATURA Nº 0458</text>
+<text x="74" y="54" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Cliente</text><rect x="74" y="58" width="70" height="5" rx="2.5" fill="#D3DAE6"/>
+<text x="150" y="54" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Vencimento</text><text x="150" y="63" font-family="Arial" font-size="7" font-weight="700" fill="#0F1E5C" text-anchor="start">20/10</text>
+<path d="M74 74 h112" stroke="#E3E7EE"/>
+<rect x="74" y="82" width="70" height="4" rx="2" fill="#D3DAE6"/><rect x="160" y="82" width="26" height="4" rx="2" fill="#D3DAE6"/>
+<rect x="74" y="94" width="60" height="4" rx="2" fill="#D3DAE6"/><rect x="160" y="94" width="26" height="4" rx="2" fill="#D3DAE6"/>
+<rect x="74" y="106" width="66" height="4" rx="2" fill="#D3DAE6"/><rect x="160" y="106" width="26" height="4" rx="2" fill="#D3DAE6"/>
+<path d="M74 120 h112" stroke="#E3E7EE"/><text x="74" y="136" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Total</text><text x="186" y="136" font-family="Arial" font-size="8" font-weight="700" fill="#1B8F5E" text-anchor="end">R$ 2.480,00</text>
+<g class="stamp" style="transform-origin:150px 156px"><rect x="112" y="144" width="76" height="22" rx="5" fill="none" stroke="#1B8F5E" stroke-width="2.5" transform="rotate(-8 150 155)"/><text x="150" y="159" font-family="Arial" font-size="10" font-weight="800" fill="#1B8F5E" text-anchor="middle" transform="rotate(-8 150 155)">EMITIDA</text></g>
+<g class="fly2"><path d="M232 82 l56 -22 -18 52 -10 -20z" fill="#F5B83D"/><path d="M260 92 l28 -32" stroke="#C4841A" stroke-width="2"/></g>
+<path d="M210 104 q 10 -6 20 -4" stroke="#B9E4CF" stroke-width="2.5" fill="none" stroke-dasharray="3 5" stroke-linecap="round"/></svg><svg class="view" data-view="f3" viewBox="0 0 320 180" aria-hidden="true">
+<rect x="14" y="16" width="116" height="134" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><text x="24" y="38" font-family="Arial" font-size="7.5" font-weight="700" fill="#5A6383" text-anchor="start">Extrato do banco</text>
+<rect x="190" y="16" width="116" height="134" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><text x="200" y="38" font-family="Arial" font-size="7.5" font-weight="700" fill="#5A6383" text-anchor="start">Seu controle</text>
+<rect x="24" y="52" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="32" y="64" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">1.250,00</text><rect x="200" y="52" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="208" y="64" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">1.250,00</text><path class="dash" d="M122 61 H 198" stroke="#1B8F5E" stroke-width="2" stroke-dasharray="4 4"/><circle cx="160" cy="61" r="7" fill="#1B8F5E"/><path d="M156.5 61 l2.5 2.5 4.5 -5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="24" y="76" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="32" y="88" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">2.300,00</text><rect x="200" y="76" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="208" y="88" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">2.300,00</text><path class="dash" d="M122 85 H 198" stroke="#1B8F5E" stroke-width="2" stroke-dasharray="4 4"/><circle cx="160" cy="85" r="7" fill="#1B8F5E"/><path d="M156.5 85 l2.5 2.5 4.5 -5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="24" y="100" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="32" y="112" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">830,00</text><rect x="200" y="100" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="208" y="112" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">830,00</text><path class="dash" d="M122 109 H 198" stroke="#1B8F5E" stroke-width="2" stroke-dasharray="4 4"/><circle cx="160" cy="109" r="7" fill="#1B8F5E"/><path d="M156.5 109 l2.5 2.5 4.5 -5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="24" y="124" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="32" y="136" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">199,90</text><rect x="200" y="124" width="96" height="18" rx="5" fill="#F7F9FB"/><text x="208" y="136" font-family="Arial" font-size="7.5" font-weight="700" fill="#0F1E5C" text-anchor="start">199,90</text><path class="dash" d="M122 133 H 198" stroke="#1B8F5E" stroke-width="2" stroke-dasharray="4 4"/><circle cx="160" cy="133" r="7" fill="#1B8F5E"/><path d="M156.5 133 l2.5 2.5 4.5 -5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="96" y="156" width="128" height="20" rx="10" fill="#DDF3E8"/><text x="160" y="169.5" font-family="Arial" font-size="8" font-weight="700" fill="#136B46" text-anchor="middle">Saldo conferido ✓</text></svg>
           </div>
           <div class="body">
             <div class="bar"></div>
             <h3>Assistência financeira</h3>
-            <p>Rotina financeira organizada e com prestação de contas.</p>
-            <div class="tags"><span>Pagar e receber</span><span>Faturamento</span><span>Conciliação bancária</span></div>
+            <p class="desc">Rotina financeira organizada e com prestação de contas.</p>
+            <div class="tags"><button type="button" class="tag" data-view="f1" data-desc="Contas organizadas por vencimento, pagamentos programados e recebimentos acompanhados, sem atraso nem multa." aria-pressed="false">Pagar e receber</button><button type="button" class="tag" data-view="f2" data-desc="Faturas e cobranças emitidas no prazo e tudo registrado, para você saber quem já pagou e quem falta pagar." aria-pressed="false">Faturamento</button><button type="button" class="tag" data-view="f3" data-desc="Confiro cada lançamento do extrato com o seu controle, para o saldo bater certinho e nenhum valor passar batido." aria-pressed="false">Conciliação bancária</button></div>
           </div>
         </article>
 
         <!-- 4. ADMINISTRATIVO -->
         <article class="svc glass reveal t-mix">
           <div class="art">
-            <img src="servico-administrativo.jpg" alt="Ana organizando documentos" loading="lazy">
+            <svg class="view on" data-view="0" viewBox="0 0 320 180" aria-hidden="true">
+              <!-- gerenciador de arquivos -->
+              <rect x="16" y="16" width="220" height="150" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+              <rect x="16" y="16" width="220" height="20" rx="10" fill="#F1F4F8"/>
+              <rect x="16" y="28" width="220" height="8" fill="#F1F4F8"/>
+              <circle cx="27" cy="26" r="3" fill="#FF6B6B"/><circle cx="37" cy="26" r="3" fill="#FFC857"/><circle cx="47" cy="26" r="3" fill="#4ADE80"/>
+              <rect x="70" y="21" width="110" height="10" rx="5" fill="#fff" stroke="#E3E7EE"/>
+              <text x="78" y="28.5" font-family="Arial" font-size="6" fill="#6B778C">Documentos › 2026 › Outubro</text>
+              <!-- barra lateral -->
+              <rect x="16" y="36" width="58" height="130" fill="#F7F9FB"/>
+              <g font-family="Arial" font-size="6.5" fill="#33415C">
+                <rect x="20" y="44" width="50" height="14" rx="4" fill="#DDF3E8"/>
+                <path d="M24 47h5l1.5 2H34v5H24z" fill="#1B8F5E"/><text x="38" y="53.5" font-weight="700" fill="#136B46">Notas</text>
+                <path d="M24 65h5l1.5 2H34v5H24z" fill="#8FD3B3"/><text x="38" y="71.5">Contratos</text>
+                <path d="M24 83h5l1.5 2H34v5H24z" fill="#8FD3B3"/><text x="38" y="89.5">Comprov.</text>
+                <path d="M24 101h5l1.5 2H34v5H24z" fill="#8FD3B3"/><text x="38" y="107.5">Cadastros</text>
+              </g>
+              <!-- arquivos -->
+              <g font-family="Arial" font-size="5.6" fill="#33415C" text-anchor="middle">
+                <g transform="translate(88 48)">
+                  <path d="M0 0h20l8 8v28H0z" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><path d="M20 0v8h8" fill="none" stroke="#D3DAE6" stroke-width="1.5"/>
+                  <rect x="-3" y="18" width="20" height="9" rx="2" fill="#E06C5A"/><text x="7" y="24.5" fill="#fff" font-weight="700">PDF</text>
+                  <text x="14" y="46">NF 1023</text>
+                </g>
+                <g transform="translate(134 48)">
+                  <path d="M0 0h20l8 8v28H0z" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><path d="M20 0v8h8" fill="none" stroke="#D3DAE6" stroke-width="1.5"/>
+                  <rect x="-3" y="18" width="22" height="9" rx="2" fill="#1B8F5E"/><text x="8" y="24.5" fill="#fff" font-weight="700">XLSX</text>
+                  <text x="14" y="46">Controle</text>
+                </g>
+                <g transform="translate(180 48)">
+                  <path d="M0 0h20l8 8v28H0z" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><path d="M20 0v8h8" fill="none" stroke="#D3DAE6" stroke-width="1.5"/>
+                  <rect x="-3" y="18" width="22" height="9" rx="2" fill="#1F3FBF"/><text x="8" y="24.5" fill="#fff" font-weight="700">DOCX</text>
+                  <text x="14" y="46">Contrato</text>
+                </g>
+                <g transform="translate(88 108)">
+                  <path d="M0 0h20l8 8v28H0z" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><path d="M20 0v8h8" fill="none" stroke="#D3DAE6" stroke-width="1.5"/>
+                  <rect x="-3" y="18" width="20" height="9" rx="2" fill="#E06C5A"/><text x="7" y="24.5" fill="#fff" font-weight="700">PDF</text>
+                  <text x="14" y="46">NF 1024</text>
+                </g>
+                <g transform="translate(134 108)">
+                  <path d="M0 0h20l8 8v28H0z" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><path d="M20 0v8h8" fill="none" stroke="#D3DAE6" stroke-width="1.5"/>
+                  <rect x="-3" y="18" width="20" height="9" rx="2" fill="#E06C5A"/><text x="7" y="24.5" fill="#fff" font-weight="700">PDF</text>
+                  <text x="14" y="46">Canhoto</text>
+                </g>
+              </g>
+              <rect x="132" y="106" width="32" height="54" rx="4" fill="none" stroke="#1B8F5E" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <!-- cartão: digitalizado -->
+              <rect x="216" y="44" width="94" height="62" rx="12" fill="#fff" stroke="#B9E4CF" stroke-width="2"/>
+              <rect x="226" y="56" width="22" height="34" rx="3" fill="#F1F4F8"/>
+              <path d="M229 64h16M229 70h12M229 76h16M229 82h9" stroke="#C9D1DC" stroke-width="2" stroke-linecap="round"/>
+              <rect x="222" y="72" width="30" height="3" rx="1.5" fill="#1B8F5E" opacity=".7"/>
+              <text x="256" y="68" font-family="Arial" font-size="6.6" font-weight="700" fill="#0F1E5C">Digitalizado</text>
+              <rect x="256" y="76" width="44" height="12" rx="6" fill="#DDF3E8"/>
+              <path d="M261 82l3 3 5-6" fill="none" stroke="#136B46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="287" y="85" text-anchor="middle" font-family="Arial" font-size="6.5" font-weight="700" fill="#136B46">Salvo</text>
+              <!-- checklist -->
+              <rect x="226" y="114" width="80" height="54" rx="12" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+              <g stroke-linecap="round" stroke-linejoin="round">
+                <rect x="236" y="124" width="10" height="10" rx="3" fill="#1B8F5E"/><path d="M238.5 129l2 2 3.5-4" stroke="#fff" stroke-width="1.8" fill="none"/>
+                <rect x="252" y="127" width="44" height="4" rx="2" fill="#D8EFE3"/>
+                <rect x="236" y="142" width="10" height="10" rx="3" fill="#1B8F5E"/><path d="M238.5 147l2 2 3.5-4" stroke="#fff" stroke-width="1.8" fill="none"/>
+                <rect x="252" y="145" width="36" height="4" rx="2" fill="#D8EFE3"/>
+                <rect x="236" y="158" width="10" height="6" rx="2" fill="none" stroke="#F5B83D" stroke-width="1.6"/>
+              </g>
+            </svg><svg class="view" data-view="a1" viewBox="0 0 320 180" aria-hidden="true"><path d="M20 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#1B8F5E"/><text x="59" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Notas</text><path d="M118 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#136B46"/><text x="157" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Contratos</text><path d="M216 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#2C7A8C"/><text x="255" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Comprov.</text>
+<g class="drop d1"><rect x="44" y="40" width="30" height="38" rx="3" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><rect x="48" y="58" width="18" height="7" rx="2" fill="#E06C5A"/><text x="57" y="63.5" font-family="Arial" font-size="5.5" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></g>
+<g class="drop d2"><rect x="142" y="40" width="30" height="38" rx="3" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><rect x="146" y="58" width="22" height="7" rx="2" fill="#1F3FBF"/><text x="157" y="63.5" font-family="Arial" font-size="5.5" font-weight="700" fill="#fff" text-anchor="middle">DOCX</text></g>
+<g class="drop d3"><rect x="240" y="40" width="30" height="38" rx="3" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><rect x="244" y="58" width="18" height="7" rx="2" fill="#E06C5A"/><text x="253" y="63.5" font-family="Arial" font-size="5.5" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></g>
+<rect x="104" y="10" width="112" height="20" rx="10" fill="#DDF3E8"/><text x="160" y="23.5" font-family="Arial" font-size="7.5" font-weight="700" fill="#136B46" text-anchor="middle">Tudo no lugar certo</text></svg><svg class="view" data-view="a2" viewBox="0 0 320 180" aria-hidden="true">
+<rect x="16" y="14" width="160" height="152" rx="12" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+<text x="30" y="36" font-family="Arial" font-size="8.5" font-weight="700" fill="#0F1E5C" text-anchor="start">Novo cadastro</text>
+<circle cx="46" cy="62" r="14" fill="#DDF3E8"/><circle cx="46" cy="58" r="5" fill="#1B8F5E"/><path d="M37 70 q9 -9 18 0" fill="#1B8F5E"/>
+<text x="68" y="58" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Nome</text><rect x="68" y="62" width="94" height="10" rx="3" fill="#F7F9FB" stroke="#E3E7EE"/>
+<text x="30" y="92" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">CNPJ / CPF</text><rect x="30" y="96" width="132" height="10" rx="3" fill="#F7F9FB" stroke="#E3E7EE"/>
+<text x="30" y="120" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Telefone</text><rect x="30" y="124" width="62" height="10" rx="3" fill="#F7F9FB" stroke="#E3E7EE"/>
+<text x="100" y="120" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Cidade</text><rect x="100" y="124" width="62" height="10" rx="3" fill="#F7F9FB" stroke="#E3E7EE"/>
+<rect class="type" x="70" y="65" width="60" height="4" rx="2" fill="#8FD3B3"/>
+<rect x="110" y="144" width="52" height="14" rx="7" fill="#F5B83D"/><text x="136" y="154" font-family="Arial" font-size="7" font-weight="700" fill="#0F1E5C" text-anchor="middle">Salvar</text>
+<g><rect x="190" y="26" width="116" height="34" rx="9" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><circle cx="206" cy="43" r="8" fill="#DDF3E8"/><rect x="220" y="36" width="50" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="46" width="36" height="4" rx="2" fill="#D3DAE6"/><circle cx="292" cy="43" r="6" fill="#1B8F5E"/><path d="M289 43 l2 2 4 -4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
+<g><rect x="190" y="70" width="116" height="34" rx="9" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><circle cx="206" cy="87" r="8" fill="#FFF3D6"/><rect x="220" y="80" width="44" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="90" width="40" height="4" rx="2" fill="#D3DAE6"/><circle cx="292" cy="87" r="6" fill="#1B8F5E"/><path d="M289 87 l2 2 4 -4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
+<g class="slidein"><rect x="190" y="114" width="116" height="34" rx="9" fill="#fff" stroke="#F5B83D" stroke-width="2"/><circle cx="206" cy="131" r="8" fill="#DDF3E8"/><rect x="220" y="124" width="54" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="134" width="30" height="4" rx="2" fill="#D3DAE6"/><text x="292" y="134" font-family="Arial" font-size="6.5" font-weight="700" fill="#8A5A00" text-anchor="middle">novo</text></g></svg><svg class="view" data-view="a3" viewBox="0 0 320 180" aria-hidden="true">
+<path id="flowpath" d="M98 55 H122 M198 55 H222 M260 70 V120" stroke="#B9E4CF" stroke-width="3" fill="none" stroke-dasharray="5 5"/>
+<path d="M116 50 l6 5 -6 5 M216 50 l6 5 -6 5 M255 114 l5 6 5 -6" stroke="#1B8F5E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="22" y="40" width="76" height="30" rx="10" fill="#1B8F5E"/><text x="60" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Receber</text><rect x="122" y="40" width="76" height="30" rx="10" fill="#136B46"/><text x="160" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Conferir</text><rect x="222" y="40" width="76" height="30" rx="10" fill="#2C7A8C"/><text x="260" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Lançar</text><rect x="222" y="120" width="76" height="30" rx="10" fill="#F5B83D"/><text x="260" y="139" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">Arquivar</text>
+<rect x="22" y="112" width="160" height="46" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
+<text x="34" y="130" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Rotina documentada</text><text x="34" y="145" font-family="Arial" font-size="7" font-weight="400" fill="#5A6383" text-anchor="start">passo a passo, sempre igual</text>
+<circle r="5" fill="#F5B83D" stroke="#fff" stroke-width="2"><animateMotion dur="3.2s" repeatCount="indefinite" path="M60 55 H260 V135"/></circle></svg>
           </div>
           <div class="body">
             <div class="bar"></div>
             <h3>Assistência administrativa</h3>
-            <p>Documentos e rotinas no lugar certo.</p>
-            <div class="tags"><span>Organização de documentos</span><span>Cadastros</span><span>Processos</span></div>
+            <p class="desc">Documentos e rotinas no lugar certo.</p>
+            <div class="tags"><button type="button" class="tag" data-view="a1" data-desc="Documentos separados por tipo e data, digitalizados e fáceis de achar quando você precisar." aria-pressed="false">Organização de documentos</button><button type="button" class="tag" data-view="a2" data-desc="Cadastro de clientes, fornecedores e produtos completo e padronizado, sem informação repetida ou faltando." aria-pressed="false">Cadastros</button><button type="button" class="tag" data-view="a3" data-desc="Rotinas do dia a dia organizadas passo a passo, para tudo acontecer do mesmo jeito, sem depender da memória." aria-pressed="false">Processos</button></div>
           </div>
         </article>
       </div>
@@ -460,6 +878,23 @@
     }, { threshold: 0.12 });
     els.forEach(function (e) { io.observe(e); });
   })();
+</script>
+<script>
+  // Serviços: trocar imagem e texto ao passar o mouse (ou tocar) nas etiquetas
+  document.querySelectorAll(".svc").forEach(function (card) {
+    var desc = card.querySelector(".desc"), def = desc.textContent;
+    var views = card.querySelectorAll(".view"), tags = card.querySelectorAll(".tag");
+    function show(v, txt, btn) {
+      views.forEach(function (x) { x.classList.toggle("on", x.dataset.view === v); });
+      tags.forEach(function (t) { t.classList.toggle("active", t === btn); t.setAttribute("aria-pressed", t === btn); });
+      if (desc.textContent !== txt) { desc.classList.add("fade"); setTimeout(function () { desc.textContent = txt; desc.classList.remove("fade"); }, 180); }
+    }
+    tags.forEach(function (t) {
+      var go = function () { show(t.dataset.view, t.dataset.desc, t); };
+      t.addEventListener("mouseenter", go); t.addEventListener("focus", go); t.addEventListener("click", go);
+    });
+    card.addEventListener("mouseleave", function () { show("0", def, null); });
+  });
 </script>
 </body>
 </html>
