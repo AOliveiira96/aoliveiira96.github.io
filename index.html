@@ -307,6 +307,7 @@
     .view .s1-cover, .view .s1-dirty, .view .s1-keys, .view .s1-cur { display: none; }
     .view .s1-clean, .view .s1-status, .view .s1-browser { opacity: 1 !important; }
   }
+  section, [id] { scroll-margin-top: 90px; }
 </style>
 </head>
 <body>
@@ -894,6 +895,22 @@
       t.addEventListener("mouseenter", go); t.addEventListener("focus", go); t.addEventListener("click", go);
     });
     card.addEventListener("mouseleave", function () { show("0", def, null); });
+  });
+</script>
+<script>
+  // Sempre abrir no topo da página (ignora #contato no link e a posição salva pelo navegador)
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  window.addEventListener("load", function () { window.scrollTo(0, 0); });
+  // Links do menu rolam até a seção sem colocar #... no endereço
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var id = a.getAttribute("href").slice(1);
+      var alvo = id ? document.getElementById(id) : null;
+      e.preventDefault();
+      if (alvo) alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   });
 </script>
 </body>
