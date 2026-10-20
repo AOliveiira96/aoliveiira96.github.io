@@ -308,7 +308,32 @@
 .ptag::after,.stag::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--brand);opacity:.6;transform:scaleX(0);transform-origin:left}
 .ptag.run::after,.stag.run::after{animation:tagfill 7s linear forwards}
 @keyframes tagfill{to{transform:scaleX(1)}}
+
+/* Avaliação do site */
+.rate-sec{padding-top:0}
+.rate{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px 32px}
+.rate h3{margin:.2em 0 .3em;font-size:1.35rem}
+.rate-txt p:last-child{margin:0;color:var(--muted,#5b6475);font-size:.95rem}
+.rate-form{display:grid;gap:12px}
+.stars{display:flex;gap:6px}
+.star{font-size:2.1rem;line-height:1;background:none;border:0;padding:2px;cursor:pointer;color:#D6DED9;transition:color .15s,transform .15s}
+.star:hover{transform:scale(1.12)}
+.star.on{color:var(--sun)}
+.star:focus-visible{outline:2px solid var(--brand);border-radius:6px}
+.rate-form textarea{font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid var(--line);border-radius:12px;resize:vertical;background:#fff;color:var(--ink)}
+.rate-form .btn{justify-self:start}
+.rate-form .btn[disabled]{opacity:.5;cursor:not-allowed}
+.rate-ok{margin:0;font-weight:700;color:var(--brand-dark)}
+@media(max-width:780px){.rate{grid-template-columns:1fr;padding:22px}}
 </style>
+  <!-- Microsoft Clarity (estatísticas de visitas) -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z0qxb3p0kb");
+  </script>
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -962,6 +987,25 @@
         </div>
       </div>
     </section>
+    <section class="section rate-sec" id="avaliar" hidden>
+      <div class="wrap">
+        <div class="rate">
+          <div class="rate-txt">
+            <p class="eyebrow">Este site também é portfólio</p>
+            <h3>O que você achou deste site?</h3>
+            <p>Fui eu que criei esta página. Sua avaliação é anônima, não aparece aqui e me ajuda a melhorar.</p>
+          </div>
+          <form class="rate-form" novalidate>
+            <div class="stars" role="radiogroup" aria-label="Nota de 1 a 5 estrelas">
+              <button type="button" class="star" data-v="1" role="radio" aria-checked="false" aria-label="1 estrela">★</button><button type="button" class="star" data-v="2" role="radio" aria-checked="false" aria-label="2 estrelas">★</button><button type="button" class="star" data-v="3" role="radio" aria-checked="false" aria-label="3 estrelas">★</button><button type="button" class="star" data-v="4" role="radio" aria-checked="false" aria-label="4 estrelas">★</button><button type="button" class="star" data-v="5" role="radio" aria-checked="false" aria-label="5 estrelas">★</button>
+            </div>
+            <textarea name="c" rows="2" maxlength="500" placeholder="Quer deixar um comentário? (opcional)"></textarea>
+            <button type="submit" class="btn primary" disabled>Enviar avaliação</button>
+            <p class="rate-ok" hidden>Obrigada pela avaliação! 💚</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="wrap">
@@ -1026,6 +1070,33 @@
       });
       if(lb){lb.querySelector(".lb-close").addEventListener("click",function(){lb.close()});lb.addEventListener("click",function(e){if(e.target===lb)lb.close()})}
     })();
-  </script>
+  
+    (function(){
+      /* Cole aqui o link pré-preenchido do Google Forms (1ª pergunta = nota, 2ª = comentário) */
+      var AVAL_LINK="https://docs.google.com/forms/d/e/1FAIpQLSep3bPPgo_bCQ9XgjS-NxFZicE-m-zC1LMrq5yiOo3dI4xJfw/viewform?usp=pp_url&entry.491505314=5&entry.1176893344=teste";
+      var sec=document.getElementById("avaliar"); if(!sec||!AVAL_LINK) return;
+      var base=AVAL_LINK.split("/viewform")[0]+"/formResponse", ids=(AVAL_LINK.match(/entry\.\d+/g)||[]);
+      if(ids.length<1) return;
+      var done=false; try{done=localStorage.getItem("avaliou")==="1"}catch(e){}
+      sec.hidden=false;
+      var form=sec.querySelector(".rate-form"),stars=[].slice.call(sec.querySelectorAll(".star")),btn=form.querySelector("button[type=submit]"),ok=form.querySelector(".rate-ok"),nota=0;
+      function paint(n){stars.forEach(function(s,k){s.classList.toggle("on",k<n)})}
+      function finish(){stars.forEach(function(s){s.disabled=true});form.querySelector("textarea").hidden=true;btn.hidden=true;ok.hidden=false}
+      if(done){paint(5);finish();ok.textContent="Você já avaliou este site. Obrigada! 💚";return}
+      stars.forEach(function(s){
+        s.addEventListener("mouseenter",function(){paint(+s.dataset.v)});
+        s.addEventListener("click",function(){nota=+s.dataset.v;paint(nota);stars.forEach(function(x){x.setAttribute("aria-checked",x===s)});btn.disabled=false});
+      });
+      sec.querySelector(".stars").addEventListener("mouseleave",function(){paint(nota)});
+      form.addEventListener("submit",function(e){
+        e.preventDefault(); if(!nota) return;
+        var d=new URLSearchParams(); d.append(ids[0],String(nota)); if(ids[1]) d.append(ids[1],form.querySelector("textarea").value.trim());
+        btn.disabled=true; btn.textContent="Enviando...";
+        fetch(base,{method:"POST",mode:"no-cors",body:d}).catch(function(){}).then(function(){
+          try{localStorage.setItem("avaliou","1")}catch(e){} finish();
+        });
+      });
+    })();
+</script>
 </body>
 </html>
