@@ -30,7 +30,7 @@
     :root{
       --brand:#1B8F5E;--brand-dark:#136B46;--brand-soft:#DDF3E8;--brand-mist:#B9E4CF;
       --ink:#0F1E5C;--text:#18213F;--muted:#5A6383;--white:#fff;
-      --sun:#F5B83D;--sun-soft:#FFF3D6;--line:#E2E9E5;--surface:#F7FBF8;
+      --sun:#F4C531;--sun-soft:#FAF5CF;--line:#E2E9E5;--surface:#F7FBF8;
       --shadow:0 18px 50px -24px rgba(20,67,48,.28);--radius:24px;
     }
     *{box-sizing:border-box}
@@ -66,7 +66,7 @@
     .menu a:hover{color:var(--brand-dark)}
     .menu .btn{color:#fff}
     .menu-toggle{display:none;border:1px solid var(--line);border-radius:10px;background:#fff;padding:9px 12px;font:inherit;font-weight:700;color:var(--ink)}
-    .hero{position:relative;overflow:hidden;padding:82px 0 74px;background:radial-gradient(circle at 86% 22%,rgba(245,184,61,.20),transparent 24%),radial-gradient(circle at 74% 78%,rgba(185,228,207,.45),transparent 30%),#fff}
+    .hero{position:relative;overflow:hidden;padding:82px 0 74px;background:radial-gradient(circle at 86% 22%,rgba(240,205,40,.20),transparent 24%),radial-gradient(circle at 74% 78%,rgba(185,228,207,.45),transparent 30%),#fff}
     .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:46px}
     .hero h1 .accent{color:var(--brand)}
     .hero-copy{font-size:1.12rem;color:var(--muted);max-width:58ch;margin:22px 0 26px}
@@ -98,7 +98,7 @@
     .text-link:hover{text-decoration:underline}
     .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
     .tag{background:var(--brand-soft);color:var(--brand-dark);border-radius:999px;padding:5px 10px;font-size:.77rem;font-weight:800}
-    .pricing-note{margin:0 auto 26px;max-width:760px;padding:13px 16px;border:1px solid #F1D89C;border-radius:14px;background:#FFFAED;color:#6E5010;font-size:.9rem;text-align:center}
+    .pricing-note{margin:0 auto 26px;max-width:760px;padding:13px 16px;border:1px solid #E9DC8A;border-radius:14px;background:#FAF7DC;color:#6E5010;font-size:.9rem;text-align:center}
     .package{position:relative;display:flex;flex-direction:column;gap:16px}
     .package.featured{border:2px solid var(--brand);box-shadow:0 18px 45px -28px rgba(27,143,94,.65)}
     .featured-label{position:absolute;right:18px;top:18px;background:var(--brand-soft);color:var(--brand-dark);border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:800}
@@ -108,7 +108,7 @@
     .package .btn{margin-top:auto;width:100%}
     .package .fine{font-size:.79rem;color:var(--muted)}
     .portfolio-card{overflow:hidden;padding:0}
-    .project-art{min-height:210px;padding:20px;background:linear-gradient(145deg,#F0FAF5,#FFF4D8);display:grid;place-items:center}
+    .project-art{min-height:210px;padding:20px;background:linear-gradient(145deg,#F0FAF5,#F7F3CF);display:grid;place-items:center}
     .project-art svg{width:100%;max-width:390px;height:auto;filter:drop-shadow(0 9px 12px rgba(15,30,92,.07))}
     .project-content{padding:22px}
     .project-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
@@ -120,7 +120,7 @@
     .step-number{width:45px;height:45px;display:grid;place-items:center;margin:0 auto 15px;border-radius:15px;background:var(--brand);color:#fff;font-weight:800}
     .process-step:nth-child(2) .step-number{background:var(--sun);color:var(--ink)}
     .process-step p{color:var(--muted);margin-top:9px;font-size:.94rem}
-    .about{display:grid;grid-template-columns:190px 1fr;gap:30px;align-items:center;background:linear-gradient(120deg,#fff,#FFF9EB);border:1px solid var(--line);border-radius:28px;padding:34px}
+    .about{display:grid;grid-template-columns:190px 1fr;gap:30px;align-items:center;background:linear-gradient(120deg,#fff,#F8F7E2);border:1px solid var(--line);border-radius:28px;padding:34px}
     .about-image{width:175px;height:175px;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,var(--sun-soft),var(--brand-soft));display:grid;place-items:end center}
     .about-image img{width:130%;max-width:none}
     .about p{color:var(--muted);margin:12px 0 18px}
@@ -135,7 +135,7 @@
     details p{padding:0 19px 18px;color:var(--muted)}
     .cta{background:var(--brand);border-radius:30px;padding:50px 28px;text-align:center;color:#fff;position:relative;overflow:hidden}
     .cta:before,.cta:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-    .cta:before{width:260px;height:260px;left:-100px;top:-150px;background:rgba(245,184,61,.28)}
+    .cta:before{width:260px;height:260px;left:-100px;top:-150px;background:rgba(240,205,40,.28)}
     .cta:after{width:300px;height:300px;right:-130px;bottom:-190px;background:rgba(255,255,255,.12)}
     .cta-inner{position:relative;z-index:1;max-width:720px;margin:auto}
     .cta h2{color:#fff}.cta p{color:#E3F7EE;margin:13px auto 24px;max-width:58ch}
@@ -186,8 +186,8 @@
     @media(max-width:680px){.pain-grid,.extras{grid-template-columns:1fr}}
 
     .svc-art{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-bottom:18px;background:linear-gradient(160deg,#F1FAF5,#DDF2E7)}
-    .svc-i:nth-child(2) .svc-art{background:linear-gradient(160deg,#FFF9EA,#FFEDC2)}
-    .svc-i:nth-child(4) .svc-art{background:linear-gradient(160deg,#F1FAF5,#FFF3D6)}
+    .svc-i:nth-child(2) .svc-art{background:linear-gradient(160deg,#FAF8DE,#F5EFBE)}
+    .svc-i:nth-child(4) .svc-art{background:linear-gradient(160deg,#F1FAF5,#FAF5CF)}
     .svc-art .view{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:scale(.97);transition:opacity .35s ease,transform .35s ease}
     .svc-art .view.on{opacity:1;transform:none}
     .sdesc{transition:opacity .2s}.sdesc.fade{opacity:0}
@@ -378,7 +378,7 @@ footer{padding:22px 0 30px}
 .svc-art .view.on .calcres2{animation:calcpop 6s ease-in-out infinite .3s}
 .svc-art .view.on .calcbtn{animation:calcbtn 6s ease-in-out infinite}
 @keyframes calcpop{0%,25%{opacity:0;transform:translateY(6px)}35%,100%{opacity:1;transform:none}}
-@keyframes calcbtn{0%,18%{fill:#F5B83D}22%{fill:#E3A21F}26%,100%{fill:#F5B83D}}
+@keyframes calcbtn{0%,18%{fill:#F4C531}22%{fill:#E3A21F}26%,100%{fill:#F4C531}}
 @media (prefers-reduced-motion: reduce){.svc-art .view.on .calcres,.svc-art .view.on .calcres2,.svc-art .view.on .calcbtn{animation:none;opacity:1;transform:none}}
 
 @media(min-width:1100px){#pacotes .grid-3p{grid-template-columns:repeat(3,1fr);gap:16px}}
@@ -622,7 +622,7 @@ footer.wrap{width:100%;max-width:none;margin:0}
 
 .brand span:last-child em{font-style:italic;color:var(--brand)}
 .price-alt{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.3;color:var(--brand-dark);margin:2px 0;padding:10px 0;border-block:1px dashed var(--line)}
-.gas{background:var(--sun-soft);border:1px solid #F1D89C;border-radius:12px;padding:12px 14px}
+.gas{background:var(--sun-soft);border:1px solid #E9DC8A;border-radius:12px;padding:12px 14px}
 .gas b{display:block;font-size:.86rem;color:#6E5010;margin-bottom:4px}
 .gas p{font-size:.84rem;color:#5E4A1C;line-height:1.5;margin:0}
 .dom{font-size:.84rem;color:var(--muted);background:var(--brand-soft);border-radius:10px;padding:9px 12px;margin:0}
@@ -710,7 +710,7 @@ h1,h2{font-weight:800;letter-spacing:-.04em}
 h1 em,h2 em,.brand span:last-child em{font-style:normal;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .hero h1{font-size:clamp(2.5rem,4.4vw,4rem);line-height:1.06}
 /* fundos em degradê, sem quadriculado */
-.hero{background:radial-gradient(circle at 88% 16%,rgba(245,184,61,.26),transparent 28%),radial-gradient(circle at 72% 86%,rgba(185,228,207,.6),transparent 34%),radial-gradient(circle at 4% 6%,rgba(221,243,232,.85),transparent 32%),#fff!important;border-bottom:0}
+.hero{background:radial-gradient(circle at 88% 16%,rgba(240,205,40,.26),transparent 28%),radial-gradient(circle at 72% 86%,rgba(185,228,207,.6),transparent 34%),radial-gradient(circle at 4% 6%,rgba(221,243,232,.85),transparent 32%),#fff!important;border-bottom:0}
 .demo-sec{background:linear-gradient(160deg,#EFFAF4 0%,#FFFFFF 48%,#FFF5DC 100%)!important;border:0}
 #contato{background:#fff!important;border:0}
 .section.soft{background:linear-gradient(180deg,#F2FAF5 0%,#FFFFFF 100%)}
@@ -738,7 +738,7 @@ h1 em,h2 em,.brand span:last-child em{font-style:normal;background:var(--grad-te
 .sc-top{background:var(--grad)}
 .sheet-card{border-radius:20px;box-shadow:0 40px 70px -36px rgba(20,67,48,.45)}
 .sc-kpis b{font-weight:800}
-.sc-tip{display:flex;align-items:center;gap:10px;padding:11px 16px;background:linear-gradient(90deg,#FFF6DE,#F1FAF5);border-top:1px solid var(--line);font-size:.82rem;color:var(--ink)}
+.sc-tip{display:flex;align-items:center;gap:10px;padding:11px 16px;background:linear-gradient(90deg,#F8F5D6,#F1FAF5);border-top:1px solid var(--line);font-size:.82rem;color:var(--ink)}
 .sc-tip svg{width:18px;height:18px;flex:none;fill:none;stroke:#C98B12;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .sc-tip b{color:var(--brand-dark)}
 /* serviços sem letras */
@@ -754,10 +754,10 @@ h1 em,h2 em,.brand span:last-child em{font-style:normal;background:var(--grad-te
 .portfolio-card h3{font-weight:800;letter-spacing:-.02em}
 /* como funciona: linha do tempo */
 .timeline{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;counter-reset:none}
-.timeline::before{content:"";position:absolute;left:12%;right:12%;top:26px;height:3px;border-radius:2px;background:linear-gradient(90deg,#B9E4CF,#F5B83D,#B9E4CF)}
+.timeline::before{content:"";position:absolute;left:12%;right:12%;top:26px;height:3px;border-radius:2px;background:linear-gradient(90deg,#B9E4CF,#F4C531,#B9E4CF)}
 .timeline li{position:relative;text-align:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:0 18px 20px;margin-top:26px;box-shadow:0 14px 34px -30px rgba(15,30,92,.35)}
 .tl-n{display:grid;place-items:center;width:52px;height:52px;margin:-26px auto 10px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:1.2rem;box-shadow:0 0 0 6px #fff,0 12px 24px -12px rgba(27,143,94,.9)}
-.timeline li:nth-child(2) .tl-n{background:linear-gradient(135deg,#F5B83D,#E79A1C);color:var(--ink)}
+.timeline li:nth-child(2) .tl-n{background:linear-gradient(135deg,#F4C531,#E79A1C);color:var(--ink)}
 .timeline h3{font-weight:800;font-size:1.08rem;margin:0 0 6px;color:var(--ink)}
 .timeline p{color:var(--muted);font-size:.92rem;margin:0}
 @media(max-width:900px){.timeline{grid-template-columns:1fr 1fr;row-gap:40px}.timeline::before{display:none}}
@@ -766,12 +766,12 @@ h1 em,h2 em,.brand span:last-child em{font-style:normal;background:var(--grad-te
 .values div{border-left:0;background:var(--brand-soft);border-radius:14px;padding:10px 14px}
 .values b{font-weight:800;font-size:.98rem}
 /* contato em painel verde */
-.contact-panel{position:relative;overflow:hidden;background:radial-gradient(circle at 92% 8%,rgba(245,184,61,.35),transparent 30%),var(--grad);border-radius:30px;padding:46px 48px 46px;color:#fff}
+.contact-panel{position:relative;overflow:hidden;background:radial-gradient(circle at 92% 8%,rgba(240,205,40,.35),transparent 30%),var(--grad);border-radius:30px;padding:46px 48px 46px;color:#fff}
 .contact-panel::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;left:-120px;bottom:-200px;background:rgba(255,255,255,.1)}
 .contact-panel>*{position:relative;z-index:1}
 .contact-panel .eyebrow{background:rgba(255,255,255,.16);color:#fff}.contact-panel .eyebrow::before{background:var(--sun)}
 .contact-panel h2{color:#fff}
-.contact-panel h2 em{background:none;-webkit-text-fill-color:#FFE29A;color:#FFE29A}
+.contact-panel h2 em{background:none;-webkit-text-fill-color:#F6E27A;color:#F6E27A}
 .contact-panel .contact-info>p{color:#DDF3E8}
 .contact-panel .contact-list li{border-color:rgba(255,255,255,.18);color:#fff}
 .contact-panel .contact-list span{color:#BFE9D3}
@@ -818,7 +818,7 @@ h1 em,h2 em,.brand span:last-child em{font-weight:inherit}
 .pl-card .btn{margin-top:auto;width:100%;justify-content:center;font-size:.92rem;padding:11px 16px}
 .pl-foot{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 0}
 .pl-foot span{font-size:.8rem;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-.pl-foot .hl{background:var(--sun-soft);border-color:#F1D89C;color:#6E5010}
+.pl-foot .hl{background:var(--sun-soft);border-color:#E9DC8A;color:#6E5010}
 /* faq */
 .faq summary{font-size:.98rem}
 /* celular */
@@ -884,6 +884,76 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 
 .pl li .pl-exp b{display:inline;font-size:inherit;font-weight:800}
 .pl-grid{align-items:start}
+
+/* toque de amarelo nos fundos */
+.hero{background:radial-gradient(ellipse 45% 55% at 80% 78%,rgba(247,204,74,.20),transparent 70%),radial-gradient(ellipse 60% 70% at 95% 5%,rgba(31,95,168,.09),transparent 70%),radial-gradient(ellipse 55% 60% at 0% 0%,rgba(27,143,94,.11),transparent 70%),linear-gradient(180deg,#F7FBF9 0%,#FFFFFF 100%)!important}
+.section.soft{background:linear-gradient(180deg,#F4F9F6 0%,#FFFFFF 55%,#FFFAEA 100%)}
+.demo-sec{background:linear-gradient(135deg,#F0F8F3 0%,#FFFBEC 50%,#F2F6FC 100%)!important}
+#dores{background:linear-gradient(180deg,#FFFFFF 0%,#FFFBEE 100%)}
+#como-funciona{background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(247,204,74,.14),transparent 70%),#fff}
+#duvidas{background:linear-gradient(180deg,#FFFFFF 0%,#FFFBEE 100%)}
+#contato{background:linear-gradient(180deg,#FFFBEE 0%,#FFFFFF 60%)!important}
+.contact-panel{background:radial-gradient(ellipse 40% 50% at 100% 0%,rgba(247,204,74,.22),transparent 70%),linear-gradient(135deg,#136B46 0%,#1B8F5E 40%,#1A6F8A 75%,#1F5FA8 100%)!important}
+
+.hero{background:radial-gradient(ellipse 42% 60% at 72% 70%,rgba(247,204,74,.30),transparent 70%),radial-gradient(ellipse 60% 70% at 95% 5%,rgba(31,95,168,.10),transparent 70%),radial-gradient(ellipse 55% 60% at 0% 0%,rgba(27,143,94,.12),transparent 70%),linear-gradient(180deg,#F7FBF9 0%,#FFFDF5 100%)!important}
+#dores,#duvidas{background:linear-gradient(180deg,#FFFFFF 0%,#FFF7DD 100%)}
+.section.soft{background:linear-gradient(180deg,#F4F9F6 0%,#FFFFFF 50%,#FFF7DD 100%)}
+.demo-sec{background:linear-gradient(135deg,#EEF8F2 0%,#FFF6D8 50%,#EEF4FC 100%)!important}
+#como-funciona{background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(247,204,74,.22),transparent 70%),#fff}
+#contato{background:linear-gradient(180deg,#FFF7DD 0%,#FFFFFF 60%)!important}
+#pacotes{background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(247,204,74,.16),transparent 70%),#fff}
+
+/* amarelo-limão (sem puxar para pêssego/rosa) */
+.hero{background:radial-gradient(ellipse 42% 60% at 72% 70%,rgba(240,214,40,.22),transparent 70%),radial-gradient(ellipse 60% 70% at 95% 5%,rgba(31,95,168,.10),transparent 70%),radial-gradient(ellipse 55% 60% at 0% 0%,rgba(27,143,94,.12),transparent 70%),linear-gradient(180deg,#F7FBF9 0%,#FCFBEA 100%)!important}
+#dores,#duvidas{background:linear-gradient(180deg,#FFFFFF 0%,#FAF8D9 100%)}
+.section.soft{background:linear-gradient(180deg,#F4F9F6 0%,#FFFFFF 50%,#FAF8D9 100%)}
+.demo-sec{background:linear-gradient(135deg,#EEF8F2 0%,#FAF8D6 50%,#EEF4FC 100%)!important}
+#como-funciona{background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(240,214,40,.16),transparent 70%),#fff}
+#contato{background:linear-gradient(180deg,#FAF8D9 0%,#FFFFFF 60%)!important}
+#pacotes{background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(240,214,40,.13),transparent 70%),#fff}
+.contact-panel{background:radial-gradient(ellipse 40% 50% at 100% 0%,rgba(240,214,40,.18),transparent 70%),linear-gradient(135deg,#136B46 0%,#1B8F5E 40%,#1A6F8A 75%,#1F5FA8 100%)!important}
+.svc-i:nth-child(4) .svc-art{background:linear-gradient(160deg,#FDFCEE,#F7F1C4)!important}
+.sc-tip{background:linear-gradient(90deg,#F8F7DA,#F2F6FC)}
+
+/* amarelo sem tom pêssego */
+:root{--sun:#F4C531;--sun-soft:#FAF5CF}
+.pl-foot .hl,.pricing-note,.gas{background:#FAF5CF!important;border-color:#E9DC8A!important;color:#5E5310!important}
+.pl-star{background:#FAF5CF!important;color:#5E5310!important}
+.about{background:linear-gradient(120deg,#FFFFFF,#F8F7E2)!important}
+.about-image{background:linear-gradient(145deg,#F7F2C8,var(--brand-soft))!important}
+.timeline li:nth-child(2) .tl-n{background:linear-gradient(135deg,#F4C531,#E2B417)!important}
+.sc-tip svg{stroke:#B59A0E}
+.pw-site{background:linear-gradient(180deg,var(--ps),#fff 70%)}
+
+/* amarelo mais forte nos fundos */
+:root{--sun-soft:#FFF1A8}
+.hero{background:radial-gradient(ellipse 45% 62% at 72% 70%,rgba(255,214,0,.30),transparent 70%),radial-gradient(ellipse 60% 70% at 95% 5%,rgba(31,95,168,.10),transparent 70%),radial-gradient(ellipse 55% 60% at 0% 0%,rgba(27,143,94,.12),transparent 70%),linear-gradient(180deg,#F7FBF9 0%,#FFF8CC 100%)!important}
+#dores,#duvidas{background:linear-gradient(180deg,#FFFFFF 0%,#FFF5BF 100%)}
+.section.soft{background:linear-gradient(180deg,#F4F9F6 0%,#FFFFFF 45%,#FFF5BF 100%)}
+.demo-sec{background:linear-gradient(135deg,#EEF8F2 0%,#FFF3B0 50%,#EEF4FC 100%)!important}
+#como-funciona{background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(255,214,0,.26),transparent 70%),#fff}
+#contato{background:linear-gradient(180deg,#FFF5BF 0%,#FFFFFF 60%)!important}
+#pacotes{background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(255,214,0,.20),transparent 70%),#fff}
+.contact-panel{background:radial-gradient(ellipse 40% 50% at 100% 0%,rgba(255,214,0,.28),transparent 70%),linear-gradient(135deg,#136B46 0%,#1B8F5E 40%,#1A6F8A 75%,#1F5FA8 100%)!important}
+.pl-foot .hl,.pricing-note,.gas,.pl-star{background:#FFF1A8!important;border-color:#F2D94E!important;color:#4F4500!important}
+.about{background:linear-gradient(120deg,#FFFFFF 40%,#FFF4BA)!important}
+.about-image{background:linear-gradient(145deg,#FFE97A,var(--brand-soft))!important}
+.svc-i:nth-child(4) .svc-art{background:linear-gradient(160deg,#FFFBE0,#FFEE99)!important}
+.sc-tip{background:linear-gradient(90deg,#FFF3B0,#F2F6FC)}
+.contact-panel h2 em{-webkit-text-fill-color:#FFE34D!important;color:#FFE34D!important}
+
+/* equilíbrio: mais verde e azul, amarelo só em toques */
+.hero{background:radial-gradient(ellipse 30% 40% at 74% 74%,rgba(255,214,0,.20),transparent 70%),radial-gradient(ellipse 60% 70% at 95% 5%,rgba(31,95,168,.13),transparent 70%),radial-gradient(ellipse 60% 70% at 0% 0%,rgba(27,143,94,.16),transparent 70%),linear-gradient(180deg,#F3FAF6 0%,#F1F6FC 100%)!important}
+#dores{background:linear-gradient(180deg,#FFFFFF 0%,#EAF6EF 100%)}
+.section.soft{background:linear-gradient(180deg,#EDF7F1 0%,#F4F8FD 100%)}
+.demo-sec{background:linear-gradient(135deg,#E9F6EE 0%,#FFF8D2 50%,#EAF1FB 100%)!important}
+#pacotes{background:radial-gradient(ellipse 55% 45% at 50% 0%,rgba(31,95,168,.08),transparent 70%),#fff}
+#como-funciona{background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(27,143,94,.10),transparent 70%),#fff}
+#duvidas{background:linear-gradient(180deg,#FFFFFF 0%,#EEF4FC 100%)}
+#contato{background:linear-gradient(180deg,#EEF4FC 0%,#FFFFFF 60%)!important}
+.contact-panel{background:radial-gradient(ellipse 30% 40% at 100% 0%,rgba(255,214,0,.18),transparent 70%),linear-gradient(135deg,#136B46 0%,#1B8F5E 40%,#1A6F8A 75%,#1F5FA8 100%)!important}
+.about{background:linear-gradient(120deg,#FFFFFF 40%,#EAF6EF)!important}
+.about-image{background:linear-gradient(145deg,#FFF1A8,var(--brand-soft))!important}
 </style>
   <!-- Microsoft Clarity (estatísticas de visitas) -->
   <script type="text/javascript">
@@ -1037,26 +1107,26 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
                 <path d="M10 -20 L 17 -13 L 8 -9" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M18 10 A 21 21 0 0 1 -16 13" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
                 <path d="M-10 20 L -17 13 L -8 9" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 -11 L -6 2 L 1 2 L -3 12 L 7 -2 L 0 -2 Z" fill="#F5B83D"/>
+                <path d="M3 -11 L -6 2 L 1 2 L -3 12 L 7 -2 L 0 -2 Z" fill="#F4C531"/>
               </g>
             </svg><svg class="view" data-view="p1" viewBox="0 0 320 180" aria-hidden="true"><rect x="20" y="30" width="150" height="124" rx="8" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="20" y="30" width="150" height="18" rx="8" fill="#1B8F5E"/><rect x="20" y="40" width="150" height="8" fill="#1B8F5E"/><text x="30" y="42.5" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="start">Controle.xlsx</text><path d="M20 60h150" stroke="#E3E7EE"/><path d="M20 76h150" stroke="#E3E7EE"/><path d="M20 92h150" stroke="#E3E7EE"/><path d="M20 108h150" stroke="#E3E7EE"/><path d="M20 124h150" stroke="#E3E7EE"/><path d="M57.5 48v106" stroke="#E3E7EE"/><path d="M95.0 48v106" stroke="#E3E7EE"/><path d="M132.5 48v106" stroke="#E3E7EE"/><rect x="150" y="14" width="150" height="124" rx="8" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="150" y="14" width="150" height="18" rx="8" fill="#2C7A8C"/><rect x="150" y="24" width="150" height="8" fill="#2C7A8C"/><text x="160" y="26.5" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="start">Planilhas Google</text><path d="M150 44h150" stroke="#E3E7EE"/><path d="M150 60h150" stroke="#E3E7EE"/><path d="M150 76h150" stroke="#E3E7EE"/><path d="M150 92h150" stroke="#E3E7EE"/><path d="M150 108h150" stroke="#E3E7EE"/><path d="M187.5 32v106" stroke="#E3E7EE"/><path d="M225.0 32v106" stroke="#E3E7EE"/><path d="M262.5 32v106" stroke="#E3E7EE"/>
 <rect x="188" y="62" width="37.5" height="16" fill="#1B8F5E" opacity=".12" stroke="#1B8F5E" stroke-width="2"/>
 <text x="156" y="104" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">=SE(C4&gt;0;&quot;Pago&quot;;&quot;Aberto&quot;)</text>
-<g class="spin" style="transform-origin:150px 150px"><circle cx="150" cy="150" r="18" fill="#F5B83D"/><path d="M141 147 a10 10 0 0 1 17 -4 M159 153 a10 10 0 0 1 -17 4" stroke="#0F1E5C" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M156 139 l2 4 -4 1 M144 161 l-2 -4 4 -1" stroke="#0F1E5C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="spin" style="transform-origin:150px 150px"><circle cx="150" cy="150" r="18" fill="#F4C531"/><path d="M141 147 a10 10 0 0 1 17 -4 M159 153 a10 10 0 0 1 -17 4" stroke="#0F1E5C" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M156 139 l2 4 -4 1 M144 161 l-2 -4 4 -1" stroke="#0F1E5C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
 <text x="38" y="62" font-family="Arial" font-size="7" font-weight="700" fill="#33415C" text-anchor="start">Mês</text><text x="76" y="62" font-family="Arial" font-size="7" font-weight="700" fill="#33415C" text-anchor="start">Valor</text><text x="38" y="78" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">Jan</text><text x="76" y="78" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">8.200</text><text x="38" y="94" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">Fev</text><text x="76" y="94" font-family="Arial" font-size="7" font-weight="400" fill="#33415C" text-anchor="start">9.450</text></svg><svg class="view" data-view="p2" viewBox="0 0 320 180" aria-hidden="true"><rect x="14" y="10" width="292" height="160" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="14" y="10" width="292" height="16" rx="10" fill="#F1F4F8"/><rect x="14" y="20" width="292" height="6" fill="#F1F4F8"/><circle cx="25" cy="18" r="2.6" fill="#FF6B6B"/><circle cx="34" cy="18" r="2.6" fill="#FFC857"/><circle cx="43" cy="18" r="2.6" fill="#4ADE80"/>
 <text x="28" y="40" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C" text-anchor="start">Painel · Outubro</text>
 <rect x="28" y="48" width="80" height="34" rx="8" fill="#DDF3E8"/><text x="36" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#136B46" text-anchor="start">Entradas</text><text x="36" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 18.400</text>
-<rect x="116" y="48" width="80" height="34" rx="8" fill="#FFF3D6"/><text x="124" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#8A5A00" text-anchor="start">Saídas</text><text x="124" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 11.200</text>
+<rect x="116" y="48" width="80" height="34" rx="8" fill="#FAF5CF"/><text x="124" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#8A5A00" text-anchor="start">Saídas</text><text x="124" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 11.200</text>
 <rect x="204" y="48" width="88" height="34" rx="8" fill="#F1F4F8"/><text x="212" y="61" font-family="Arial" font-size="6.5" font-weight="400" fill="#5A6383" text-anchor="start">Saldo</text><text x="212" y="75" font-family="Arial" font-size="10" font-weight="700" fill="#1B8F5E" text-anchor="start">R$ 7.200</text>
 <rect x="28" y="92" width="170" height="68" rx="8" fill="#FAFBFC" stroke="#E3E7EE"/>
 <g class="grow">
 <rect x="42" y="118" width="16" height="34" rx="3" fill="#B9E4CF"/><rect x="66" y="110" width="16" height="42" rx="3" fill="#8FD3B3"/><rect x="90" y="104" width="16" height="48" rx="3" fill="#1B8F5E"/>
-<rect x="114" y="112" width="16" height="40" rx="3" fill="#8FD3B3"/><rect x="138" y="100" width="16" height="52" rx="3" fill="#1B8F5E"/><rect x="162" y="96" width="16" height="56" rx="3" fill="#F5B83D"/>
+<rect x="114" y="112" width="16" height="40" rx="3" fill="#8FD3B3"/><rect x="138" y="100" width="16" height="52" rx="3" fill="#1B8F5E"/><rect x="162" y="96" width="16" height="56" rx="3" fill="#F4C531"/>
 </g>
 <rect x="206" y="92" width="86" height="68" rx="8" fill="#FAFBFC" stroke="#E3E7EE"/>
 <circle cx="249" cy="126" r="22" fill="none" stroke="#DDF3E8" stroke-width="10"/>
 <circle class="donut" cx="249" cy="126" r="22" fill="none" stroke="#1B8F5E" stroke-width="10" stroke-dasharray="90 138" transform="rotate(-90 249 126)"/>
-<circle cx="249" cy="126" r="22" fill="none" stroke="#F5B83D" stroke-width="10" stroke-dasharray="30 138" stroke-dashoffset="-90" transform="rotate(-90 249 126)"/>
+<circle cx="249" cy="126" r="22" fill="none" stroke="#F4C531" stroke-width="10" stroke-dasharray="30 138" stroke-dashoffset="-90" transform="rotate(-90 249 126)"/>
 <text x="249" y="129" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">65%</text></svg><svg class="view" data-view="p3" viewBox="0 0 320 180" aria-hidden="true">
 <rect x="14" y="16" width="190" height="148" rx="10" fill="#1E1E2E"/><rect x="14" y="16" width="190" height="16" rx="10" fill="#2A2A3C"/><rect x="14" y="26" width="190" height="6" fill="#2A2A3C"/>
 <circle cx="25" cy="24" r="2.6" fill="#FF6B6B"/><circle cx="34" cy="24" r="2.6" fill="#FFC857"/><circle cx="43" cy="24" r="2.6" fill="#4ADE80"/>
@@ -1065,13 +1135,13 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <text x="32" y="66" fill="#C3A6FF">const</text><text x="60" y="66" fill="#E6E6F0">conta = vencendo();</text>
 <text x="32" y="82" fill="#C3A6FF">if</text><text x="44" y="82" fill="#E6E6F0">(conta) {</text>
 <text x="40" y="98" fill="#7AA2FF">enviarEmail</text><text x="96" y="98" fill="#E6E6F0">(conta);</text>
-<text x="40" y="114" fill="#7AA2FF">marcar</text><text x="72" y="114" fill="#E6E6F0">(</text><text x="77" y="114" fill="#F5B83D">"avisado"</text><text x="121" y="114" fill="#E6E6F0">);</text>
+<text x="40" y="114" fill="#7AA2FF">marcar</text><text x="72" y="114" fill="#E6E6F0">(</text><text x="77" y="114" fill="#F4C531">"avisado"</text><text x="121" y="114" fill="#E6E6F0">);</text>
 <text x="32" y="130" fill="#E6E6F0">}</text><text x="24" y="146" fill="#E6E6F0">}</text>
 </g>
 <g class="spin" style="transform-origin:236px 64px"><circle cx="236" cy="64" r="26" fill="#1B8F5E"/><circle cx="236" cy="64" r="9" fill="none" stroke="#fff" stroke-width="4"/>
 <path d="M236 42v7M236 79v7M214 64h7M251 64h7M220 48l5 5M247 75l5 5M220 80l5-5M247 53l5-5" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g>
 <g class="fly"><rect x="222" y="112" width="40" height="28" rx="5" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><path d="M223 114 l19 14 19 -14" fill="none" stroke="#1B8F5E" stroke-width="2"/></g>
-<g><circle cx="290" cy="130" r="14" fill="#F5B83D"/><path d="M284 134 h12 l-2 -3 v-5 a4 4 0 0 0 -8 0 v5z M288 136 a2 2 0 0 0 4 0" fill="#0F1E5C"/></g></svg></div>
+<g><circle cx="290" cy="130" r="14" fill="#F4C531"/><path d="M284 134 h12 l-2 -3 v-5 a4 4 0 0 0 -8 0 v5z M288 136 a2 2 0 0 0 4 0" fill="#0F1E5C"/></g></svg></div>
             <h3>Planilhas, dashboards e automação</h3>
             <p class="sdesc">Controles claros em Excel ou Google Planilhas, do ajuste de uma fórmula até um painel completo que se atualiza sozinho.</p>
             <div class="tags"><button type="button" class="stag" data-view="p1" data-desc="Controles organizados no programa que você já usa, com fórmulas que calculam sozinhas e abas fáceis de entender." aria-pressed="false">Excel e Google Planilhas</button><button type="button" class="stag" data-view="p2" data-desc="Os números do mês num relance: entradas, saídas, saldo e gráficos que se atualizam conforme você preenche." aria-pressed="false">Dashboards</button><button type="button" class="stag" data-view="p3" data-desc="Automações que fazem o repetitivo por você: lembretes de vencimento, relatórios e preenchimentos automáticos." aria-pressed="false">Automação</button></div>
@@ -1088,7 +1158,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
               <rect x="26" y="46" width="58" height="26" rx="6" fill="#DDF3E8"/>
               <text x="32" y="56" font-family="Arial" font-size="6" fill="#136B46">A pagar</text>
               <text x="32" y="67" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C">R$ 4.380</text>
-              <rect x="90" y="46" width="58" height="26" rx="6" fill="#FFF3D6"/>
+              <rect x="90" y="46" width="58" height="26" rx="6" fill="#FAF5CF"/>
               <text x="96" y="56" font-family="Arial" font-size="6" fill="#8A5A00">Vence hoje</text>
               <text x="96" y="67" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C">R$ 1.250</text>
               <rect x="154" y="46" width="58" height="26" rx="6" fill="#F1F4F8"/>
@@ -1121,17 +1191,17 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
               <g>
                 <ellipse cx="272" cy="160" rx="24" ry="7" fill="#C4841A"/>
                 <rect x="248" y="147" width="48" height="13" fill="#C4841A"/>
-                <ellipse cx="272" cy="147" rx="24" ry="7" fill="#F5B83D"/>
-                <rect x="248" y="136" width="48" height="11" fill="#F5B83D"/>
+                <ellipse cx="272" cy="147" rx="24" ry="7" fill="#F4C531"/>
+                <rect x="248" y="136" width="48" height="11" fill="#F4C531"/>
                 <ellipse cx="272" cy="136" rx="24" ry="7" fill="#FCD877"/>
                 <text x="272" y="140" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#7A4E00">R$</text>
               </g>
-            </svg><svg class="view" data-view="f1" viewBox="0 0 320 180" aria-hidden="true"><rect x="18" y="14" width="180" height="150" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="18" y="14" width="180" height="16" rx="10" fill="#F1F4F8"/><rect x="18" y="24" width="180" height="6" fill="#F1F4F8"/><circle cx="29" cy="22" r="2.6" fill="#FF6B6B"/><circle cx="38" cy="22" r="2.6" fill="#FFC857"/><circle cx="47" cy="22" r="2.6" fill="#4ADE80"/><text x="30" y="46" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Vencimentos · Outubro</text><rect x="30" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">1</text><rect x="52" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">2</text><rect x="74" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">3</text><rect x="96" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">4</text><rect x="118" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">5</text><rect x="140" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">6</text><rect x="162" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">7</text><rect x="30" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">8</text><rect x="52" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">9</text><rect x="74" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">10</text><rect x="96" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">11</text><rect x="118" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">12</text><rect x="140" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">13</text><rect x="162" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">14</text><rect x="30" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">15</text><rect x="52" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">16</text><rect x="74" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">17</text><rect x="96" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">18</text><rect x="118" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">19</text><rect x="140" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">20</text><rect x="162" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">21</text><rect x="30" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">22</text><rect x="52" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">23</text><rect x="74" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">24</text><rect x="96" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">25</text><rect x="118" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">26</text><rect x="140" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">27</text><rect x="162" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">28</text><rect x="52" y="56" width="18" height="18" rx="4" fill="#1B8F5E"/><text x="61" y="68" font-family="Arial" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle">2</text><rect x="118" y="78" width="18" height="18" rx="4" fill="#1B8F5E"/><text x="127" y="90" font-family="Arial" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle">12</text><rect class="blink" x="74" y="100" width="18" height="18" rx="4" fill="#F5B83D"/><text x="83" y="112" font-family="Arial" font-size="6.5" font-weight="700" fill="#0F1E5C" text-anchor="middle">17</text><rect x="162" y="122" width="18" height="18" rx="4" fill="none" stroke="#F5B83D" stroke-width="2"/>
+            </svg><svg class="view" data-view="f1" viewBox="0 0 320 180" aria-hidden="true"><rect x="18" y="14" width="180" height="150" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="18" y="14" width="180" height="16" rx="10" fill="#F1F4F8"/><rect x="18" y="24" width="180" height="6" fill="#F1F4F8"/><circle cx="29" cy="22" r="2.6" fill="#FF6B6B"/><circle cx="38" cy="22" r="2.6" fill="#FFC857"/><circle cx="47" cy="22" r="2.6" fill="#4ADE80"/><text x="30" y="46" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Vencimentos · Outubro</text><rect x="30" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">1</text><rect x="52" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">2</text><rect x="74" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">3</text><rect x="96" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">4</text><rect x="118" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">5</text><rect x="140" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">6</text><rect x="162" y="56" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="68" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">7</text><rect x="30" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">8</text><rect x="52" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">9</text><rect x="74" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">10</text><rect x="96" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">11</text><rect x="118" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">12</text><rect x="140" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">13</text><rect x="162" y="78" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="90" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">14</text><rect x="30" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">15</text><rect x="52" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">16</text><rect x="74" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">17</text><rect x="96" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">18</text><rect x="118" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">19</text><rect x="140" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">20</text><rect x="162" y="100" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="112" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">21</text><rect x="30" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="39" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">22</text><rect x="52" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="61" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">23</text><rect x="74" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="83" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">24</text><rect x="96" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="105" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">25</text><rect x="118" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="127" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">26</text><rect x="140" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="149" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">27</text><rect x="162" y="122" width="18" height="18" rx="4" fill="#F7F9FB"/><text x="171" y="134" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="middle">28</text><rect x="52" y="56" width="18" height="18" rx="4" fill="#1B8F5E"/><text x="61" y="68" font-family="Arial" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle">2</text><rect x="118" y="78" width="18" height="18" rx="4" fill="#1B8F5E"/><text x="127" y="90" font-family="Arial" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle">12</text><rect class="blink" x="74" y="100" width="18" height="18" rx="4" fill="#F4C531"/><text x="83" y="112" font-family="Arial" font-size="6.5" font-weight="700" fill="#0F1E5C" text-anchor="middle">17</text><rect x="162" y="122" width="18" height="18" rx="4" fill="none" stroke="#F4C531" stroke-width="2"/>
 <rect x="212" y="30" width="96" height="50" rx="10" fill="#fff" stroke="#B9E4CF" stroke-width="2"/>
 <circle cx="230" cy="55" r="10" fill="#DDF3E8"/><path d="M230 60 v-10 M225 54 l5 -5 5 5" stroke="#1B8F5E" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="246" y="51" font-family="Arial" font-size="6.5" font-weight="400" fill="#5A6383" text-anchor="start">Recebido</text><text x="246" y="63" font-family="Arial" font-size="9" font-weight="700" fill="#1B8F5E" text-anchor="start">R$ 3.200</text>
 <rect x="212" y="92" width="96" height="50" rx="10" fill="#fff" stroke="#FCE3A6" stroke-width="2"/>
-<circle cx="230" cy="117" r="10" fill="#FFF3D6"/><path d="M230 112 v10 M225 118 l5 5 5 -5" stroke="#C4841A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="230" cy="117" r="10" fill="#FAF5CF"/><path d="M230 112 v10 M225 118 l5 5 5 -5" stroke="#C4841A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="246" y="113" font-family="Arial" font-size="6.5" font-weight="400" fill="#5A6383" text-anchor="start">Pago hoje</text><text x="246" y="125" font-family="Arial" font-size="9" font-weight="700" fill="#0F1E5C" text-anchor="start">R$ 1.250</text></svg><svg class="view" data-view="f2" viewBox="0 0 320 180" aria-hidden="true">
 <rect x="60" y="10" width="140" height="160" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
 <rect x="60" y="10" width="140" height="28" rx="10" fill="#136B46"/><rect x="60" y="28" width="140" height="10" fill="#136B46"/>
@@ -1144,7 +1214,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <rect x="74" y="106" width="66" height="4" rx="2" fill="#D3DAE6"/><rect x="160" y="106" width="26" height="4" rx="2" fill="#D3DAE6"/>
 <path d="M74 120 h112" stroke="#E3E7EE"/><text x="74" y="136" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Total</text><text x="186" y="136" font-family="Arial" font-size="8" font-weight="700" fill="#1B8F5E" text-anchor="end">R$ 2.480,00</text>
 <g class="stamp" style="transform-origin:150px 156px"><rect x="112" y="144" width="76" height="22" rx="5" fill="none" stroke="#1B8F5E" stroke-width="2.5" transform="rotate(-8 150 155)"/><text x="150" y="159" font-family="Arial" font-size="10" font-weight="800" fill="#1B8F5E" text-anchor="middle" transform="rotate(-8 150 155)">EMITIDA</text></g>
-<g class="fly2"><path d="M232 82 l56 -22 -18 52 -10 -20z" fill="#F5B83D"/><path d="M260 92 l28 -32" stroke="#C4841A" stroke-width="2"/></g>
+<g class="fly2"><path d="M232 82 l56 -22 -18 52 -10 -20z" fill="#F4C531"/><path d="M260 92 l28 -32" stroke="#C4841A" stroke-width="2"/></g>
 <path d="M210 104 q 10 -6 20 -4" stroke="#B9E4CF" stroke-width="2.5" fill="none" stroke-dasharray="3 5" stroke-linecap="round"/></svg><svg class="view" data-view="f3" viewBox="0 0 320 180" aria-hidden="true">
 <rect x="14" y="16" width="116" height="134" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><text x="24" y="38" font-family="Arial" font-size="7.5" font-weight="700" fill="#5A6383" text-anchor="start">Extrato do banco</text>
 <rect x="190" y="16" width="116" height="134" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><text x="200" y="38" font-family="Arial" font-size="7.5" font-weight="700" fill="#5A6383" text-anchor="start">Seu controle</text>
@@ -1154,11 +1224,11 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <g font-family="Arial" font-size="7.5" fill="#0F1E5C">
 <text x="32" y="70">Moradia</text><rect x="82" y="64" width="100" height="7" rx="3.5" fill="#EEF2F6"/><rect class="pfbar" x="82" y="64" width="78" height="7" rx="3.5" fill="#1B8F5E"/>
 <text x="32" y="90">Mercado</text><rect x="82" y="84" width="100" height="7" rx="3.5" fill="#EEF2F6"/><rect class="pfbar" x="82" y="84" width="56" height="7" rx="3.5" fill="#26A874"/>
-<text x="32" y="110">Transporte</text><rect x="82" y="104" width="100" height="7" rx="3.5" fill="#EEF2F6"/><rect class="pfbar" x="82" y="104" width="34" height="7" rx="3.5" fill="#F5B83D"/>
+<text x="32" y="110">Transporte</text><rect x="82" y="104" width="100" height="7" rx="3.5" fill="#EEF2F6"/><rect class="pfbar" x="82" y="104" width="34" height="7" rx="3.5" fill="#F4C531"/>
 <text x="32" y="130">Lazer</text><rect x="82" y="124" width="100" height="7" rx="3.5" fill="#EEF2F6"/><rect class="pfbar" x="82" y="124" width="24" height="7" rx="3.5" fill="#2E7B8C"/></g>
 <text x="32" y="153" font-family="Arial" font-size="7" fill="#5A6383">Contas do mês: 6 de 7 pagas</text>
 <g class="pfcard"><rect x="218" y="30" width="88" height="56" rx="12" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><text x="230" y="48" font-family="Arial" font-size="7" fill="#5A6383">Sobrou no mês</text><text x="230" y="70" font-family="Arial" font-size="13" font-weight="700" fill="#1B8F5E">R$ 640</text></g>
-<g class="pfcard2"><rect x="218" y="96" width="88" height="56" rx="12" fill="#FFF8E6" stroke="#F1D89C" stroke-width="2"/><text x="230" y="114" font-family="Arial" font-size="7" fill="#6E5010">Meta: viagem</text><rect x="230" y="124" width="64" height="7" rx="3.5" fill="#fff"/><rect x="230" y="124" width="38" height="7" rx="3.5" fill="#F5B83D"/><text x="230" y="143" font-family="Arial" font-size="7" font-weight="700" fill="#6E5010">60% guardado</text></g></svg></div>
+<g class="pfcard2"><rect x="218" y="96" width="88" height="56" rx="12" fill="#FAF6D6" stroke="#E9DC8A" stroke-width="2"/><text x="230" y="114" font-family="Arial" font-size="7" fill="#6E5010">Meta: viagem</text><rect x="230" y="124" width="64" height="7" rx="3.5" fill="#fff"/><rect x="230" y="124" width="38" height="7" rx="3.5" fill="#F4C531"/><text x="230" y="143" font-family="Arial" font-size="7" font-weight="700" fill="#6E5010">60% guardado</text></g></svg></div>
             <h3>Organização financeira e administrativa</h3>
             <p class="sdesc">Mantenho seus controles em dia todo mês, do seu negócio ou da sua casa, com base nas informações que você envia.</p>
             <div class="tags"><button type="button" class="stag" data-view="f1" data-desc="Contas organizadas por vencimento, pagamentos programados e recebimentos acompanhados, sem atraso nem multa." aria-pressed="false">Contas a pagar e receber</button><button type="button" class="stag" data-view="f2" data-desc="Faturas e cobranças emitidas no prazo e tudo registrado, para você saber quem já pagou e quem falta pagar." aria-pressed="false">Faturas e cobranças</button><button type="button" class="stag" data-view="f3" data-desc="Confiro cada lançamento do extrato com o seu controle, para o saldo bater certinho e nenhum valor passar batido." aria-pressed="false">Conferência do extrato</button><button type="button" class="stag" data-view="f4" data-desc="Também para pessoa física: seus gastos do mês por categoria, contas em dia e quanto sobrou, com metas para guardar dinheiro." aria-pressed="false">Finanças pessoais</button></div>
@@ -1227,15 +1297,15 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
                 <rect x="252" y="127" width="44" height="4" rx="2" fill="#D8EFE3"/>
                 <rect x="236" y="142" width="10" height="10" rx="3" fill="#1B8F5E"/><path d="M238.5 147l2 2 3.5-4" stroke="#fff" stroke-width="1.8" fill="none"/>
                 <rect x="252" y="145" width="36" height="4" rx="2" fill="#D8EFE3"/>
-                <rect x="236" y="158" width="10" height="6" rx="2" fill="none" stroke="#F5B83D" stroke-width="1.6"/>
+                <rect x="236" y="158" width="10" height="6" rx="2" fill="none" stroke="#F4C531" stroke-width="1.6"/>
               </g>
             </svg><svg class="view" data-view="a3" viewBox="0 0 320 180" aria-hidden="true">
 <path id="flowpath" d="M98 55 H122 M198 55 H222 M260 70 V120" stroke="#B9E4CF" stroke-width="3" fill="none" stroke-dasharray="5 5"/>
 <path d="M116 50 l6 5 -6 5 M216 50 l6 5 -6 5 M255 114 l5 6 5 -6" stroke="#1B8F5E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="22" y="40" width="76" height="30" rx="10" fill="#1B8F5E"/><text x="60" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Receber</text><rect x="122" y="40" width="76" height="30" rx="10" fill="#136B46"/><text x="160" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Conferir</text><rect x="222" y="40" width="76" height="30" rx="10" fill="#2C7A8C"/><text x="260" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Lançar</text><rect x="222" y="120" width="76" height="30" rx="10" fill="#F5B83D"/><text x="260" y="139" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">Arquivar</text>
+<rect x="22" y="40" width="76" height="30" rx="10" fill="#1B8F5E"/><text x="60" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Receber</text><rect x="122" y="40" width="76" height="30" rx="10" fill="#136B46"/><text x="160" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Conferir</text><rect x="222" y="40" width="76" height="30" rx="10" fill="#2C7A8C"/><text x="260" y="59" font-family="Arial" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Lançar</text><rect x="222" y="120" width="76" height="30" rx="10" fill="#F4C531"/><text x="260" y="139" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">Arquivar</text>
 <rect x="22" y="112" width="160" height="46" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
 <text x="34" y="130" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="start">Rotina documentada</text><text x="34" y="145" font-family="Arial" font-size="7" font-weight="400" fill="#5A6383" text-anchor="start">passo a passo, sempre igual</text>
-<circle r="5" fill="#F5B83D" stroke="#fff" stroke-width="2"><animateMotion dur="3.2s" repeatCount="indefinite" path="M60 55 H260 V135"/></circle></svg><svg class="view" data-view="a2" viewBox="0 0 320 180" aria-hidden="true">
+<circle r="5" fill="#F4C531" stroke="#fff" stroke-width="2"><animateMotion dur="3.2s" repeatCount="indefinite" path="M60 55 H260 V135"/></circle></svg><svg class="view" data-view="a2" viewBox="0 0 320 180" aria-hidden="true">
 <rect x="16" y="14" width="160" height="152" rx="12" fill="#fff" stroke="#D3DAE6" stroke-width="2"/>
 <text x="30" y="36" font-family="Arial" font-size="8.5" font-weight="700" fill="#0F1E5C" text-anchor="start">Novo cadastro</text>
 <circle cx="46" cy="62" r="14" fill="#DDF3E8"/><circle cx="46" cy="58" r="5" fill="#1B8F5E"/><path d="M37 70 q9 -9 18 0" fill="#1B8F5E"/>
@@ -1244,10 +1314,10 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <text x="30" y="120" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Telefone</text><rect x="30" y="124" width="62" height="10" rx="3" fill="#F7F9FB" stroke="#E3E7EE"/>
 <text x="100" y="120" font-family="Arial" font-size="6.5" font-weight="400" fill="#6B778C" text-anchor="start">Cidade</text><rect x="100" y="124" width="62" height="10" rx="3" fill="#F7F9FB" stroke="#E3E7EE"/>
 <rect class="type" x="70" y="65" width="60" height="4" rx="2" fill="#8FD3B3"/>
-<rect x="110" y="144" width="52" height="14" rx="7" fill="#F5B83D"/><text x="136" y="154" font-family="Arial" font-size="7" font-weight="700" fill="#0F1E5C" text-anchor="middle">Salvar</text>
+<rect x="110" y="144" width="52" height="14" rx="7" fill="#F4C531"/><text x="136" y="154" font-family="Arial" font-size="7" font-weight="700" fill="#0F1E5C" text-anchor="middle">Salvar</text>
 <g><rect x="190" y="26" width="116" height="34" rx="9" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><circle cx="206" cy="43" r="8" fill="#DDF3E8"/><rect x="220" y="36" width="50" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="46" width="36" height="4" rx="2" fill="#D3DAE6"/><circle cx="292" cy="43" r="6" fill="#1B8F5E"/><path d="M289 43 l2 2 4 -4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
-<g><rect x="190" y="70" width="116" height="34" rx="9" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><circle cx="206" cy="87" r="8" fill="#FFF3D6"/><rect x="220" y="80" width="44" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="90" width="40" height="4" rx="2" fill="#D3DAE6"/><circle cx="292" cy="87" r="6" fill="#1B8F5E"/><path d="M289 87 l2 2 4 -4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
-<g class="slidein"><rect x="190" y="114" width="116" height="34" rx="9" fill="#fff" stroke="#F5B83D" stroke-width="2"/><circle cx="206" cy="131" r="8" fill="#DDF3E8"/><rect x="220" y="124" width="54" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="134" width="30" height="4" rx="2" fill="#D3DAE6"/><text x="292" y="134" font-family="Arial" font-size="6.5" font-weight="700" fill="#8A5A00" text-anchor="middle">novo</text></g></svg><svg class="view" data-view="a1" viewBox="0 0 320 180" aria-hidden="true"><path d="M20 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#1B8F5E"/><text x="59" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Notas</text><path d="M118 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#136B46"/><text x="157" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Contratos</text><path d="M216 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#2C7A8C"/><text x="255" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Comprov.</text>
+<g><rect x="190" y="70" width="116" height="34" rx="9" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><circle cx="206" cy="87" r="8" fill="#FAF5CF"/><rect x="220" y="80" width="44" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="90" width="40" height="4" rx="2" fill="#D3DAE6"/><circle cx="292" cy="87" r="6" fill="#1B8F5E"/><path d="M289 87 l2 2 4 -4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
+<g class="slidein"><rect x="190" y="114" width="116" height="34" rx="9" fill="#fff" stroke="#F4C531" stroke-width="2"/><circle cx="206" cy="131" r="8" fill="#DDF3E8"/><rect x="220" y="124" width="54" height="5" rx="2.5" fill="#0F1E5C" opacity=".7"/><rect x="220" y="134" width="30" height="4" rx="2" fill="#D3DAE6"/><text x="292" y="134" font-family="Arial" font-size="6.5" font-weight="700" fill="#8A5A00" text-anchor="middle">novo</text></g></svg><svg class="view" data-view="a1" viewBox="0 0 320 180" aria-hidden="true"><path d="M20 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#1B8F5E"/><text x="59" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Notas</text><path d="M118 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#136B46"/><text x="157" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Contratos</text><path d="M216 112 q0-8 8-8 h22 l8 8 h32 q8 0 8 8 v40 q0 8 -8 8 h-62 q-8 0 -8 -8z" fill="#2C7A8C"/><text x="255" y="152" font-family="Arial" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">Comprov.</text>
 <g class="drop d1"><rect x="44" y="40" width="30" height="38" rx="3" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><rect x="48" y="58" width="18" height="7" rx="2" fill="#E06C5A"/><text x="57" y="63.5" font-family="Arial" font-size="5.5" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></g>
 <g class="drop d2"><rect x="142" y="40" width="30" height="38" rx="3" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><rect x="146" y="58" width="22" height="7" rx="2" fill="#1F3FBF"/><text x="157" y="63.5" font-family="Arial" font-size="5.5" font-weight="700" fill="#fff" text-anchor="middle">DOCX</text></g>
 <g class="drop d3"><rect x="240" y="40" width="30" height="38" rx="3" fill="#fff" stroke="#D3DAE6" stroke-width="1.5"/><rect x="244" y="58" width="18" height="7" rx="2" fill="#E06C5A"/><text x="253" y="63.5" font-family="Arial" font-size="5.5" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></g>
@@ -1255,7 +1325,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <text x="36" y="33" font-family="Arial" font-size="9" font-weight="700" fill="#fff">Calculadora de valuation</text>
 <text x="36" y="58" font-family="Arial" font-size="7" fill="#5A6383">Lucro por ação (R$)</text><rect x="36" y="62" width="152" height="16" rx="5" fill="#F7F9FB" stroke="#D3DAE6"/><text x="42" y="73" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C">3,20</text>
 <text x="36" y="92" font-family="Arial" font-size="7" fill="#5A6383">Crescimento esperado (% ao ano)</text><rect x="36" y="96" width="152" height="16" rx="5" fill="#F7F9FB" stroke="#D3DAE6"/><text x="42" y="107" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C">8</text>
-<rect class="calcbtn" x="36" y="122" width="152" height="18" rx="9" fill="#F5B83D"/><text x="112" y="134" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">Calcular</text>
+<rect class="calcbtn" x="36" y="122" width="152" height="18" rx="9" fill="#F4C531"/><text x="112" y="134" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">Calcular</text>
 <text x="36" y="156" font-family="Arial" font-size="6.5" fill="#8A93AD">Ferramenta de estudo · não é recomendação</text>
 <g class="calcres"><rect x="214" y="44" width="92" height="70" rx="12" fill="#fff" stroke="#B9E4CF" stroke-width="2"/><text x="226" y="62" font-family="Arial" font-size="7" fill="#5A6383">Preço justo estimado</text><text x="226" y="82" font-family="Arial" font-size="13" font-weight="700" fill="#1B8F5E">R$ 42,80</text>
 <rect x="226" y="92" width="68" height="6" rx="3" fill="#E4EAF2"/><rect class="calcbar" x="226" y="92" width="50" height="6" rx="3" fill="#1B8F5E"/><text x="226" y="108" font-family="Arial" font-size="6.5" fill="#5A6383">Cotação atual: R$ 35,10</text></g>
@@ -1281,7 +1351,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
               <g font-family="ui-monospace, Menlo, monospace" font-size="8.5">
                 <text x="40" y="64" fill="#5C6080">1</text><text x="52" y="64" fill="#7AA2FF">&lt;header&gt;</text>
                 <text x="40" y="78" fill="#5C6080">2</text><text x="60" y="78" fill="#7AA2FF">&lt;h1&gt;</text><text x="86" y="78" fill="#E6E6F0">Seu site</text><text x="126" y="78" fill="#7AA2FF">&lt;/h1&gt;</text>
-                <text x="40" y="92" fill="#5C6080">3</text><text x="60" y="92" fill="#7AA2FF">&lt;a</text><text x="74" y="92" fill="#C3A6FF">class</text><text x="100" y="92" fill="#E6E6F0">=</text><text x="105" y="92" fill="#F5B83D">"btn"</text><text x="132" y="92" fill="#7AA2FF">&gt;</text>
+                <text x="40" y="92" fill="#5C6080">3</text><text x="60" y="92" fill="#7AA2FF">&lt;a</text><text x="74" y="92" fill="#C3A6FF">class</text><text x="100" y="92" fill="#E6E6F0">=</text><text x="105" y="92" fill="#F4C531">"btn"</text><text x="132" y="92" fill="#7AA2FF">&gt;</text>
                 <text x="40" y="106" fill="#5C6080">4</text><text x="68" y="106" fill="#E6E6F0">WhatsApp</text>
                 <text x="40" y="120" fill="#5C6080">5</text><text x="60" y="120" fill="#7AA2FF">&lt;/a&gt;</text>
                 <text x="40" y="134" fill="#5C6080">6</text><text x="52" y="134" fill="#7AA2FF">&lt;/header&gt;</text>
@@ -1294,7 +1364,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
               <rect x="162" y="82" width="56" height="8" rx="4" fill="#1B8F5E"/>
               <rect x="162" y="96" width="44" height="5" rx="2.5" fill="#B9E4CF"/>
               <rect x="162" y="106" width="50" height="5" rx="2.5" fill="#B9E4CF"/>
-              <rect x="162" y="120" width="34" height="12" rx="6" fill="#F5B83D"/>
+              <rect x="162" y="120" width="34" height="12" rx="6" fill="#F4C531"/>
               <rect x="226" y="80" width="40" height="48" rx="8" fill="#E3F5EC"/>
               <path d="M231 120 l11-13 8 9 5-5 9 9z" fill="#8FD3B3"/>
               <circle cx="256" cy="92" r="5" fill="#8FD3B3"/>
@@ -1303,7 +1373,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
               <rect x="271" y="110" width="20" height="5" rx="2.5" fill="#1B8F5E"/>
               <rect x="271" y="120" width="26" height="3.5" rx="1.75" fill="#B9E4CF"/>
               <rect x="271" y="127" width="22" height="3.5" rx="1.75" fill="#B9E4CF"/>
-              <rect x="271" y="148" width="18" height="7" rx="3.5" fill="#F5B83D"/>
+              <rect x="271" y="148" width="18" height="7" rx="3.5" fill="#F4C531"/>
               <path d="M200 132 l0 20 5-5 4.5 9 4.5-2-4.5-9 7 0z" fill="#0F1E5C" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
             </svg><svg class="view" data-view="s1" viewBox="0 0 320 180" aria-hidden="true">
 <g class="s1-editor">
@@ -1318,7 +1388,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
   <text x="35" y="36.5" font-family="Arial" font-size="6.8" fill="#E6E6F0">index.html</text>
   <circle class="s1-dirty" cx="85" cy="33.5" r="2.4" fill="#E6E6F0"/>
   <path class="s1-clean" d="M82.5 33.5 l2 2 3.5 -4" stroke="#4ADE80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <g font-family="ui-monospace, Menlo, monospace"><text x="38" y="58" fill="#5C6080" font-size="7.5">1</text><text x="50" y="58" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;!DOCTYPE html&gt;</tspan></text><text x="38" y="71" fill="#5C6080" font-size="7.5">2</text><text x="50" y="71" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;header&gt;</tspan></text><text x="38" y="84" fill="#5C6080" font-size="7.5">3</text><text x="50" y="84" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;h1&gt;</tspan><tspan fill="#E6E6F0">Seu negócio</tspan><tspan fill="#7AA2FF">&lt;/h1&gt;</tspan></text><text x="38" y="97" fill="#5C6080" font-size="7.5">4</text><text x="50" y="97" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;p&gt;</tspan><tspan fill="#E6E6F0">Simples e bonito</tspan><tspan fill="#7AA2FF">&lt;/p&gt;</tspan></text><text x="38" y="110" fill="#5C6080" font-size="7.5">5</text><text x="50" y="110" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;a </tspan><tspan fill="#C3A6FF">class</tspan><tspan fill="#E6E6F0">=</tspan><tspan fill="#F5B83D">"btn"</tspan><tspan fill="#7AA2FF">&gt;</tspan></text><text x="38" y="123" fill="#5C6080" font-size="7.5">6</text><text x="50" y="123" font-size="7.5" xml:space="preserve"><tspan fill="#E6E6F0">    Orçamento</tspan><tspan fill="#7AA2FF">&lt;/a&gt;</tspan></text><text x="38" y="136" fill="#5C6080" font-size="7.5">7</text><text x="50" y="136" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;/header&gt;</tspan></text></g>
+  <g font-family="ui-monospace, Menlo, monospace"><text x="38" y="58" fill="#5C6080" font-size="7.5">1</text><text x="50" y="58" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;!DOCTYPE html&gt;</tspan></text><text x="38" y="71" fill="#5C6080" font-size="7.5">2</text><text x="50" y="71" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;header&gt;</tspan></text><text x="38" y="84" fill="#5C6080" font-size="7.5">3</text><text x="50" y="84" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;h1&gt;</tspan><tspan fill="#E6E6F0">Seu negócio</tspan><tspan fill="#7AA2FF">&lt;/h1&gt;</tspan></text><text x="38" y="97" fill="#5C6080" font-size="7.5">4</text><text x="50" y="97" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;p&gt;</tspan><tspan fill="#E6E6F0">Simples e bonito</tspan><tspan fill="#7AA2FF">&lt;/p&gt;</tspan></text><text x="38" y="110" fill="#5C6080" font-size="7.5">5</text><text x="50" y="110" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">  &lt;a </tspan><tspan fill="#C3A6FF">class</tspan><tspan fill="#E6E6F0">=</tspan><tspan fill="#F4C531">"btn"</tspan><tspan fill="#7AA2FF">&gt;</tspan></text><text x="38" y="123" fill="#5C6080" font-size="7.5">6</text><text x="50" y="123" font-size="7.5" xml:space="preserve"><tspan fill="#E6E6F0">    Orçamento</tspan><tspan fill="#7AA2FF">&lt;/a&gt;</tspan></text><text x="38" y="136" fill="#5C6080" font-size="7.5">7</text><text x="50" y="136" font-size="7.5" xml:space="preserve"><tspan fill="#7AA2FF">&lt;/header&gt;</tspan></text></g>
   <rect class="s1-cover s1-c1" x="49" y="50" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c2" x="49" y="63" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c3" x="49" y="76" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c4" x="49" y="89" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c5" x="49" y="102" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c6" x="49" y="115" width="152" height="11" fill="#1E1E2E"/><rect class="s1-cover s1-c7" x="49" y="128" width="152" height="11" fill="#1E1E2E"/>
   <rect class="s1-caret" x="50" y="145" width="1.4" height="9" fill="#E6E6F0"/>
   <rect x="10" y="158" width="200" height="12" fill="#136B46"/><path d="M10 158 h200 v2 h-200z" fill="#136B46"/>
@@ -1326,7 +1396,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
   <g class="s1-status"><text x="204" y="166.5" font-family="Arial" font-size="6.2" font-weight="700" fill="#fff" text-anchor="end">✓ Salvo</text></g>
 </g>
 <g class="s1-keys">
-  <rect x="150" y="126" width="56" height="20" rx="6" fill="#F5B83D"/><rect x="150" y="126" width="56" height="17" rx="6" fill="#FFD27A"/>
+  <rect x="150" y="126" width="56" height="20" rx="6" fill="#F4C531"/><rect x="150" y="126" width="56" height="17" rx="6" fill="#FFD27A"/>
   <text x="178" y="138.5" font-family="Arial" font-size="8" font-weight="800" fill="#0F1E5C" text-anchor="middle">Ctrl + S</text>
 </g>
 <g class="s1-browser">
@@ -1339,10 +1409,10 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
   <rect x="248" y="59" width="14" height="4" rx="2" fill="#D3DAE6"/><rect x="266" y="57.5" width="34" height="9" rx="4.5" fill="#1B8F5E"/>
   <rect x="130" y="76" width="84" height="9" rx="4.5" fill="#136B46"/><rect x="130" y="89" width="64" height="9" rx="4.5" fill="#136B46"/>
   <rect x="130" y="104" width="78" height="4" rx="2" fill="#D3DAE6"/><rect x="130" y="112" width="62" height="4" rx="2" fill="#D3DAE6"/>
-  <rect class="s1-cta" x="130" y="122" width="44" height="13" rx="6.5" fill="#F5B83D"/>
-  <rect x="222" y="74" width="78" height="62" rx="8" fill="#DDF3E8"/><circle cx="284" cy="88" r="6" fill="#F5B83D" opacity=".85"/><path d="M226 132 l20-24 14 14 9-9 27 19z" fill="#8FD3B3"/>
+  <rect class="s1-cta" x="130" y="122" width="44" height="13" rx="6.5" fill="#F4C531"/>
+  <rect x="222" y="74" width="78" height="62" rx="8" fill="#DDF3E8"/><circle cx="284" cy="88" r="6" fill="#F4C531" opacity=".85"/><path d="M226 132 l20-24 14 14 9-9 27 19z" fill="#8FD3B3"/>
   <rect x="130" y="144" width="52" height="16" rx="5" fill="#F4F7F9"/><circle cx="139" cy="152" r="3.5" fill="#1B8F5E"/>
-  <rect x="188" y="144" width="52" height="16" rx="5" fill="#F4F7F9"/><circle cx="197" cy="152" r="3.5" fill="#F5B83D"/>
+  <rect x="188" y="144" width="52" height="16" rx="5" fill="#F4F7F9"/><circle cx="197" cy="152" r="3.5" fill="#F4C531"/>
   <rect x="246" y="144" width="54" height="16" rx="5" fill="#F4F7F9"/><circle cx="255" cy="152" r="3.5" fill="#136B46"/>
   <path class="s1-cur" d="M168 132 l0 15 4 -4 3.5 7 3.5 -1.6 -3.5 -7 5.6 0z" fill="#0F1E5C" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
 </g>
@@ -1350,19 +1420,19 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <defs><clipPath id="cp-phone"><rect x="124" y="20" width="72" height="142" rx="6"/></clipPath></defs>
 <rect x="18" y="58" width="86" height="58" rx="6" fill="none" stroke="#B9E4CF" stroke-width="2.5"/><path d="M50 116 v10 M38 128 h24" stroke="#B9E4CF" stroke-width="2.5" stroke-linecap="round"/>
 <rect x="226" y="46" width="66" height="90" rx="8" fill="none" stroke="#B9E4CF" stroke-width="2.5"/>
-<path d="M106 86 h10 M214 86 h10" stroke="#F5B83D" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5"/>
+<path d="M106 86 h10 M214 86 h10" stroke="#F4C531" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5"/>
 <rect x="116" y="8" width="88" height="166" rx="16" fill="#136B46"/>
 <rect x="124" y="20" width="72" height="142" rx="6" fill="#fff"/>
 <g clip-path="url(#cp-phone)"><g class="scroll">
   <rect x="124" y="20" width="72" height="16" fill="#1B8F5E"/><circle cx="133" cy="28" r="3" fill="#fff"/>
   <rect x="130" y="44" width="50" height="7" rx="3.5" fill="#136B46"/><rect x="130" y="55" width="40" height="7" rx="3.5" fill="#136B46"/>
   <rect x="130" y="68" width="56" height="3.5" rx="1.75" fill="#D3DAE6"/><rect x="130" y="75" width="46" height="3.5" rx="1.75" fill="#D3DAE6"/>
-  <rect x="130" y="84" width="32" height="10" rx="5" fill="#F5B83D"/>
+  <rect x="130" y="84" width="32" height="10" rx="5" fill="#F4C531"/>
   <rect x="130" y="102" width="60" height="40" rx="6" fill="#DDF3E8"/><path d="M134 138 l14-16 10 10 7-7 21 13z" fill="#8FD3B3"/>
   <rect x="130" y="150" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="161" r="4" fill="#1B8F5E"/><rect x="147" y="159" width="36" height="4" rx="2" fill="#D3DAE6"/>
-  <rect x="130" y="178" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="189" r="4" fill="#F5B83D"/><rect x="147" y="187" width="36" height="4" rx="2" fill="#D3DAE6"/>
+  <rect x="130" y="178" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="189" r="4" fill="#F4C531"/><rect x="147" y="187" width="36" height="4" rx="2" fill="#D3DAE6"/>
   <rect x="130" y="206" width="60" height="22" rx="5" fill="#F4F7F9"/><circle cx="139" cy="217" r="4" fill="#136B46"/><rect x="147" y="215" width="36" height="4" rx="2" fill="#D3DAE6"/>
-  <rect x="130" y="238" width="60" height="30" rx="6" fill="#DDF3E8"/><rect x="136" y="246" width="34" height="5" rx="2.5" fill="#136B46"/><rect x="136" y="255" width="26" height="8" rx="4" fill="#F5B83D"/>
+  <rect x="130" y="238" width="60" height="30" rx="6" fill="#DDF3E8"/><rect x="136" y="246" width="34" height="5" rx="2.5" fill="#136B46"/><rect x="136" y="255" width="26" height="8" rx="4" fill="#F4C531"/>
   <rect x="124" y="276" width="72" height="30" fill="#136B46"/><rect x="132" y="286" width="30" height="4" rx="2" fill="#fff" opacity=".7"/>
 </g></g>
 <rect x="148" y="12" width="24" height="5" rx="2.5" fill="#0D4A31"/></svg><svg class="view" data-view="s3" viewBox="0 0 320 180" aria-hidden="true"><rect x="16" y="22" width="170" height="136" rx="10" fill="#fff" stroke="#D3DAE6" stroke-width="2"/><rect x="16" y="22" width="170" height="16" rx="10" fill="#F1F4F8"/><rect x="16" y="32" width="170" height="6" fill="#F1F4F8"/><circle cx="27" cy="30" r="2.6" fill="#FF6B6B"/><circle cx="36" cy="30" r="2.6" fill="#FFC857"/><circle cx="45" cy="30" r="2.6" fill="#4ADE80"/>
@@ -1384,7 +1454,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
 <g class="s4res"><rect x="40" y="96" width="240" height="26" rx="6" fill="#F7F9FB"/><rect x="50" y="102" width="110" height="5" rx="2.5" fill="#B7C4D8"/><rect x="50" y="111" width="170" height="4" rx="2" fill="#DCE3EC"/></g>
 <g class="s4res2"><rect x="40" y="128" width="240" height="26" rx="6" fill="#F7F9FB"/><rect x="50" y="134" width="96" height="5" rx="2.5" fill="#B7C4D8"/><rect x="50" y="143" width="150" height="4" rx="2" fill="#DCE3EC"/></g>
 <g class="s4top"><rect x="40" y="70" width="240" height="22" rx="6" fill="#DDF3E8" stroke="#1B8F5E" stroke-width="1.6"/><text x="50" y="80" font-family="Arial" font-size="8" font-weight="700" fill="#136B46">Seu Negócio · seunegocio.com.br</text><rect x="50" y="84" width="150" height="3.5" rx="1.75" fill="#8FCFB0"/>
-<circle cx="266" cy="81" r="9" fill="#F5B83D"/><text x="266" y="84" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">1º</text></g></svg></div>
+<circle cx="266" cy="81" r="9" fill="#F4C531"/><text x="266" y="84" font-family="Arial" font-size="8" font-weight="700" fill="#0F1E5C" text-anchor="middle">1º</text></g></svg></div>
             <h3>Sites simples e web design</h3>
             <p class="sdesc">Uma página bonita e rápida para o seu negócio ser encontrado, com botão direto para o seu WhatsApp.</p>
             <div class="tags"><button type="button" class="stag" data-view="s1" data-desc="Eu escrevo o código, salvo e o seu site entra no ar: uma página limpa e direta, com quem você é, o que oferece e como falar com você, num visual que chama atenção." aria-pressed="false">Site de apresentação</button><button type="button" class="stag" data-view="s2" data-desc="O site se ajusta a qualquer tela. Seu cliente navega pelo celular com a mesma facilidade do computador." aria-pressed="false">Funciona no celular</button><button type="button" class="stag" data-view="s3" data-desc="Um clique e o cliente já cai na sua conversa, com a mensagem pronta. Menos barreira, mais pedidos de orçamento." aria-pressed="false">Botão de WhatsApp</button><button type="button" class="stag" data-view="s4" data-desc="Entrego o site pronto para o Google: título e descrição para a busca, textos com as palavras que seus clientes pesquisam, carregamento rápido e cadastro no Google Search Console." aria-pressed="false">Aparece no Google</button></div>
@@ -1941,7 +2011,7 @@ footer.wrap{background:linear-gradient(135deg,#0F1E5C 0%,#14386E 55%,#136B46 100
       function dirty(){status.textContent="○ Alterações não salvas — clique em Salvar"}
       var inCor=$("corIn"),userColor=false;
       function tint(hex,f){var n=parseInt(hex.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;r=Math.round(r+(255-r)*f);g=Math.round(g+(255-g)*f);b=Math.round(b+(255-b)*f);return "rgb("+r+","+g+","+b+")"}
-      function paint(){var c=inCor.value;win.style.setProperty("--pc",c);win.style.setProperty("--ps",tint(c,.88));$("corHex").textContent=c.toUpperCase();document.querySelectorAll(".sw").forEach(function(b){b.classList.toggle("on",b.dataset.c.toLowerCase()===c.toLowerCase())})}
+      function paint(){var c=inCor.value;win.style.setProperty("--pc",c);win.style.setProperty("--ps",tint(c,.92));$("corHex").textContent=c.toUpperCase();document.querySelectorAll(".sw").forEach(function(b){b.classList.toggle("on",b.dataset.c.toLowerCase()===c.toLowerCase())})}
       function setColor(c,manual){inCor.value=c;if(manual){userColor=true;stop()}paint()}
       inCor.addEventListener("input",function(){setColor(inCor.value,true)});
       document.querySelectorAll(".sw").forEach(function(b){b.addEventListener("click",function(){setColor(b.dataset.c,true)})});
